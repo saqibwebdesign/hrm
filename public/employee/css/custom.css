@@ -1,0 +1,1050 @@
+body
+{	
+  margin:0px;
+  padding: 0px; 
+  font-family: 'Roboto', sans-serif;                                                                                                                                            
+}
+.no-pad{
+    padding:0px !important;
+}
+
+.section-1 {
+    background: #17263A !important;
+     padding: 20px;
+}
+.section-1-1 {
+    background:  #17263A !important;
+}
+.section-1-2 {
+    background: transparent;
+    padding: 50px 20px;
+}
+.section-1-2 span {
+    color: #849BB9;
+    font-size: 16px;
+    font-weight: 400; 
+}
+.section-1-2.sidebar-nav > ul > li.active > a  {
+    border-left: 3px solid transparent;
+    font-weight: 400;
+}
+.section-1-2.sidebar-nav > ul > li:hover > a  {
+    background: #1D2F47 !important;
+    border-radius: 5px !important;
+}
+.section-1-2.sidebar-nav > ul > li:hover > a i {
+    color: #ee0005;
+}
+.section-1-2 a.has-arrow.waves-effect.waves-dark {
+    padding: 15px 20px !important;
+}
+.sidebar-nav .has-arrow:after {
+    right: 2em !important;
+}
+.section-1-2.sidebar-nav ul li ul {
+    padding-left: 10px;
+}
+.section-1-2.sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {
+    color: #ee0005 !important;
+}
+.section-1-2.sidebar-nav ul li a.active, .sidebar-nav ul li a {
+    color: #546A88!important;
+    font-weight: 400;
+    font-size: 14px;
+    background: transparent;
+}
+.section-1-3 {
+    margin-top: 3px !important;
+}
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+    color: #CCD2E3 !important;
+}
+.section-1-4 i::before {
+    color: #CCD2E3 !important;
+    font-size: 20px;
+}
+.navbar.section-1-5 {
+    width: 100%;
+}
+.navbar.section-1-5 i.ti-menu::before {
+    color: #242E3A;
+    font-size: 20px;
+}
+.topbar {
+    background: #FFFFFF !important;
+}
+.serach_field-area .search_inner button {
+    position: absolute;
+    right:  590px !important;
+    top: -2px !important;
+    height: 100%;
+    background: transparent;
+    font-size: 12px;
+    border: 0;
+    padding-left: 25px;
+    padding-right: 13px;
+}
+li.nav-item.dropdown.section-1-4 a {
+    padding: 10px 25px 0px 30px !important;
+}
+.topbar ul.dropdown-user li a:hover {
+    color: #e8a348 !important;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer !important;
+}
+.serach_field-area .search_inner input {
+    color: #C3C3C3 !important;
+    font-size: 15px;
+    height: 50px;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 200px;
+    background: #EBEBEB;
+    border-radius: 5px;
+    border: 0;
+    font-weight: 300;
+}
+.topbar ul.dropdown-user li a:hover {
+    color:  #ee0005 !important;
+}
+.topbar .top-navbar .mailbox {
+    width: 300px;
+    left: -295% !important;
+}
+li.nav-item.dropdown.section-1-4 a {
+    padding: 10px 25px 10px 30px !important;
+}
+.btn-danger, .btn-danger.disabled {
+    background: #ef5350 !important;
+}
+.topbar ul.dropdown-user li .dw-user-box .u-text .btn {
+    color: white !important;
+}
+.page-wrapper {
+    background: white !important;
+    padding-bottom: 0px !important;
+}
+.container-fluid {
+    padding: 0px !important;
+}
+.section-1-7 {
+    background: #f1f4fb;
+    padding: 30px 20px 30px 30px;
+}
+.section-1-6 img {
+    height: 240px;
+    width: 100%;
+    border-radius: 12px;
+}
+.section-1-8 {
+    text-align: right;
+}
+.section-1-8 img {
+    border-radius: 200px;
+    margin-top: -200px;
+}
+.section-1-9 h2 {
+    color: #263871;
+    font-size: 20px;
+    font-weight: 500;
+    margin:0;
+}
+.section-1-9 p {
+    color: #263871;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    margin-top: -5px;
+}
+.section-1-10 span{
+	text-align: right;
+	margin:0 auto;
+	display: block;
+}
+
+.section-1-10 button {
+    background: #dee5f7;
+    padding: 12px 25px;
+    border: 0;
+    color: #263872;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 7px;
+    margin-top: 10px;
+    margin-right: 12px;
+}
+button.section-1-11 {
+    background: #71d875;
+    padding: 12px 16px;
+    border: 0;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 7px;
+    margin-right: 0px !important;
+}
+.section-1-12 {
+    padding: 20px 10px 20px 0px !important;
+    background: white;
+    border-radius: 15px;
+    margin: -5px;
+}
+.section-1-14 h2 {
+    color: #263871;
+    font-size: 13px;
+    margin: 0;
+    font-weight: 500;
+    text-align: right;
+    line-height: 32px;
+    padding-top: 10px;
+}
+.section-1-14 p {
+    font-size: 26px;
+    color: #263871;
+    margin: 0;
+    line-height: 0;
+    font-weight: 600;
+    padding-top: 10px;
+    text-align: right;
+}
+.section-1-15 {
+    padding-top: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 30px;
+}
+.section-1-16 {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 15px;
+}
+.section-1-19 {
+    margin-top: 12px;
+}
+.section-1-17 h2 {
+    color: #263871;
+    font-size: 18px;
+    font-weight: 600;
+    margin:0;
+}
+.section-1-18 h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #263871;
+}
+.section-1-16 p {
+    color: #7786ab;
+    font-size: 16px;
+    margin: 0;
+    margin-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+.section-1-16 span {
+    margin-left: 15px;
+}
+.section-1-16 button {
+    background: #e3f7e3;
+    color: #4caf50 !important;
+    border: 0;
+    padding: 14px 25px !important;
+    border-radius: 9px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.section-1-20 {
+    background: #e1e9fb;
+    padding: 30px 35px 30px 20px;
+}
+.section-1-21 .card-body {
+    padding: 0px !important;
+}
+.section-1-21 .btn-group {
+    width: 100%;
+}
+.section-1-21 .dropdown-menu.dropdown-menu-lg-right.show {
+    margin: 0;
+    width: 100%;
+}
+
+
+
+/*<---------------------------------------------------------Index-1------------------------------------------------------------>*/
+
+
+.section-2-1 {
+    background: #f1f4fb;
+    padding: 30px 40px 30px 40px;
+}
+.section-2-2 img {
+    height: auto;
+    width: 100%;
+    border-radius: 80px 0px 0px 0px;
+}
+.section-2-4 h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #363636;
+    margin: 0;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.section-2-6 .card-body {
+    padding: 50px 35px 10px 35px!important;
+}
+.section-2-6 .card {
+    border: 0px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 20px rgb(0 0 0 / 5%);
+}
+.section-2-6 .form-control {
+    border-radius: 9px;
+    color: #9A9A9A;
+    min-height: 65px;
+    display: initial;
+    border: 2px solid #E7E7E7;
+    font-size: 18px;
+    padding: 0.375rem 1.1rem !important;
+}
+
+.form-row>.col, .form-row>[class*=col-] {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.section-2-6 label {
+    position: absolute;
+    background: white;
+    margin-left: 35px;
+    margin-top: -14px;
+    color: #757575;
+    font-size: 18px;
+    font-weight: 400;
+    width: auto;
+    text-align: center;
+    z-index: 9;
+    padding: 1px 7px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.section-2-6 .form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 25px;
+}
+
+.section-2-7 h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #363636;
+    margin: 0;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
+.section-2-8 .card-body {
+    padding: 50px 35px 5px 35px!important;
+}
+.section-2-9 .btn-1 {
+    background: transparent;
+    color: #474747;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 30px;
+    border: 2px solid #B1B1B1;
+    border-radius: 5px;
+    margin-right: 15px !important;
+}
+.section-2-9 .btn-2 {
+    background: #17263A;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 40px;
+    border: 2px solid #17263A;
+    border-radius: 5px;
+    margin-right: 15px !important;
+}
+.section-2-10 h2 {
+    color: #272727;
+    font-size: 30px;
+    font-weight: 600;
+}
+.section-2-10 h2 {
+    color: #272727;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 20px;
+    margin: 0;
+    padding-left: 20px;
+}
+.section-2-10 h3 {
+    color: #5E5E5E;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    padding-left: 20px;
+}
+.profile-pic {
+    width: 230px;
+    max-height: 230px;
+    display: inline-block;
+}
+
+.file-upload {
+    display: none;
+}
+.circle {
+    border-radius: 100% !important;
+    overflow: hidden;
+    width: 230px;
+    height: 230px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.p-image {
+    position: absolute;
+    top: 90px;
+    color: #17263A;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    margin-left: 175px;
+    margin-top: 95px;
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button {
+    font-size: 1.4em;
+    background: white;
+    padding: 8px;
+    border-radius: 20px;
+}
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color:  #17263A;
+}
+.small-12.medium-2.large-2.columns {
+    transform: translate(0%, 0%);
+    margin-left: 50px;
+    margin-top: -150px;
+}
+/*
+<----------------------------------------------------------Work Experience---------------------------------------------->*/
+
+.section-3-1 {
+    background: #f1f4fb;
+    padding: 30px 40px 30px 40px;
+}
+.section-3-2 h2 {
+    color: #363636;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.section-3-3 input {
+    width: 99%;
+    background: white;
+    border: 1px solid #E4E6FC;
+    height: 48px !important;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #B8B8B8;
+    font-weight: 400;
+    border-radius: 5px;
+    padding-right: 20px;
+}
+.section-3-3 button {
+    background: transparent;
+    border: 0;
+    margin-left: -50px;
+    position: absolute;
+    margin-top: 9px;
+}
+.section-3-4 button {
+    color: white !important;
+    font-size: 14px;
+    background: #FEC200;
+    border-radius: 5px;
+    padding: 12px 10px;
+    border: 1px solid #FEC200;
+}
+.section-3-4 {
+    text-align: right;
+}
+
+.section-3-5 {
+    margin-top: 50px;
+}
+
+
+thead.thead-dark.section-3-6 th {
+    background: white;
+    padding-top: 20px;
+    text-align: center;
+    color: black;
+    font-size: 22px;
+    font-weight: 500;
+}
+.table-responsive {
+    box-shadow: 0px 15px 30px rgb(0 0 0 / 10%);
+    border-radius: 15px;
+    background: white;
+}
+.section-3-7 td {
+    padding: 22px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #999292;
+    vertical-align: bottom;
+}
+tr.section-3-7 {
+    background: white;
+}
+.table td, .table th {
+    border-top: 1px solid #dee2e6;
+}
+i.fa.fa-eye.section-3-8 {
+    color: #7F63F4;
+    font-size: 20px;
+}
+i.fa.fa-pencil.section-3-9 {
+    font-size: 20px;
+    color: #4CAF50;
+}
+i.fa.fa-trash.section-3-10 {
+    font-size: 20px;
+    color: #FF0008;
+}
+
+.btn-primary{
+    background-color: red !important;
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background-color: white !important;
+    color: red;
+    border: 1px solid;
+}
+
+.btn-default{
+    background-color: white !important;
+    color: #777;
+    border: 1px solid #777 !important;
+}
+
+.btn-default:hover{
+    background-color: #777 !important;
+    color: #fff;
+}
+
+/*
+<------------------------------------------------------Add Qualification---------------------------------------------->*/
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  padding-top: 180px; 
+  padding-bottom: 40px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+ background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    border: 1px solid #888;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+.modal-content h2 {
+    text-align: left;
+    color: black;
+    font-size: 28px;
+    font-weight: 700;
+    border-bottom: 1px solid #C1BDBD;
+    padding: 0px 30px 20px 30px;
+}
+.close {
+    color: #FF0008 !important;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.section-3-11 .card {
+    border: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+}
+.section-3-11 .card-body {
+    padding: 20px 20px 5px 20px !important;
+}
+.section-3-11 .form-control {
+    border-radius: 9px;
+    color: #9A9A9A;
+    min-height: 65px;
+    display: initial;
+    border: 2px solid #E7E7E7;
+    font-size: 18px;
+    padding: 0.375rem 1.1rem !important;
+}
+.section-3-11 label {
+    position: absolute;
+    background: white;
+    margin-left: 35px;
+    margin-top: -14px;
+    color: #757575;
+    font-size: 18px;
+    font-weight: 400;
+    width: auto;
+    text-align: center;
+}
+.section-3-11 .form-row {
+    padding-bottom: 25px;
+}
+
+button.section-3-12 {
+    background: #17263A;
+    padding: 8px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 0;
+}
+
+button#myBtn:focus {
+    outline: none;
+}
+
+
+.card {
+    margin-bottom: 0 !important;
+}
+.section-3-16 .form-row{
+    padding-bottom: 0 !important;
+}
+.ellipsis {
+  text-overflow: ellipsis;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*
+<------------------------------------------------------Login Page---------------------------------------------->*/
+
+.section-4-1 {
+    background: #101B2B;
+    height: 100vh;
+}
+.section-4-2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.section-4-4 {
+    background: white;
+    height: 100vh;
+    border-radius: 50px 0px 0px 50px !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 50px;
+}
+.section-4-4 .card-body {
+    padding: 0px!important;
+}
+.section-4-4 .card {
+    border: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+}
+.section-4-4 .form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 25px;
+}
+.section-4-4 .form-control {
+    border-radius: 9px;
+    color: #9A9A9A;
+    min-height: 75px;
+    display: initial;
+    border: 2px solid #E7E7E7;
+    font-size: 18px;
+    padding: 0.375rem 4.3rem !important;
+    margin-bottom: 30px;
+}
+.section-4-4 label {
+    position: absolute;
+    background: white;
+    margin-left: 55px;
+    margin-top: -14px;
+    color: #757575;
+    font-size: 18px;
+    font-weight: 400;
+    width: auto;
+    text-align: center;
+}
+.section-4-4 h2 {
+    font-size: 55px;
+    font-weight: 800;
+    color: #0D0D0D;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.section-4-5 i {
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-size: 35px;
+}
+
+.section-4-4 button {
+    color: white;
+    height: 75px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    background: #17263A;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 30%);
+    border-radius: 7px;
+}
+.section-4-4 p {
+    color: #101010 !important;
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 20px;
+}
+.section-3-2 p {
+    color: #9B9B9B;
+    font-size: 22px;
+    font-weight: 400;
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+.section-5-2 .card-body {
+    padding: 50px 35px 50px 35px!important;
+}
+.section-5-2 .card {
+    border: 0px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 20px rgb(0 0 0 / 5%);
+}
+.section-5-2 .form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 0px;
+}
+.section-5-2 .form-control {
+    border-radius: 9px;
+    color: #9A9A9A;
+    min-height: 70px;
+    display: initial;
+    border: 2px solid #E7E7E7;
+    font-size: 18px;
+    padding: 0.375rem 1.3rem !important;
+    margin-bottom: 20px;
+}
+.section-5-2 label {
+    position: absolute;
+    background: white;
+    margin-left: 45px;
+    margin-top: -14px;
+    color: #757575;
+    font-size: 18px;
+    font-weight: 400;
+    width: auto;
+    text-align: center;
+}
+.section-5-1 h2 {
+    color: #363636;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.section-5-1 p {
+    color: #9B9B9B;
+    font-size: 22px;
+    font-weight: 400;
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+.section-5-3 {
+    background: #f1f4fb;
+    padding: 30px 40px 30px 40px;
+    height: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:519px) and (min-width:320px) {
+.section-1-3 {
+    display: none !important;
+}
+.topbar .top-navbar .mailbox {
+    left: 0 !important;
+}
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+    font-size: 22px !important;
+    color: #CCD2E3 !important;
+}
+li.nav-item.dropdown.section-1-4 a {
+    padding: 10px 15px 10px 20px !important;
+}
+.section-1 {
+    background: #17263A !important;
+    padding: 15px 7px;
+}
+.section-2-6 .card-body {
+    padding: 40px 10px 10px 10px!important;
+}
+.section-2-6 .form-row {
+    margin-bottom: 5px !important;
+}
+.section-2-7 h2 {
+    padding-left: 0px;
+    padding-bottom: 25px;
+    padding-top: 5px;
+}
+.section-2-1 {
+    background: #f1f4fb;
+    padding: 50px 30px 50px 30px;
+}
+.section-2-6 .form-control {
+    min-height: 50px;
+    margin-bottom: 8px;
+}
+.section-2-9 button.btn-2 {
+    padding: 10px 30px;
+}
+.section-2-9 button.btn-1 {
+    padding: 10px 25px;
+}
+.section-2-4 h2 {
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.small-12.medium-2.large-2.columns {
+    margin-left: 15px;
+    margin-top: -50px;
+}
+.section-2-2 img {
+    height: 12vh;
+    border-radius: 30px 0px 0px 0px;
+}
+.profile-pic {
+    width: 90px;
+    max-height: 90px;
+}
+.circle {
+    width: 90px;
+    height: 90px;
+}
+.section-2-10 h2 {  
+    font-size: 20px;
+    padding-top: 5px;
+    padding-left: 0px;
+}
+.section-2-10 {
+    margin-left: -35px;
+    margin-top: -6px;
+}
+.section-2-10 h3 {
+   font-size: 14px;
+    padding-left: 0px;
+    margin-top: -12px;
+}
+.p-image {
+    top: 0px;
+    margin-left: 65px;
+    margin-top: 58px;
+    font-size: 12px;
+}
+.upload-button {
+    font-size: 1em;
+}
+.section-3-1 {
+    padding: 50px 30px 50px 30px;
+}
+.section-3-2 h2 {
+   font-size: 30px;
+    padding-left: 0px;
+}
+.section-3-3 {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+button#myBtn i {
+    font-size: 10px !important;
+}
+.section-3-4 {
+    margin-top: 20px;
+}
+.section-3-7 td {
+    padding: 17px 0px;
+    font-size: 12px;
+}
+i.fa.fa-pencil.section-3-9 {
+    font-size: 16px;
+}
+i.fa.fa-eye.section-3-8 {
+    font-size: 16px;
+}
+i.fa.fa-trash.section-3-10 {
+    font-size: 16px;
+}
+thead.thead-dark.section-3-6 th {
+    padding-top: 10px;
+    font-size: 21px;
+}
+.section-4-2 {
+    height: 60px;
+    margin: 20px;
+}
+.section-4-2 img {
+    width: 70%;
+}
+.section-4-4 {
+    height: 550px;
+    padding: 10px;
+    border-radius: 0px !important;
+}
+.section-4-4 h2 {
+    font-size: 38px;
+     padding-bottom: 30px;
+}
+.section-4-4 .form-control {
+    min-height: 63px;
+    margin-bottom: 15px;
+    padding: 0.375rem 3.8rem !important;
+}
+.section-4-4 button {
+    height: 60px;
+    margin-top: 8px;
+}
+.section-4-4 p {
+    font-size: 16px;
+    padding-top: 12px;
+}
+.section-4-5 i {
+    margin-top: 17px;
+    font-size: 25px;
+}
+.modal {
+    padding-top: 140px;
+    padding-bottom: 40px;
+    left: 0px;
+}
+.modal-content {
+    width: 90%;
+}
+.section-3-11 .form-row {
+    padding-bottom: 0px;
+}
+.section-3-11 .form-control {
+    margin-bottom: 10px;
+}
+.modal-content h2 {
+    padding: 0px 20px 20px 20px;
+}
+.section-3-11 .form-control {
+    min-height: 55px;
+}
+.navbar.section-1-5 i::before {
+    color: #CCD2E3 !important;
+    font-size: 20px !important;
+}
+.section-5-3 {
+    padding: 30px 30px 30px 30px;
+}
+.section-5-1 p {
+    padding-top: 20px;
+}
+.section-5-2 .card-body {
+    padding: 35px 10px 35px 10px!important;
+}
+.section-5-2 .form-control {
+    min-height: 65px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+}
