@@ -21,35 +21,38 @@ use App\Http\Controllers\employee\attendanceController;
     Route::post('login', [authController::class,'loginAttempt'])->name('login');
     Route::get('logout', [authController::class,'logout'])->name('logout');
 
-    //Employee
-    Route::prefix('employee')->namespace('employee')->middleware('employeeAuth')->group(function(){
-        //Dashboard
-        Route::get('/', [employeeController::class, 'index'])->name('employee.dashboard');
+    Route::middleware('employeeAuth')->group(function(){
+        Route::get('/',[authController::class, 'check']);
+        //Employee
+        Route::prefix('employee')->namespace('employee')->group(function(){
+            //Dashboard
+            Route::get('/', [employeeController::class, 'index'])->name('employee.dashboard');
 
-        //Attendance
-        Route::prefix('attendance')->group(function(){
-            Route::get('/clockAttempt/{id}', [attendanceController::class, 'clockAttempt']);
-        });
+            //Attendance
+            Route::prefix('attendance')->group(function(){
+                Route::get('/clockAttempt/{id}', [attendanceController::class, 'clockAttempt']);
+            });
 
-        //General Settings
-        Route::prefix('settings')->group(function(){
-            Route::get('profile', [employeeController::class, 'profile'])->name('employee.settings.profile');
-            Route::post('profile', [employeeController::class, 'profileUpdate'])->name('employee.settings.profile');
-            Route::post('updateImage', [employeeController::class, 'updateImage'])->name('employee.settings.profile.updateImage');
+            //General Settings
+            Route::prefix('settings')->group(function(){
+                Route::get('profile', [employeeController::class, 'profile'])->name('employee.settings.profile');
+                Route::post('profile', [employeeController::class, 'profileUpdate'])->name('employee.settings.profile');
+                Route::post('updateImage', [employeeController::class, 'updateImage'])->name('employee.settings.profile.updateImage');
 
-            Route::get('social', [employeeController::class, 'social'])->name('employee.settings.social');
-            Route::post('social', [employeeController::class, 'socialUpdate'])->name('employee.settings.social');
+                Route::get('social', [employeeController::class, 'social'])->name('employee.settings.social');
+                Route::post('social', [employeeController::class, 'socialUpdate'])->name('employee.settings.social');
 
-            Route::get('bank', [employeeController::class, 'bank'])->name('employee.settings.bank');
-            Route::post('bankAdd', [employeeController::class, 'bankAdd'])->name('employee.settings.bank.add');
+                Route::get('bank', [employeeController::class, 'bank'])->name('employee.settings.bank');
+                Route::post('bankAdd', [employeeController::class, 'bankAdd'])->name('employee.settings.bank.add');
 
-            Route::get('experience', [employeeController::class, 'experience'])->name('employee.settings.experience');
-            Route::post('experienceAdd', [employeeController::class, 'experienceAdd'])->name('employee.settings.experience.add');
+                Route::get('experience', [employeeController::class, 'experience'])->name('employee.settings.experience');
+                Route::post('experienceAdd', [employeeController::class, 'experienceAdd'])->name('employee.settings.experience.add');
 
-            Route::get('qualification', [employeeController::class, 'qualification'])->name('employee.settings.qualification');
-            Route::post('qualificationAdd', [employeeController::class, 'qualificationAdd'])->name('employee.settings.qualification.add');
+                Route::get('qualification', [employeeController::class, 'qualification'])->name('employee.settings.qualification');
+                Route::post('qualificationAdd', [employeeController::class, 'qualificationAdd'])->name('employee.settings.qualification.add');
 
-            Route::get('changePassword', [employeeController::class, 'changePassword'])->name('employee.settings.changePassword');
-            Route::post('changePassword', [employeeController::class, 'changePasswordSubmit'])->name('employee.settings.changePassword');
+                Route::get('changePassword', [employeeController::class, 'changePassword'])->name('employee.settings.changePassword');
+                Route::post('changePassword', [employeeController::class, 'changePasswordSubmit'])->name('employee.settings.changePassword');
+            });
         });
     });

@@ -25,4 +25,8 @@ class authController extends Controller
         Auth::logout();
         return redirect(route('login'));
     }
+
+    public function check(){
+        return redirect(route('employee.dashboard'));
+    }
 }
