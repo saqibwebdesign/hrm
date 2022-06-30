@@ -67,7 +67,7 @@
                         <div class="col-lg-7 col-md-6 col-3">
                             <div class="section-1-14"> 
                                <h2>Current Salary</h2>
-                               <p>{{number_format(Auth::user()->basic_salary)}}</p>
+                               <p>{{Auth::user()->basic_salary == 0 ? 'Un-Paid' : number_format(Auth::user()->basic_salary)}}</p>
                             </div>
                         </div>
                      </div>
