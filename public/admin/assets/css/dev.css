@@ -1,0 +1,82 @@
+.cut-address { 
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 220px; 
+  height: 1.2em; 
+  white-space: nowrap;
+}
+.restaurant-section table tr td p {
+        font-size: 18px !important;
+    color: #2E2E2E !important;
+    font-family: 'Poppins' !important;
+    font-weight: 600 !important;
+    margin-top: -7px;
+}
+#driverDetailModal .loaderBlock {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+}
+#driverDetailModal .loaderBlock img {
+    height: 200px;
+}
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #a21c8d;
+    border-color: #ebac00;
+}
+.badge-success{
+    color: #fff !important;
+    padding: 5px 5px;
+}
+.fa.fa-star.disable {
+    color: #e6e6e6;
+}
+.btn-danger{
+    color: #fff !important;
+}
+.action-tray {
+    width: 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.cut-second-line{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical
+}
+.filter-form {
+    width: 280px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.filter-form select {
+    width: 225px;
+}
+.btn-filter {
+    border: 1px solid #a4a0a0;
+    height: 38px;
+}
+.feature-label {
+    cursor: pointer;
+}
+.user-tray img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: -50px;
+    margin-bottom: -50px;
+}
+.user-tray p{
+    margin-bottom: 0px;
+}
+.user-tray {
+    padding-left: 55px;
+}
