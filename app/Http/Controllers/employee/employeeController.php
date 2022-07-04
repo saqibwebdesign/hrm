@@ -9,16 +9,31 @@ use App\Models\employee\bankAccount;
 use App\Models\employee\experience;
 use App\Models\employee\qualification;
 use App\Models\employee\attendance;
+use App\Models\notification;
+use App\Models\holidays;
 use App\Models\eduLevel;
 use App\Models\banks;
 use Auth;
 use Hash;
+use DB;
 
 class employeeController extends Controller
 {
     public function index(){
         $data['lastClock'] = attendance::where('user_id', Auth::id())->orderBy('id', 'desc')->first();
         $data['shift'] = array('in' => '17:00:00', 'out' => '02:00:00');
+        $data['notification'] = notification::where('department_id', Auth::user()->department_id)
+                                                ->orWhere('department_id', '0')
+                                                ->orderBy('id', 'desc')
+                                                ->limit(5)
+                                                ->get();
+        $data['holidays'] = holidays::where('date', '>', date('Y-m-d'))
+                                        ->where('date', '<=', date('Y-12-25'))
+                                        ->orderBy('date', 'asc')
+                                        ->get();
+        $date = now();
+        $data['birthdays'] = DB::select("select * from `tbl_users_info` where month(`dob`) > ".$date->month." or (month(`dob`) = ".$date->month." and day(`dob`) >= ".$date->day.") ORDER BY DATE_FORMAT(`dob`,'%m'), DATE_FORMAT(`dob`,'%d') LIMIT 4");
+                                   //dd($data['birthdays']);
         return view('employee.index')->with($data);
     }
     public function profile(){

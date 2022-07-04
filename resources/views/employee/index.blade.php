@@ -82,7 +82,7 @@
                         <div class="col-lg-7 col-md-6 col-3">
                             <div class="section-1-14"> 
                                <h2>Holidays</h2>
-                               <p>05</p>
+                               <p>{{count($holidays)}}</p>
                             </div>
                         </div>
                      </div>
@@ -118,86 +118,35 @@
                      </div>
                   </div>
                </div>
-               <div class="row section-1-19">
-                    <div class="col-lg-12 col-md-8 col-4">
-                         <div class="section-1-16">
-                             <div class="row">
-                                 <div class="col-lg-4 col-md-8 col-4">
-                                     <div class="section-1-17">
-                                         <h2>NOTICE FOR SALES DEPT</h2> 
+               @foreach($notification as $val)
+                   <div class="row section-1-19">
+                        <div class="col-lg-12 col-md-8 col-4">
+                             <div class="section-1-16">
+                                 <div class="row">
+                                     <div class="col-lg-4 col-md-8 col-4">
+                                         <div class="section-1-17">
+                                             <h2>{{$val->title}}</h2> 
+                                         </div>
                                      </div>
-                                 </div>
-                                 <div class="col-lg-8 col-md-8 col-4">
-                                    <div class="section-1-18">
-                                      <h3>03-08-2021</h3>
-                                    </div>  
-                                 </div>
-                                 <p>Dear Sales Dept. As per conversation with your team leader you are not allowed to take a break until you didn't complete your bids and gigs in the platform provided to you so if ...</p>
-                                 <span><button>Production Department</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
-                             </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="row section-1-19">
-                    <div class="col-lg-12 col-md-8 col-4">
-                         <div class="section-1-16">
-                             <div class="row">
-                                 <div class="col-lg-6 col-md-8 col-4">
-                                     <div class="section-1-17">
-                                         <h2>IMPORTANT NOTICE FOR PRODUCTION TEAM</h2> 
+                                     <div class="col-lg-8 col-md-8 col-4">
+                                        <div class="section-1-18">
+                                          <h3>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</h3>
+                                        </div>  
                                      </div>
+                                     <p>{{$val->description}}</p>
+                                     <span><button>{{@$val->depart->name}}</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
                                  </div>
-                                 <div class="col-lg-6 col-md-8 col-4">
-                                    <div class="section-1-18">
-                                      <h3>03-08-2021</h3>
-                                    </div>  
-                                 </div>
-                                 <p>All production team must take the notice regarding their jobs , they must complete their task on urgent basis because there is an upcoming big project we have to handle next month so don't show ligancy.</p>
-                                 <span><button>Production Department</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
                              </div>
-                         </div>
+                        </div>
+                   </div>
+               @endforeach
+               @if(count($notification) == 0)
+                    <div class="row section-1-19">
+                        <div class="col-lg-12 col-md-8 col-4">
+                             <h4>Nothing to show here.</h4>
+                        </div>
                     </div>
-               </div>
-               <div class="row section-1-19">
-                    <div class="col-lg-12 col-md-8 col-4">
-                         <div class="section-1-16">
-                             <div class="row">
-                                 <div class="col-lg-4 col-md-8 col-4">
-                                     <div class="section-1-17">
-                                         <h2>TAKE UPDATES FROM GROUP</h2> 
-                                     </div>
-                                 </div>
-                                 <div class="col-lg-8 col-md-8 col-4">
-                                    <div class="section-1-18">
-                                      <h3>03-08-2021</h3>
-                                    </div>  
-                                 </div>
-                                 <p>Dear Employee of all Department kindly check the messages in the group for updates which are created on skype or whatsaap because all updates have been posted in the group.</p>
-                                 <span><button>Production Department</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
-                             </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="row section-1-19">
-                    <div class="col-lg-12 col-md-8 col-4">
-                         <div class="section-1-16">
-                             <div class="row">
-                                 <div class="col-lg-4 col-md-8 col-4">
-                                     <div class="section-1-17">
-                                         <h2>TAKE UPDATES FROM GROUP</h2> 
-                                     </div>
-                                 </div>
-                                 <div class="col-lg-8 col-md-8 col-4">
-                                    <div class="section-1-18">
-                                      <h3>03-08-2021</h3>
-                                    </div>  
-                                 </div>
-                                 <p>Dear Employee of all Department kindly check the messages in the group for updates which are created on skype or whatsaap because all updates have been posted in the group.</p>
-                                 <span><button>Production Department</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
-                             </div>
-                         </div>
-                    </div>
-               </div>
+               @endif
            </div>
             <div class="col-lg-4 col-md-6 col-3 section-1-20">                        
                 <div class="accordion">
@@ -287,97 +236,40 @@
                       </div>
                     </div>
                 </div>
-                 <div class="accordion">
+                <div class="accordion">
                     <div class="accordion-item">
                       <button id="accordion-button-1" aria-expanded="false">
                         <span class="accordion-title">Up Comming Birthdays</span>
                         <span class="icon" aria-hidden="true"></span>
                       </button>
                       <div class="accordion-content">
+                        @foreach($birthdays as $val)
                           <div class="row section-1-21">  
-                             <div class="col-lg-6 col-md-8 col-3">
+                             <div class="col-lg-8 col-md-8 col-3">
                                 <div class="section-1-26">
-                                  <img src="{{URL::To('/public/employee')}}/assets/image/image5.png"  width="100%" />  
-                                  <h2>Mohib Ahmed</h2>
-                                  <p>19 Feb 2020 26 Years old</p>
+                                  <img src="{{URL::to('public/storage/users/'.$val->profile_img)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';" width="100%" />  
+                                  <h2>{{$val->firstname.' '.$val->lastname}}</h2>
+                                  <p>{{date('d-M-Y', strtotime($val->dob))}}<br>26 Years old</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-6 col-md-8 col-3">
+                             <div class="col-lg-4 col-md-4 col-3">
                                 <div class="section-1-27">
-                                    <a  class="btn btn-default">Wish Now</a>
+                                    <a href="javascript:void(0)" class="btn btn-default">
+                                        @php
+                                            $d = date('d', strtotime($val->dob));
+                                            $m = date('m', strtotime($val->dob));
+                                            $y = date('Y');
+                                            $future = strtotime($y.'-'.$m.'-'.$d); //Future date.
+                                            $timefromdb = strtotime(date('Y-m-d'));
+                                            $timeleft = $future-$timefromdb;
+                                            $daysleft = round((($timeleft/24)/60)/60); 
+                                            echo $daysleft.' day left';
+                                        @endphp
+                                    </a>
                                 </div>  
                              </div>
                           </div> 
-                          <div class="row section-1-21">  
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-26">
-                                  <img src="{{URL::To('/public/employee')}}/assets/image/image5.png"  width="100%" />  
-                                  <h2>Mohib Ahmed</h2>
-                                  <p>19 Feb 2020 26 Years old</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-27">
-                                    <a  class="btn btn-default">30 Days to Left</a>
-                                </div>  
-                             </div>
-                          </div> 
-                          <div class="row section-1-21">  
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-26">
-                                  <img src="{{URL::To('/public/employee')}}/assets/image/image5.png"  width="100%" />  
-                                  <h2>Mohib Ahmed</h2>
-                                  <p>19 Feb 2020 26 Years old</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-27">
-                                    <a  class="btn btn-default">Wish Now</a>
-                                </div>  
-                             </div>
-                          </div>  
-                          <div class="row section-1-21">  
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-26">
-                                  <img src="{{URL::To('/public/employee')}}/assets/image/image5.png"  width="100%" />  
-                                  <h2>Mohib Ahmed</h2>
-                                  <p>19 Feb 2020 26 Years old</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-27">
-                                    <a  class="btn btn-default">10 Days to Left</a>
-                                </div>  
-                             </div>
-                          </div> 
-                          <div class="row section-1-21">  
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-26">
-                                  <img src="{{URL::To('/public/employee')}}/assets/image/image5.png"  width="100%" />  
-                                  <h2>Mohib Ahmed</h2>
-                                  <p>19 Feb 2020 26 Years old</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-27">
-                                    <a  class="btn btn-default">Wish Now</a>
-                                </div>  
-                             </div>
-                          </div> 
-                          <div class="row section-1-21">  
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-26">
-                                  <img src="{{URL::To('/public/employee')}}/assets/image/image5.png"  width="100%" />  
-                                  <h2>Mohib Ahmed</h2>
-                                  <p>19 Feb 2020 26 Years old</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-6 col-md-8 col-3">
-                                <div class="section-1-27">
-                                    <a  class="btn btn-default">22 Days to Left</a>
-                                </div>  
-                             </div>
-                          </div> 
+                        @endforeach 
                       </div>
                     </div>
                 </div>
@@ -388,114 +280,43 @@
                         <span class="icon" aria-hidden="true"></span>
                       </button>
                       <div class="accordion-content">
+                        @foreach($holidays as $val)
                           <div class="row section-1-30">  
                              <div class="col-lg-3 col-md-8 col-3">
                                 <div class="section-1-29">
-                                   <h3>03<br>FEb</h3> 
+                                   <h3>{{date('d', strtotime($val->date))}}<br>{{date('M', strtotime($val->date))}}</h3> 
                                 </div>
                              </div>
                              <div class="col-lg-5 col-md-8 col-3 no-pad">
                                 <div class="section-1-28">
-                                  <h2>Office Off</h2>
-                                  <p>Sunday</p>
+                                  <h2>{{$val->title}}</h2>
+                                  <p>{{date('l', strtotime($val->date))}}</p>
                                 </div>  
                              </div>
                              <div class="col-lg-4 col-md-8 col-3">
                                 <div class="section-1-31">
-                                   <a href="#"><h2>3 day left</h2></a> 
+                                    <a href="javascript:void(0)">
+                                        <h2>
+                                            @php
+                                                $future = strtotime($val->date); //Future date.
+                                                $timefromdb = strtotime(date('Y-m-d'));
+                                                $timeleft = $future-$timefromdb;
+                                                $daysleft = round((($timeleft/24)/60)/60); 
+                                                echo $daysleft.' day left';
+                                            @endphp
+                                        </h2>
+                                    </a> 
                                 </div>  
                              </div>
                           </div> 
-                          <div class="row section-1-30">  
-                             <div class="col-lg-3 col-md-8 col-3">
-                                <div class="section-1-32">
-                                   <h3>03<br>FEb</h3> 
-                                </div>
-                             </div>
-                             <div class="col-lg-5 col-md-8 col-3 no-pad">
-                                <div class="section-1-28">
-                                  <h2>Public Holiday</h2>
-                                  <p>Enjoy your day off</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-4 col-md-8 col-3">
-                                <div class="section-1-31">
-                                   <a href="#"> <h2>30 day left</h2></a>
-                                </div>  
+                        @endforeach 
+                        @if(count($holidays) == 0)
+                            <div class="row section-1-30">  
+                             <div class="col-lg-12 col-md-12 col-3">
+                                <h4>No Holidays.</h4>
                              </div>
                           </div>
-                          <div class="row section-1-30">  
-                             <div class="col-lg-3 col-md-8 col-3">
-                                <div class="section-1-33">
-                                   <h3>03<br>FEb</h3> 
-                                </div>
-                             </div>
-                             <div class="col-lg-5 col-md-8 col-3 no-pad">
-                                <div class="section-1-28">
-                                  <h2>14th August 2021</h2>
-                                  <p>Independence day </p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-4 col-md-8 col-3">
-                                <div class="section-1-31">
-                                   <a href="#"> <h2>20 day left</h2></a>
-                                </div>  
-                             </div>
-                          </div>   
-                          <div class="row section-1-30">  
-                             <div class="col-lg-3 col-md-8 col-3">
-                                <div class="section-1-29">
-                                   <h3>03<br>FEb</h3> 
-                                </div>
-                             </div>
-                             <div class="col-lg-5 col-md-8 col-3 no-pad">
-                                <div class="section-1-28">
-                                  <h2>Office Off</h2>
-                                  <p>Sunday</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-4 col-md-8 col-3">
-                                <div class="section-1-31">
-                                   <a href="#"> <h2>3 day left</h2></a>
-                                </div>  
-                             </div>
-                          </div>
-                          <div class="row section-1-30">  
-                             <div class="col-lg-3 col-md-8 col-3">
-                                <div class="section-1-32">
-                                   <h3>03<br>FEb</h3> 
-                                </div>
-                             </div>
-                             <div class="col-lg-5 col-md-8 col-3 no-pad">
-                                <div class="section-1-28">
-                                  <h2>Public Holiday</h2>
-                                  <p>Enjoy your day off</p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-4 col-md-8 col-3">
-                                <div class="section-1-31">
-                                   <a href="#"> <h2>30 day left</h2></a>
-                                </div>  
-                             </div>
-                          </div> 
-                          <div class="row section-1-30">  
-                             <div class="col-lg-3 col-md-8 col-3">
-                                <div class="section-1-33">
-                                   <h3>03<br>FEb</h3> 
-                                </div>
-                             </div>
-                             <div class="col-lg-5 col-md-8 col-3 no-pad">
-                                <div class="section-1-28">
-                                  <h2>14th August 2021</h2>
-                                  <p>Independence day </p>
-                                </div>  
-                             </div>
-                             <div class="col-lg-4 col-md-8 col-3">
-                                <div class="section-1-31">
-                                    <a href="#"><h2>20 day left</h2></a>
-                                </div>  
-                             </div>
-                          </div>                          
+                        @endif                        
                       </div>
                     </div>
                 </div>

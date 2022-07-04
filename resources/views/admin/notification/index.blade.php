@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'Testimonials')
+@section('title', 'Notifications')
 
 @section('content')
 <div class="main_content_iner">
@@ -10,9 +10,19 @@
 	                <div class="white_box">
 	                   <div class="QA_section">
                             <div class="white_box_tittle list_header no-margin">
-                                <h3 class="inner-order-head no-margin pad-bot-10">Testimonials</h3>
+                                <form class="filter-form" method="get">
+                                    <select class="form-control" name="depart">
+                                        <option value="">All Departments</option>
+                                        @foreach($departs as $val)
+                                            <option value="{{$val->id}}"
+                                                {{isset($_GET['depart']) && $_GET['depart'] == $val->id ? 'selected' : ''}}
+                                            >{{$val->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <button type="submit" class="btn btn-default btn-filter"><i class="fa fa-search"></i></button>
+                                </form>
                                 <div class="add_button m-b-20 pad-top-10">
-                                    <a href="#" class="bg-yellow" data-toggle="modal" data-target="#add-testimonial">Add New</a>
+                                    <a href="#" class="bg-yellow" data-toggle="modal" data-target="#add-notification">Add New</a>
                                 </div>
                             </div>
                             <hr>
@@ -21,25 +31,25 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col" style="width:15%">Client</th>
-                                            <th scope="col" style="width:15%">Tagline</th>
-                                            <th scope="col" style="width:40%">Testimonial</th>
-                                            <th scope="col" style="width:15%">Category</th>
-                                            <th scope="col" style="width:15%; text-align: right;">Action</th>
+                                            <th scope="col" style="width:15%">Department</th>
+                                            <th scope="col" style="width:25%">Title</th>
+                                            <th scope="col" style="width:40%">Description</th>
+                                            <th scope="col" style="width:10%">Date</th>
+                                            <th scope="col" style="width:10%; text-align: right;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($testimonial as $key => $val)
+                                        @foreach($notification as $key => $val)
                                             <tr>
                                                 <td>{{++$key}}</td>
-                                                <td>{{$val->client_name}}</td>
-                                                <td>{{$val->client_tagline}}</td>
-                                                <td><p class="cut-second-line" title="{{$val->testimonial}}">{{$val->testimonial}}</p></td>
-                                                <td><label class="badge badge-primary">{{@$val->category->name}}</label></td>
+                                                <td><label class="badge badge-primary">{{$val->department_id == 0 ? 'All Departments' : @$val->depart->name}}</label></td>
+                                                <td>{{$val->title}}</td>
+                                                <td><p class="cut-second-line" title="{{$val->description}}">{{$val->description}}</p></td>
+                                                <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}
                                                 <td style=" text-align: right;">
-                                                    <div class="action-tray">
-                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-primary editTestimonial" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
-                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-danger deleteTestimonial" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
+                                                    <div class="action-tray" style=" text-align: right;">
+                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-primary editNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-danger deleteNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>                               
@@ -51,34 +61,36 @@
 	                </div>
 	            </div>
             </div>
-            {{$testimonial->links()}}
+            @if(!isset($_GET['depart']))
+                {{$notification->links()}}
+            @endif
         </div>
     </div>
 </div>
 
 <!-- General add popup -->
 
-    <div class="modal fade" id="add-testimonial" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="add-notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 30%;" role="document">
             <div class="modal-content">
                 <div class="modal-header sec-46">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add Testimonial</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Notification</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="row">
-                    <form class="profile-form pad-top-20 pad-bot-20" id="resetPasswordForm" action="{{route('admin.testimonial.add')}}" method="post" enctype="multipart/form-data">
+                    <form class="profile-form pad-top-20 pad-bot-20" id="resetPasswordForm" action="{{route('admin.notification.add')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">                                    
                             <div class="col-lg-12 col-md-4 col-12 no-margin">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
-                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Category</label>
-                                            <select name="category" class="form-control" required>
-                                                <option value="">Select</option>
-                                                @foreach($categories as $val)
+                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Department</label>
+                                            <select name="department" class="form-control" required>
+                                                <option value="0">All Departments</option>
+                                                @foreach($departs as $val)
                                                     <option value="{{$val->id}}">{{$val->name}}</option>
                                                 @endforeach
                                             </select>
@@ -87,22 +99,15 @@
                                     </div>
                                     <div class="col-lg-12 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
-                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Client Name</label>
-                                            <input type="text" name="client_name" class="form-control" required>
+                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Title</label>
+                                            <input type="text" name="title" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
-                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Client Tagline</label>
-                                            <input type="text" name="client_tagline" class="form-control" required>
-                                            <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
-                                        <div class="input-form res-section-1">
-                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Testimonial</label>
-                                            <textarea class="form-control" name="testimonial" rows="7" required></textarea>
+                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Description</label>
+                                            <textarea class="form-control" name="description" rows="7" required></textarea>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
@@ -118,11 +123,11 @@
         </div>
     </div>
 
-    <div class="modal fade" id="edit-testimonial" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="edit-notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 30%;" role="document">
             <div class="modal-content">
                 <div class="modal-header sec-46">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Testimonial</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Notification</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

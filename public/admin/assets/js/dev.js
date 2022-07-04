@@ -3,11 +3,11 @@ $(document).ready(function(){
     'use strict'
 
         //Portfolio
-            $(document).on('click', '.deletePortfolio', function(){
+            $(document).on('click', '.deleteNotification', function(){
                 var val = $(this).data('id');
                 Swal.fire({
                   title: 'Are you sure?',
-                  text: "Want to delete this portfolio!",
+                  text: "Want to delete this notification!",
                   icon: 'warning',
                   showCancelButton: true,
                   confirmButtonColor: '#3085d6',
@@ -15,19 +15,19 @@ $(document).ready(function(){
                   confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = host+'/portfolio/delete/'+val;
+                        window.location.href = host+'/notification/delete/'+val;
                     }else{
                         Swal.close();
                     }
                 });
             });
 
-            $(document).on('click', '.editPortfolio', function(){
+            $(document).on('click', '.editNotification', function(){
                 var val = $(this).data('id');
-                $('#edit-portfolio').modal('show');
-                $('#edit-portfolio .row').html('<img src="'+host+'/../public/loader.gif" />');
-                $.get(host+'/portfolio/edit/'+val, function(data){
-                    $('#edit-portfolio .row').html(data);
+                $('#edit-notification').modal('show');
+                $('#edit-notification .row').html('<img src="'+host+'/../public/loader.gif" />');
+                $.get(host+'/notification/edit/'+val, function(data){
+                    $('#edit-notification .row').html(data);
                 });
             });
 
