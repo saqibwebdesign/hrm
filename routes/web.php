@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\employeeController as adminEmployee;
 use App\Http\Controllers\admin\portfolioController;
 use App\Http\Controllers\admin\testimonialController;
 use App\Http\Controllers\admin\notificationController;
+use App\Http\Controllers\admin\holidaysController;
 
 /*
 |--------------------------------------------------------------------------

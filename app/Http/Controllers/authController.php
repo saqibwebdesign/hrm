@@ -8,7 +8,7 @@ use Auth;
 class authController extends Controller
 {
     public function login(){
-
+        
         return view('login');
     }
     public function loginAttempt(Request $request){

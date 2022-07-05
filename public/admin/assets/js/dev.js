@@ -2,7 +2,7 @@ var host = $("meta[name='host']").attr("content");
 $(document).ready(function(){
     'use strict'
 
-        //Portfolio
+        //Notification
             $(document).on('click', '.deleteNotification', function(){
                 var val = $(this).data('id');
                 Swal.fire({
@@ -32,12 +32,12 @@ $(document).ready(function(){
             });
 
 
-        //Testimonial
-            $(document).on('click', '.deleteTestimonial', function(){
+        //Holidays
+            $(document).on('click', '.deleteHoliday', function(){
                 var val = $(this).data('id');
                 Swal.fire({
                   title: 'Are you sure?',
-                  text: "Want to delete this Testimonial!",
+                  text: "Want to delete this Holiday!",
                   icon: 'warning',
                   showCancelButton: true,
                   confirmButtonColor: '#3085d6',
@@ -45,19 +45,19 @@ $(document).ready(function(){
                   confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = host+'/testimonial/delete/'+val;
+                        window.location.href = host+'/holidays/delete/'+val;
                     }else{
                         Swal.close();
                     }
                 });
             });
 
-            $(document).on('click', '.editTestimonial', function(){
+            $(document).on('click', '.editHoliday', function(){
                 var val = $(this).data('id');
-                $('#edit-testimonial').modal('show');
-                $('#edit-testimonial .row').html('<img src="'+host+'/../public/loader.gif" />');
-                $.get(host+'/testimonial/edit/'+val, function(data){
-                    $('#edit-testimonial .row').html(data);
+                $('#edit-holidays').modal('show');
+                $('#edit-holidays .row').html('<img src="'+host+'/../public/loader.gif" />');
+                $.get(host+'/holidays/edit/'+val, function(data){
+                    $('#edit-holidays .row').html(data);
                 });
             });
 
