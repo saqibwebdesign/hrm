@@ -21,47 +21,31 @@ class employeeController extends Controller
         $data['departs'] = departments::orderBy('name')->get();
         return view('admin.employees.index')->with($data);
     }
-    function portfolioAdd(Request $request){
+    function employeeAdd(){
+        $data['departs'] = departments::orderBy('name')->get();
+        return view('admin.employees.add')->with($data);
+    }
+
+    function employeeInsert(Request $request){
         $data = $request->all();
-        $id = portfolio::addPortfolio($data);
+        $id = User::addUser($data);
         if ($request->hasFile('logo_img')) {
             $file = $request->file('logo_img');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
             $filename = $id.'-'.$filename;
-            $file->move(base_path('/public/storage/portfolio/'), $filename);
+            $file->move(base_path('/public/storage/users/'), $filename);
 
-            portfolio::updateImage($id, $filename);
-        }
-        if ($request->hasFile('large')) {
-            $file = $request->file('large');
-            $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
-            $filename = $id.'-'.$filename;
-            $file->move(base_path('/public/storage/portfolio/large/'), $filename);
-
-            portfolio::updateImageLarge($id, $filename);
+            User::updateImage($id, $filename);
         }
 
-        if(isset($request->album)){
-            for ($i=0; $i < count($request->album); $i++) { 
-                $image_source = date('dmyHis').'-'.$request->album[$i]->getClientOriginalName();
-                $request->album[$i]->move(public_path('/public/storage/portfolio/album/'),$image_source);
-
-                $c = new portfolioDetail;
-                $c->portfolio_id = $id;
-                $c->image = $image_source;
-                $c->save();
-            }
-        }
-
-
-        return redirect()->back()->with('success', 'New Portfolio Added.');
+        return redirect(route('admin.employee'))->with('success', 'New Employee Added.');
     }
-    function portfolioEdit($id){
+    function employeeEdit($id){
         $id = base64_decode($id);
-        $data['data'] = portfolio::find($id);
-        $data['categories'] = categories::orderBy('name')->get();
+        $data['data'] = User::find($id);
+        $data['departs'] = departments::orderBy('name')->get();
 
-        return view('admin.response.editPortfolio')->with($data);
+        return view('admin.employees.edit')->with($data);
     }
     function portfolioUpdate(Request $request){
         $data = $request->all();

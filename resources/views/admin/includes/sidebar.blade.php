@@ -34,7 +34,7 @@
               <span>General Settings</span>
             </a>
             <ul>
-              <li><a href="#">Departments</a></li>
+              <li><a href="{{route('admin.settings.department')}}">Departments</a></li>
             </ul>
         </li>
     </ul>

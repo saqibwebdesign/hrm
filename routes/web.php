@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\portfolioController;
 use App\Http\Controllers\admin\testimonialController;
 use App\Http\Controllers\admin\notificationController;
 use App\Http\Controllers\admin\holidaysController;
+use App\Http\Controllers\admin\departmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,16 +74,17 @@ use App\Http\Controllers\admin\holidaysController;
         //Middleware
             Route::middleware('adminAuth')->group(function(){
                 Route::get('/', [adminController::class, 'index'])->name('admin.dashboard');
-                    //Portfolio
+                    //Employee
                         Route::prefix('employee')->group(function(){
                             Route::get('/', [adminEmployee::class, 'index'])->name('admin.employee');   
-                            Route::post('/add', [adminEmployee::class, 'employeeAdd'])->name('admin.employee.add');
+                            Route::get('/add', [adminEmployee::class, 'employeeAdd'])->name('admin.employee.add');
+                            Route::post('/add', [adminEmployee::class, 'employeeInsert'])->name('admin.employee.add');
                             Route::get('/edit/{id}', [adminEmployee::class, 'employeeEdit']);
                             Route::post('/update', [adminEmployee::class, 'employeeUpdate'])->name('admin.employee.update');
                             Route::get('/delete/{id}', [adminEmployee::class, 'employeeDelete']);
                         });
 
-                    //Testimonials
+                    //Notification
                         Route::prefix('notification')->group(function(){
                             Route::get('/', [notificationController::class, 'notification'])->name('admin.notification');
                             Route::get('/delete/{id}', [notificationController::class, 'notificationDelete']);
@@ -92,13 +94,25 @@ use App\Http\Controllers\admin\holidaysController;
                         });
 
 
-                    //Categories
+                    //Holidays
                         Route::prefix('holidays')->group(function(){
                             Route::get('/', [holidaysController::class, 'holidays'])->name('admin.holidays');
                             Route::get('/delete/{id}', [holidaysController::class, 'holidaysDelete']);
                             Route::get('/edit/{id}', [holidaysController::class, 'holidaysEdit']);
                             Route::post('/add', [holidaysController::class, 'holidaysAdd'])->name('admin.holidays.add');
                             Route::post('/update', [holidaysController::class, 'holidaysUpdate'])->name('admin.holidays.update');
+                        });
+
+                    //Settings
+                        Route::prefix('settings')->group(function(){
+                            //Departments
+                                Route::prefix('departments')->group(function(){
+                                    Route::get('/', [departmentController::class, 'index'])->name('admin.settings.department');
+                                    Route::get('/delete/{id}', [departmentController::class, 'delete']);
+                                    Route::get('/edit/{id}', [departmentController::class, 'edit']);
+                                    Route::post('/add', [departmentController::class, 'add'])->name('admin.settings.department.add');
+                                    Route::post('/update', [departmentController::class, 'update'])->name('admin.settings.department.update');
+                                });
                         });
                 });   
     });  

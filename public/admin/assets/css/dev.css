@@ -80,3 +80,6 @@
 .user-tray {
     padding-left: 55px;
 }
+.input-form span{
+    color: red;
+}

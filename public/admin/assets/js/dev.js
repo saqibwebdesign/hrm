@@ -61,12 +61,12 @@ $(document).ready(function(){
                 });
             });
 
-        //Categories
-            $(document).on('click', '.deleteCategory', function(){
+        //Department
+            $(document).on('click', '.deleteDepartment', function(){
                 var val = $(this).data('id');
                 Swal.fire({
                   title: 'Are you sure?',
-                  text: "Want to delete this category!",
+                  text: "Want to delete this department!",
                   icon: 'warning',
                   showCancelButton: true,
                   confirmButtonColor: '#3085d6',
@@ -74,19 +74,39 @@ $(document).ready(function(){
                   confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = host+'/categories/delete/'+val;
+                        window.location.href = host+'/settings/departments/delete/'+val;
                     }else{
                         Swal.close();
                     }
                 });
             });
 
-            $(document).on('click', '.editCategory', function(){
+            $(document).on('click', '.editDepartment', function(){
                 var val = $(this).data('id');
-                $('#edit-catagories').modal('show');
-                $('#edit-catagories .row').html('<img src="'+host+'/../public/loader.gif" />');
-                $.get(host+'/categories/edit/'+val, function(data){
-                    $('#edit-catagories .row').html(data);
+                $('#edit-department').modal('show');
+                $('#edit-department .row').html('<img src="'+host+'/../public/loader.gif" />');
+                $.get(host+'/settings/departments/edit/'+val, function(data){
+                    $('#edit-department .row').html(data);
+                });
+            });
+
+        //Employee
+            $(document).on('click', '.editEmployee', function(){
+                var val = $(this).data('id');
+                Swal.fire({
+                  title: 'Are you sure?',
+                  text: "Want to edit this employee!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, edit it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = host+'/employee/edit/'+val;
+                    }else{
+                        Swal.close();
+                    }
                 });
             });
 
