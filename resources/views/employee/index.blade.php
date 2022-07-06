@@ -14,7 +14,7 @@
                         <div class="row">
                            <div class="col-lg-6 col-md-6 col-3"> 
                              <div class="section-1-8">
-                               <img  src="{{URL::to('public/storage/users/'.Auth::user()->profile_img)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';"  width="90%" />
+                               <img  src="{{URL::to('public/storage/users/'.Auth::user()->profile_img)}}" width="85%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';"  width="85%" />
                              </div>
                            </div>
                            <div class="col-lg-6 col-md-6 col-3"> 
@@ -249,7 +249,7 @@
                                 <div class="section-1-26">
                                   <img src="{{URL::to('public/storage/users/'.$val->profile_img)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';" width="100%" />  
                                   <h2>{{$val->firstname.' '.$val->lastname}}</h2>
-                                  <p>{{date('d-M-Y', strtotime($val->dob))}}<br>26 Years old</p>
+                                  <p>{{date('d-M-Y', strtotime($val->dob))}} &nbsp; 26 Years old</p>
                                 </div>  
                              </div>
                              <div class="col-lg-4 col-md-4 col-3">
@@ -287,13 +287,13 @@
                                    <h3>{{date('d', strtotime($val->date))}}<br>{{date('M', strtotime($val->date))}}</h3> 
                                 </div>
                              </div>
-                             <div class="col-lg-5 col-md-8 col-3 no-pad">
+                             <div class="col-lg-6 col-md-8 col-3 no-pad">
                                 <div class="section-1-28">
                                   <h2>{{$val->title}}</h2>
                                   <p>{{date('l', strtotime($val->date))}}</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-4 col-md-8 col-3">
+                             <div class="col-lg-3 col-md-8 col-3">
                                 <div class="section-1-31">
                                     <a href="javascript:void(0)">
                                         <h2>
