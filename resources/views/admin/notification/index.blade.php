@@ -1,6 +1,9 @@
 @extends('admin.includes.master')
 @section('title', 'Notifications')
+@section('addStyle')
+    <link rel="stylesheet" href="{{URL::to('/public/admin')}}/assets/vendors/html5-editor/bootstrap-wysihtml5.css" />
 
+@endsection
 @section('content')
 <div class="main_content_iner">
     <div class="container-fluid">
@@ -71,7 +74,7 @@
 <!-- General add popup -->
 
     <div class="modal fade" id="add-notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 30%;" role="document">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
             <div class="modal-content">
                 <div class="modal-header sec-46">
                     <h5 class="modal-title" id="exampleModalLongTitle">Add Notification</h5>
@@ -85,7 +88,7 @@
                         <div class="form-row">                                    
                             <div class="col-lg-12 col-md-4 col-12 no-margin">
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
+                                    <div class="col-lg-5 col-md-5 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Department</label>
                                             <select name="department" class="form-control" required>
@@ -97,7 +100,7 @@
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
+                                    <div class="col-lg-7 col-md-7 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Title</label>
                                             <input type="text" name="title" class="form-control" required>
@@ -107,7 +110,7 @@
                                     <div class="col-lg-12 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Description</label>
-                                            <textarea class="form-control" name="description" rows="7" required></textarea>
+                                            <textarea class="form-control textarea_editor" name="description" rows="10" required></textarea>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
@@ -124,7 +127,7 @@
     </div>
 
     <div class="modal fade" id="edit-notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 30%;" role="document">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
             <div class="modal-content">
                 <div class="modal-header sec-46">
                     <h5 class="modal-title" id="exampleModalLongTitle">Edit Notification</h5>
@@ -137,4 +140,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('addScript')
+    <!-- wysuhtml5 Plugin JavaScript -->
+    <script src="{{URL::to('/public/admin')}}/assets/vendors/html5-editor/wysihtml5-0.3.0.js"></script>
+    <script src="{{URL::to('/public/admin')}}/assets/vendors/html5-editor/bootstrap-wysihtml5.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.textarea_editor').wysihtml5();
+        });
+    </script>
 @endsection

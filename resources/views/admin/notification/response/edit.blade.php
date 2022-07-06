@@ -4,7 +4,7 @@
     <div class="form-row">                                    
         <div class="col-lg-12 col-md-4 col-12 no-margin">
             <div class="row">
-                <div class="col-lg-12 col-md-4 col-12 no-margin">
+                <div class="col-lg-5 col-md-5 col-12 no-margin">
                     <div class="input-form res-section-1">
                         <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Department</label>
                         <select name="department" class="form-control" required>
@@ -18,7 +18,7 @@
                         <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-4 col-12 no-margin">
+                <div class="col-lg-7 col-md-7 col-12 no-margin">
                     <div class="input-form res-section-1">
                         <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Title</label>
                         <input type="text" name="title" class="form-control" value="{{$data->title}}" required>
@@ -28,7 +28,7 @@
                 <div class="col-lg-12 col-md-4 col-12 no-margin">
                     <div class="input-form res-section-1">
                         <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Description</label>
-                        <textarea class="form-control" name="description" rows="7" required>{{$data->description}}</textarea>
+                        <textarea class="form-control textarea_editor2" name="description" rows="7" required>{{$data->description}}</textarea>
                         <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                     </div>
                 </div>

@@ -83,3 +83,6 @@
 .input-form span{
     color: red;
 }
+.fc-button-primary span {
+    color: #fff !important;
+}
