@@ -47,28 +47,19 @@ class employeeController extends Controller
 
         return view('admin.employees.edit')->with($data);
     }
-    function portfolioUpdate(Request $request){
+    function employeeUpdate(Request $request){
         $data = $request->all();
-        $id = base64_decode($data['cid']);
-        portfolio::updatePortfolio($id, $data);
+        $id = base64_decode($data['emp_id']);
+        User::updateUser($id, $data);
         if ($request->hasFile('logo_img')) {
             $file = $request->file('logo_img');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
             $filename = $id.'-'.$filename;
-            $file->move(base_path('/public/storage/portfolio/'), $filename);
+            $file->move(base_path('/public/storage/users/'), $filename);
 
-            portfolio::updateImage($id, $filename);
+            User::updateImage($id, $filename);
         }
-        if ($request->hasFile('large')) {
-            $file = $request->file('large');
-            $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
-            $filename = $id.'-'.$filename;
-            $file->move(base_path('/public/storage/portfolio/large/'), $filename);
-
-            portfolio::updateImageLarge($id, $filename);
-        }
-
-        return redirect()->back()->with('success', 'Portfolio Updated.');
+        return redirect(route('admin.employee'))->with('success', 'Portfolio Updated.');
     }
 
     function portfolioDelete($id){

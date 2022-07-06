@@ -40,7 +40,7 @@ class User extends Authenticatable
         return $c->id;
     }
 
-    public static function updatePortfolio($id, array $data){
+    public static function updateUser($id, array $data){
         $c = User::find($id);
         $c->firstname = $data['firstname'];
         $c->lastname = $data['lastname'];
@@ -48,7 +48,6 @@ class User extends Authenticatable
         $c->maritial_status = $data['maritial_status'];
         $c->dob = date('Y-m-d', strtotime($data['dob']));
         $c->email = $data['email'];
-        $c->password = bcrypt($data['password']);
         $c->phone = $data['phone'];
         $c->emergency_phone = $data['emergency_phone'];
         $c->address = $data['address'];

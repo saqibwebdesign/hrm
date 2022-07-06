@@ -10,6 +10,7 @@
 	                <div class="white_box">
 	                   <form  method="post" action="{{route('admin.employee.update')}}" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="emp_id" value="{{base64_encode($data->id)}}">
                             <div class="form-row">                                    
                                 <div class="col-lg-12 no-margin">
                                     <div class="row">
@@ -18,7 +19,7 @@
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-8">
                                             <div id="msg"></div>
-                                            <input type="file" name="logo_img" class="profilePic profilePicCat" accept="image/*" required>
+                                            <input type="file" name="logo_img" class="profilePic profilePicCat" accept="image/*">
                                             <div class="input-group">
                                                 <div class="input-group-append">
                                                     <button type="button" class="browseProfilePhoto browseProfilePhotoCat btn btn-primary">Change photo</button>
@@ -57,11 +58,11 @@
                                                 <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Maritial Status <span>*</span></label>
                                                 <select name="maritial_status" class="form-control" required>
                                                     <option value=""></option>
-                                                    <option value="Single">Single</option>
-                                                    <option value="Married">Married</option>
-                                                    <option value="Widowed">Widowed</option>
-                                                    <option value="Separated">Separated</option>
-                                                    <option value="Divorced">Divorced</option>
+                                                    <option value="Single" {{$data->maritial_status == 'Single' ? 'selected' : ''}}>Single</option>
+                                                    <option value="Married" {{$data->maritial_status == 'Married' ? 'selected' : ''}}>Married</option>
+                                                    <option value="Widowed" {{$data->maritial_status == 'Widowed' ? 'selected' : ''}}>Widowed</option>
+                                                    <option value="Separated" {{$data->maritial_status == 'Separated' ? 'selected' : ''}}>Separated</option>
+                                                    <option value="Divorced" {{$data->maritial_status == 'Divorced' ? 'selected' : ''}}>Divorced</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -137,7 +138,9 @@
                                                 <select name="department_id" class="form-control" required>
                                                     <option value=""></option>
                                                     @foreach($departs as $val)
-                                                        <option value="{{$val->id}}">{{$val->name}}</option>
+                                                        <option value="{{$val->id}}"
+                                                            {{$val->id == $data->department_id ? 'selected' : ''}}
+                                                        >{{$val->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -166,7 +169,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">                                    
                                             <div class="sav-button pad-top-30 pad-right-20">
-                                                <input type="Submit" value="Submit" class="bg-yellow">
+                                                <input type="submit" value="Submit" class="bg-yellow">
                                             </div>
                                         </div>
                                     </div>
