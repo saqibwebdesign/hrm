@@ -69,7 +69,7 @@
                                                         @else
                                                             @php $present = 0 @endphp
                                                             @foreach($val['clock_in'] as $clIn)
-                                                                @if(date('Y-m-d', strtotime($hol->clIn)) == date('Y-m-'.sprintf("%02d", $i)))
+                                                                @if(date('Y-m-d', strtotime($clIn->attempt_time)) == date('Y-m-'.sprintf("%02d", $i)))
                                                                     @php $present = 1; @endphp
                                                                 @endif
                                                             @endforeach 
