@@ -57,12 +57,12 @@ class attendanceController extends Controller
         $data['holiday'] = holidays::where('date', '>=', date('Y-m-1'))->where('date', '<=', date('Y-m-31'))->get();
         //dd($data['holiday']);
         foreach ($employees as $key => $value) {
-            $ad1 = attendance::whereDate('attempt_time', '>=', date('Y-m-1'))->whereDate('attempt_time', '<=', date('Y-m-31')))
+            $ad1 = attendance::whereDate('attempt_time', '>=', date('Y-m-1'))->whereDate('attempt_time', '<=', date('Y-m-31'))
                                 ->where('user_id', $value->id)
                                 ->where('type', '1')
                                 ->orderBy('attempt_time', 'desc')
                                 ->get();
-            $ad2 = attendance::whereDate('attempt_time', '>=', date('Y-m-1'))->whereDate('attempt_time', '<=', date('Y-m-31')))
+            $ad2 = attendance::whereDate('attempt_time', '>=', date('Y-m-1'))->whereDate('attempt_time', '<=', date('Y-m-31'))
                                 ->where('user_id', $value->id)
                                 ->where('type', '2')
                                 ->orderBy('attempt_time', 'desc')
