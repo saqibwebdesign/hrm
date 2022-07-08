@@ -88,6 +88,8 @@ use App\Http\Controllers\admin\attendanceController as adminAttendance;
                     //Attendance
                         Route::prefix('attendance')->group(function(){
                             Route::get('employee/{id}', [adminAttendance::class, 'employee'])->name('admin.attendance.employee');
+                            Route::get('today', [adminAttendance::class, 'today'])->name('admin.attendance.today');
+                            Route::get('sheet', [adminAttendance::class, 'sheet'])->name('admin.attendance.sheet');
                         });
 
                     //Notification
