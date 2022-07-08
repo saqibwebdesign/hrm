@@ -61,10 +61,16 @@
                                                 <td>{{$val['break']}}</td>
                                                 <td>{{$val['clock_out']}}</td>
                                                 <td>
-                                                    @if($val['status'] == '0')
-                                                        <label class="btn btn-danger btn-sm">Absent</label>
+                                                    @if(date('l') == 'Sunday')
+                                                        <label class="btn btn-info btn-sm">Weekend</label>
+                                                    @elseif($holiday == '1')
+                                                        <label class="btn btn-info btn-sm">Holiday</label>
                                                     @else
-                                                        <label class="btn btn-success btn-sm">Present</label>
+                                                        @if($val['status'] == '0')
+                                                            <label class="btn btn-danger btn-sm">Absent</label>
+                                                        @else
+                                                            <label class="btn btn-success btn-sm">Present</label>
+                                                        @endif
                                                     @endif
                                                 </td>
                                             </tr>                               

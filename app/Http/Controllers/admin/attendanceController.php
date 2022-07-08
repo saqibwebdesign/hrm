@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\departments;
+use App\Models\holidays;
 use App\Models\employee\attendance;
 
 class attendanceController extends Controller
@@ -19,6 +20,8 @@ class attendanceController extends Controller
     public function today(){
         $employees = User::orderBy('id')->get();
         $data['employees'] = array();
+        $h = holidays::where('date', date('Y-m-d'))->first();
+        $data['holiday'] = empty($h->id) ? '0' : '1';
         foreach ($employees as $key => $value) {
             $ad1 = attendance::whereDate('attempt_time', '=', date('Y-m-d'))
                                 ->where('user_id', $value->id)
