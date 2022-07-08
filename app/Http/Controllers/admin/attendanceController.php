@@ -23,10 +23,12 @@ class attendanceController extends Controller
             $ad1 = attendance::whereDate('attempt_time', '=', date('Y-m-d'))
                                 ->where('user_id', $value->id)
                                 ->where('type', '1')
+                                ->orderBy('attempt_time', 'desc')
                                 ->first();
             $ad2 = attendance::whereDate('attempt_time', '=', date('Y-m-d'))
                                 ->where('user_id', $value->id)
                                 ->where('type', '2')
+                                ->orderBy('attempt_time', 'desc')
                                 ->first();
             $val = array(
                 'id' => $value->id,
