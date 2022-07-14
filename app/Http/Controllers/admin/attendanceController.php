@@ -41,7 +41,7 @@ class attendanceController extends Controller
                 'department' => @$value->department->name,
                 'clock_in' => empty($ad1->id) ? '-' : date('h:i a', strtotime($ad1->attempt_time)),
                 'break' => '-',
-                'clock_out' => empty($ad2->id) || strtotime($ad1->attempt_time) >= strtotime($ad2->attempt_time) ? '-' : date('h:i a', strtotime($ad2->attempt_time)),
+                'clock_out' => ((!empty($ad2->id) && !empty($ad1->id)) && strtotime($ad1->attempt_time) >= strtotime($ad2->attempt_time)) || empty($ad2->id) ? '-' : date('h:i a', strtotime($ad2->attempt_time)),
                 'status' => empty($ad1->id) && empty($ad2->id) ? '0' : '1'
             );
 
