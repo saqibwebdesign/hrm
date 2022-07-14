@@ -145,7 +145,8 @@ li.nav-item.dropdown.section-1-4 a {
 }
 .section-1-8 img {
     border-radius: 200px;
-    margin-top: -200px;
+    margin-top: -170px;
+    border: 3px solid #263871 !important;
 }
 .section-1-9 h2 {
     color: #263871;

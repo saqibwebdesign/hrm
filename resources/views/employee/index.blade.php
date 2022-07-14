@@ -14,7 +14,7 @@
                         <div class="row">
                            <div class="col-lg-6 col-md-6 col-3"> 
                              <div class="section-1-8">
-                               <img  src="{{URL::to('public/storage/users/'.Auth::user()->profile_img)}}" width="85%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';"  width="85%" />
+                               <img  src="{{URL::to('public/storage/users/'.Auth::user()->profile_img)}}" width="80%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';"  width="80%" />
                              </div>
                            </div>
                            <div class="col-lg-6 col-md-6 col-3"> 
