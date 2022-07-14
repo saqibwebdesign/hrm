@@ -53,16 +53,16 @@
                                         @for($i=1; $i<=31; $i++)
                                             <td>
                                                 @if(date('l', strtotime(date('Y-m-'.$i))) == 'Sunday')
-                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"  data-toggle="tooltip" title="Weekend"></i>
                                                 @else
                                                     @php $holi = 0; @endphp
                                                     @foreach($holiday as $hol)
                                                         @if($hol->date == date('Y-m-'.sprintf("%02d", $i)))
-                                                            @php $holi = 1; @endphp
+                                                            @php $holi = $hol->title; @endphp
                                                         @endif
                                                     @endforeach
-                                                    @if($holi == 1)
-                                                        <i class="fa fa-star text-warning"></i>
+                                                    @if($holi != 0)
+                                                        <i class="fa fa-star text-warning"  data-toggle="tooltip" title="{{$holi}}"></i>
                                                     @else
                                                         @if(strtotime(date('Y-m-'.$i)) > strtotime(date('Y-m-d')))
                                                             -
@@ -74,9 +74,9 @@
                                                                 @endif
                                                             @endforeach 
                                                             @if($present == 1)
-                                                                <i class="fa fa-check-circle text-success"></i>
+                                                                <i class="fa fa-check-circle text-success" data-toggle="tooltip" title="Present"></i>
                                                             @else
-                                                                <i class="fa fa-times text-danger"></i>
+                                                                <i class="fa fa-times text-danger" data-toggle="tooltip" title="Absent"></i>
                                                             @endif
                                                         @endif
                                                     @endif
@@ -104,4 +104,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 @section('addScript')
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 @endsection

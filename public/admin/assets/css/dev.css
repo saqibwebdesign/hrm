@@ -96,3 +96,6 @@
     border: 1px solid #a3a3a3;
     border-radius: 10px;
 }
+[data-toggle="tooltip"]{
+    cursor: pointer;
+}
