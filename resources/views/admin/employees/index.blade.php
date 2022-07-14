@@ -77,8 +77,14 @@
                                                 <td>{{$val->phone}}</td>
                                                 <td>{{number_format($val->basic_salary)}}</td>
                                                 <td style=" text-align: right;">
-                                                    <div class="action-tray pull-right">
-                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-primary editEmployee" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                                                    <div class="btn-group">
+                                                      <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fa fa-ellipsis-v"></i>
+                                                      </button>
+                                                      <div class="dropdown-menu dropdown-menu-left" style="">
+                                                        <a class="dropdown-item editEmployee" href="javascript:void(0)" data-id="{{base64_encode($val->id)}}">Edit</a>
+                                                        <a class="dropdown-item" href="{{route('admin.attendance.employee', base64_encode($val->id))}}">Attendance</a>
+                                                      </div>
                                                     </div>
                                                 </td>
                                             </tr>                               

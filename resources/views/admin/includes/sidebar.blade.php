@@ -20,6 +20,15 @@
             </a>
         </li>
         <li>
+            <a class="has-arrow"  href="javascript:void(0)"  aria-expanded="false">
+              <span>Attendance</span>
+            </a>
+            <ul>
+              <li><a href="{{route('admin.attendance.today')}}">Today Attendance</a></li>
+              <li><a href="{{route('admin.attendance.sheet')}}">Attendance Sheet</a></li>
+            </ul>
+        </li>
+        <li>
             <a href="{{route('admin.notification')}}"  aria-expanded="false">
               Notifications
             </a>

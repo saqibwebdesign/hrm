@@ -133,8 +133,8 @@
                                           <h3>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</h3>
                                         </div>  
                                      </div>
-                                     <p>{{$val->description}}</p>
-                                     <span><button>{{@$val->depart->name}}</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
+                                     <div style="padding:15px;">{!! $val->description !!}</div>
+                                     <span><button>{{$val->department_id == '0' ? 'All Departments' : @$val->depart->name}}</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
                                  </div>
                              </div>
                         </div>

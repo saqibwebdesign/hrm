@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\testimonialController;
 use App\Http\Controllers\admin\notificationController;
 use App\Http\Controllers\admin\holidaysController;
 use App\Http\Controllers\admin\departmentController;
+use App\Http\Controllers\admin\attendanceController as adminAttendance;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,13 @@ use App\Http\Controllers\admin\departmentController;
                             Route::get('/edit/{id}', [adminEmployee::class, 'employeeEdit']);
                             Route::post('/update', [adminEmployee::class, 'employeeUpdate'])->name('admin.employee.update');
                             Route::get('/delete/{id}', [adminEmployee::class, 'employeeDelete']);
+                        });
+
+                    //Attendance
+                        Route::prefix('attendance')->group(function(){
+                            Route::get('employee/{id}', [adminAttendance::class, 'employee'])->name('admin.attendance.employee');
+                            Route::get('today', [adminAttendance::class, 'today'])->name('admin.attendance.today');
+                            Route::get('sheet', [adminAttendance::class, 'sheet'])->name('admin.attendance.sheet');
                         });
 
                     //Notification

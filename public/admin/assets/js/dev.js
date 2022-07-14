@@ -28,6 +28,7 @@ $(document).ready(function(){
                 $('#edit-notification .row').html('<img src="'+host+'/../public/loader.gif" />');
                 $.get(host+'/notification/edit/'+val, function(data){
                     $('#edit-notification .row').html(data);
+                    $('.textarea_editor2').wysihtml5();
                 });
             });
 

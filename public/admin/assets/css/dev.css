@@ -83,3 +83,16 @@
 .input-form span{
     color: red;
 }
+.fc-button-primary span {
+    color: #fff !important;
+}
+.dataTables_filter label input {
+    padding: 6px 15px;
+    border: 1px solid #a3a3a3;
+    border-radius: 10px;
+}
+.dataTables_length label select {
+    padding: 6px 15px;
+    border: 1px solid #a3a3a3;
+    border-radius: 10px;
+}
