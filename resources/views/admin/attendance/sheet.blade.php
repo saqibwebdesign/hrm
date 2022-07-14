@@ -62,7 +62,7 @@
                                                         @endif
                                                     @endforeach
                                                     @if($holi != 0)
-                                                        <i class="fa fa-star text-warning"  data-toggle="tooltip" title="{{$holi}}"></i>
+                                                        <i class="fa fa-star text-warning holiday"  data-toggle="tooltip" title="{{$holi}}"></i>
                                                     @else
                                                         @if(strtotime(date('Y-m-'.$i)) > strtotime(date('Y-m-d')))
                                                             -

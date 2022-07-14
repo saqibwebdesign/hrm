@@ -99,3 +99,6 @@
 [data-toggle="tooltip"]{
     cursor: pointer;
 }
+.text-warning.holiday {
+    color: #309fff !important;
+}
