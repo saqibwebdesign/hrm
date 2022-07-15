@@ -2,7 +2,9 @@
     <div class="scroll-sidebar">    
   <nav class="sidebar-nav section-1-2">
             <ul id="sidebarnav">
-                <li> <a class="has-arrow waves-effect waves-dark" href="{{route('employee.dashboard')}}" aria-expanded="false"><span class="hide-menu">Dashboard </span></a>
+                <li> <a class="waves-effect waves-dark" href="{{route('employee.dashboard')}}" aria-expanded="false">
+                    <span class="hide-menu">Dashboard </span>
+                </a>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">Organization</span></a>
                     <ul aria-expanded="false" class="collapse">
@@ -10,10 +12,10 @@
                         <li><a href="#">Company Policy</a></li>
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">Attendence</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="#">Monthly</a></li>
-                    </ul>
+                <li> 
+                    <a class="waves-effect waves-dark" href="{{route('employee.monthly')}}" aria-expanded="false">
+                        <span class="hide-menu">Attendence</span>
+                    </a>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">General Settings</span></a>
                     <ul aria-expanded="false" class="collapse">
