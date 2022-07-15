@@ -850,4 +850,832 @@ button.btn.btn-default.clockOut {
 
 
 
+ 
+
+
+
+
+
+
+
+
+
+/*NEW FIXINGS N*/
+
+.icon-box1 {
+    float: left;
+    width: 100%;
+    background: white;
+    padding: 12px 10px 12px 55px;
+    border-radius: 10px;
+    position: relative;
+}
+.icon-box1 img {
+    position: absolute;
+    width: 30px;
+    left: 12px;
+    top: 18px;
+}
+.icon-box1 h2 {
+    color: #263871;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+    margin-bottom: 3px;
+}
+.icon-box1 p {
+    margin: 0px;
+    font-weight: 600;
+    color: #263871;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+
+
+.banner-profile-image {
+    float: left;
+    position: static;
+    width: 100%;
+    margin-top: -60px;
+}
+.banner-profile-image img {
+    float: none;
+    margin: 0px !important;
+    border-radius: 100%;
+    width: 100%;
+    max-width: 155px;
+    margin: auto !important;
+    display: block !important;
+}
+.banner-profile-text h2 {
+    line-height: 25px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+.banner-profile-text p {
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-size: 13px !important;
+}
+.banner-profile-text {
+    padding-top: 10px;
+}
+
+
+.custom-btn1 {
+    padding: 10px 18px !important;
+    display: inline-block;
+    color: black !important;
+    font-weight: 500 !important;
+}
+
+
+.custom-btn2 {
+    padding: 10px 18px !important;
+    display: inline-block;
+    font-weight: 500 !important;
+}
+
+.buttons-holder1 {
+    margin-top: 15px;
+}
+
+button.custom-btn3 {
+    padding: 11px 25px !important;
+    border-radius: 5px !important;
+    letter-spacing: 0.1px;
+}
+
+p.para-text1 {
+    padding: 0px !important;
+    margin: 0px 0px 15px 0px;
+    line-height: 26px;
+    letter-spacing: 0.1px;
+}
+.section-1-20 button#accordion-button-1 {
+    height: auto !important;
+    padding: 16px 15px !important;
+}
+.section-1-20 .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+}
+.section-1-20 .accordion button .accordion-title {
+    padding: 0px 0px;
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+}
+
+.card-textual {
+    padding-left: 35px;
+    position: relative;
+}
+
+.card-textual img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+}
+
+ 
+.card-textual p {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.card-textual h2 {
+    line-height: 18px;
+    margin-top: 8px;
+    display: block;
+    padding: 0px !important;
+}
+
+.card-textual-btn a {
+    padding: 5px 0px;
+    display: block;
+    width: 100%;
+}
+
+.card-textual-btn {
+    padding: 0px;
+}
+
+.center-row1 {
+    align-items: center;
+}
+.birth-card {
+    padding: 10px 10px;
+}
+.holiday-date h3 {
+    border-radius: 100%;
+    font-size: 12px !important;
+    width: 50px;
+    height: 50px;
+}
+.holiday-title h2 {
+    font-weight: 600;
+    font-size: 13px !important;
+    line-height: 15px !important;
+    margin-bottom: 2px !important;
+}
+.holiday-desc h2 {
+    display: block;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    text-align: left;
+}
+.custom-btn4 {
+    width: 100%;
+    margin: 20px 0px 0px 0px !important;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+}
+.awards-textual h3 {
+    line-height: 24px;
+    margin-bottom: 4px !important;
+}
+
+
+.banner-profile-image2 {
+    margin: 0px !important;
+    width: 100% !important;
+    margin-top: -70px !important;
+}
+
+
+.banner-profile-image2 form {
+    width: 100% !important;
+    padding: 0px 10px !important;
+}
+.banner-profile-image2 .circle {
+    width: 155px;
+    height: 155px;
+    margin: auto;
+    display: block;
+}
+
+.banner-profile-image2 .p-image {
+    margin: 0px;
+    position: absolute;
+    right: 0%;
+    bottom: 5px;
+    top: auto;
+}
+.upload-button {
+    font-size: 17px;
+    background: white;
+    padding: 8px;
+    border-radius: 20px;
+}
+.banner-profile-title2 h2 {
+    font-size: 22px !important;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    margin-bottom: 8px !important;
+    padding-left: 0px;
+}
+
+ .banner-profile-title2 h3 {
+    font-size: 15px !important;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 18px;
+    padding-left: 0px;
+}
+
+.section-2-6 .card-body {
+    padding: 40px 30px 0px 30px!important;
+}
+.banner-profile-image2 .profile-pic {
+    width: 230px;
+    max-height: 230px;
+    display: inline-block;
+    border-radius: 100%;
+    border: 5px solid rgba(23, 38, 58, 0.6);
+}
+
+
+.block-element {
+    float: left;
+    width: 100%;
+}
+
+
+
+.container-fluid select.field-style2, .container-fluid input.field-style2 {
+    height: 62px !important;
+    font-size: 16px !important;
+    letter-spacing: 0.4px;
+    color: #9A9A9A !important;
+    border: 2px solid #E7E7E7 !important;
+    padding: 0px 10px 0px 70px !important;
+}
+
+label.label-tag1 {
+    position: absolute;
+    background: white;
+    margin-left: 35px;
+    margin-top: -12px;
+    font-weight: 400 !important;
+    width: auto;
+    text-align: center;
+    z-index: 9;
+    padding: 1px 7px;
+    font-size: 16px !important;
+    letter-spacing: 0.3px;
+    color: #757575 !important;
+}
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto" !important;
+}
+
+
+.step-head h2 {
+    padding: 0px 36px;
+    font-size: 21px;
+    letter-spacing: 0.3px;
+    margin-bottom: 15px;
+}
+
+
+
+
+.custom-btn6 {
+    background: #17263A !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    padding: 12px 38px !important;
+    border: 1px solid #17263A !important;
+    border-radius: 4px !important;
+    margin-right: 0px !important;
+    display: inline-block !important;
+    min-width: 125px !important;
+    text-align: center;
+}
+
+.custom-btn5 {
+    background: none !important;
+    color: #474747 !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    padding: 12px 38px !important;
+    border: 1px solid #B1B1B1 !important;
+    border-radius: 4px !important;
+    margin-right: 0px !important;
+    display: inline-block !important;
+    min-width: 125px !important;
+    text-align: center;
+}
+
+
+
+.custom-btn5:hover , .custom-btn6:hover {
+    background:black !important;
+    color:white !important;
+    border:1px solid black !important;
+}
+
+
+.page-title-text1 {
+    padding: 0px 30px !important;
+    font-size: 28px !important;
+    letter-spacing: 0.5px;
+    margin-bottom: 35px !important;
+    margin-top: 15px !important;
+    font-weight: 700 !important;
+}
+
+.page-title-text3 {
+    padding: 0px 20px !important;
+    font-size: 28px !important;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px !important;
+    margin-top: 15px !important;
+    font-weight: 700 !important;
+}
+p.page-para-text1 {
+    font-size: 18px !important;
+    letter-spacing: 0.3px;
+}
+
+
+label.label-tag2 {
+    position: absolute;
+    background: white;
+    margin-left: 65px;
+    margin-top: -12px;
+    font-weight: 400 !important;
+    width: auto;
+    text-align: center;
+    z-index: 9;
+    padding: 1px 7px;
+    font-size: 16px !important;
+    letter-spacing: 0.3px;
+    color: #757575 !important;
+}
+
+
+
+.page-title-text2 {
+    font-size: 26px !important;
+    letter-spacing: 0.5px;
+    font-weight: 700 !important;
+    padding-left: 10px !important;
+}
+thead.thead-dark.section-3-6 th {
+    background: white;
+    text-align: left;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 16px;
+    letter-spacing: 0.3px;
+}
+
+.section-3-7 td {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #999292;
+    vertical-align: bottom;
+}
+
+
+
+
+
+.form-holder1 {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.form-holder1 .section-3-3 {
+    width: 55%;
+    margin-right: 12px;
+}
+.section-3-4 button {
+    padding: 11px 10px;
+}
+
+.section-3-7 td p {
+    margin: 0px;
+}
+
+
+/*Media Queries Of Website*/
+
+/*Small Laptops*/
+@media screen and (max-width:992px) and (min-width:768px) { 
+.right-sidebar2 {
+    padding: 30px 20px 30px 30px !important;
+}
+.right-sidebar2>div {
+    max-width: 400px;
+}
+.card-textual {
+    padding-left: 50px;
+    position: relative;
+}
+.card-textual h2 {
+    font-size: 13px !important;
+}
+.card-textual p {
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 12px !important;
+}
+.card-textual-btn a {
+    font-size: 12px !important;
+}
+.section-1-10 button {
+    font-size: 11px !important;
+    padding: 10px 17px !important;
+}
+}
+
+
+/*Tablet Devices*/
+@media screen and (max-width:767px) and (min-width:520px) { 
+
+.icon-box1 {
+    margin-bottom: 20px;
+}
+
+.banner-profile-image img {
+    float: left;
+    max-width: 130px;
+}
+
+.buttons-holder1 span {
+    width: 100%;
+    text-align: left;
+}
+.custom-container1 {
+    padding: 0px 0px 0px 15px !important;
+}
+button.custom-btn3 {
+    margin: 0px 12px 12px 0px !important;
+}
+.right-sidebar2 {
+    padding: 30px 20px 30px 30px !important;
+}
+.awards-textual h3 {
+    line-height: 24px !important;
+    margin-bottom: 4px !important;
+    font-size: 14px !important;
+}
+.awards-textual h2 {
+    font-size: 20px !important;
+}
+.projects-head h2 {
+    font-size: 12px !important;
+    text-align: left;
+    line-height: 18px !important;
+    padding: 10px 0px !important;
+}
+.projects-card h2 {
+    font-size: 13px !important;
+    line-height: 16px !important;
+    margin-bottom: 2px !important;
+}
+.projects-card p {
+    font-size: 11px !important;
+}
+.projects-card .btn-default {
+    width: 100%;
+    font-size: 12px !important;
+}
+.projects-card {
+    align-items: center;
+    padding: 10px 15px;
+}
+.navbar.section-1-5 i::before {
+    color: black !important;
+    font-size: 25px !important;
+}
+.buttons-holder1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.section-1-10 button {
+    font-size: 11px !important;
+    padding: 10px 17px !important;
+}
+.card-textual {
+    padding-left: 60px;
+    position: relative;
+}
+.card-textual img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    width: 35px;
+}
+.card-textual h2 {
+    line-height: 20px;
+    margin-top: 8px;
+    display: block;
+    padding: 0px !important;
+    font-size: 13px !important;
+}
+.card-textual p {
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 12px !important;
+}
+.card-textual-btn a {
+    padding: 5px 0px !important;
+    display: block;
+    width: 100%;
+    font-size: 12px !important;
+}
+.right-sidebar2 {
+    padding: 30px 35px 30px 35px;
+}
+.right-sidebar2>div {
+    max-width: 400px;
+}
+
+
+.banner-profile-image2 {
+    max-width: 160px;
+    margin: 15px 0px 20px 0px !important;
+}
+.banner-profile-title2 >div {
+    margin: 0px;
+}
+.banner-profile-title2 h2 {
+    font-size: 20px !important;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+    margin-bottom: 5px !important;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+.banner-profile-title2 h3 {
+ 
+    margin: 0px;
+}
+
+
+
+
+.section-2-1 {
+    background: #f1f4fb;
+    padding: 50px 30px 50px 30px;
+}
+.step-head h2 {
+    padding: 0px 25px;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    margin-bottom: 9px;
+}
+.section-2-6 .card-body {
+    padding: 40px 22px 0px 22px!important;
+}
+.container-fluid select.field-style1, .container-fluid input.field-style1 {
+    height: 60px !important;
+    font-size: 15px !important;
+    letter-spacing: 0.4px;
+    color: #9A9A9A !important;
+    border: 2px solid #E7E7E7 !important;
+    padding: 0px 20px !important;
+}
+label.label-tag1 {
+    position: absolute;
+    background: white;
+    margin-left: 20px;
+    margin-top: -12px;
+    font-weight: 400 !important;
+    width: auto;
+    text-align: center;
+    z-index: 9;
+    padding: 1px 7px;
+    font-size: 15px !important;
+    letter-spacing: 0.3px;
+    color: #757575 !important;
+}
+.page-title-text1 {
+    margin-top: 35px !important;
+    margin-bottom: 10px !important;
+    font-size: 25px !important;
+    padding: 0px 20px !important;
+}
+.page-title-text3 {
+    margin-top: 35px !important;
+    margin-bottom: 10px !important;
+    font-size: 26px !important;
+    padding: 0px 20px !important;
+}
+.section-6-3 .card-body {
+    padding: 40px 20px 50px 20px!important;
+}
+.form-holder1 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 15px;
+}
+.page-title-text2 {
+    padding-top: 25px !important;
+}
+}
+
+
+
+
+/*Mobile Devices*/
+@media screen and (max-width:519px) and (min-width:320px) { 
+
+.icon-box1 {
+    margin-bottom: 20px;
+}
+
+.banner-profile-image img {
+    float: left;
+    max-width: 130px;
+}
+
+.buttons-holder1 span {
+    width: 100%;
+    text-align: left;
+}
+.custom-container1 {
+    padding: 0px 0px 0px 15px !important;
+}
+button.custom-btn3 {
+    margin: 0px 12px 12px 0px !important;
+}
+.right-sidebar2 {
+    padding: 30px 20px 30px 30px !important;
+}
+.awards-textual h3 {
+    line-height: 24px !important;
+    margin-bottom: 4px !important;
+    font-size: 14px !important;
+}
+.awards-textual h2 {
+    font-size: 20px !important;
+}
+.projects-head h2 {
+    font-size: 12px !important;
+    text-align: left;
+    line-height: 18px !important;
+    padding: 10px 0px !important;
+}
+.projects-card h2 {
+    font-size: 13px !important;
+    line-height: 16px !important;
+    margin-bottom: 2px !important;
+}
+.projects-card p {
+    font-size: 11px !important;
+}
+.projects-card .btn-default {
+    width: 100%;
+    font-size: 12px !important;
+}
+.projects-card {
+    align-items: center;
+    padding: 10px 15px;
+}
+.navbar.section-1-5 i::before {
+    color: black !important;
+    font-size: 25px !important;
+}
+.buttons-holder1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.section-1-10 button {
+    font-size: 11px !important;
+    padding: 10px 17px !important;
+}
+
+
+
+
+
+.banner-profile-image2 {
+    max-width: 160px;
+    margin: 15px 0px 20px 0px !important;
+}
+.banner-profile-title2 >div {
+    margin: 0px;
+}
+.banner-profile-title2 h2 {
+    font-size: 20px !important;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+    margin-bottom: 5px !important;
+    padding-left: 0px;
+}
+.banner-profile-title2 h3 {
+ 
+    margin: 0px;
+}
+
+
+
+.section-2-1 {
+    background: #f1f4fb;
+    padding: 50px 30px 50px 30px;
+}
+.step-head h2 {
+    padding: 0px 25px;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    margin-bottom: 9px;
+}
+.section-2-6 .card-body {
+    padding: 40px 22px 0px 22px!important;
+}
+.container-fluid select.field-style1, .container-fluid input.field-style1 {
+    height: 60px !important;
+    font-size: 15px !important;
+    letter-spacing: 0.4px;
+    color: #9A9A9A !important;
+    border: 2px solid #E7E7E7 !important;
+    padding: 0px 20px !important;
+}
+label.label-tag1 {
+    position: absolute;
+    background: white;
+    margin-left: 20px;
+    margin-top: -12px;
+    font-weight: 400 !important;
+    width: auto;
+    text-align: center;
+    z-index: 9;
+    padding: 1px 7px;
+    font-size: 15px !important;
+    letter-spacing: 0.3px;
+    color: #757575 !important;
+}
+
+.page-title-text1 {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    font-size: 25px !important;
+    padding: 0px 20px !important;
+}
+.page-title-text3 {
+    margin-top: 30px !important;
+    margin-bottom: 10px !important;
+    font-size: 25px !important;
+    padding: 0px 20px !important;
+}
+.section-6-3 .card-body {
+    padding: 40px 20px 50px 20px!important;
+}
+.form-holder1 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 15px;
+}
+
+.page-title-text2 {
+    font-size: 24px !important;
+    letter-spacing: 0.5px;
+    font-weight: 700 !important;
+    padding-left: 0px !important;
+    margin-top: 0px !important;
+}
+.form-holder1 >div {
+    margin: 0px !important;
+}
+
+
+p.page-para-text1 {
+    padding: 0px 20px !important;
+    margin-bottom: 30px !important;
+}
+.section-5-2 .card-body {
+    padding: 35px 25px 35px 25px!important;
+}
 }

@@ -3,35 +3,35 @@
 @section('content')
 
 <div class="page-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid custom-container1">
         <div class="row"> 
-           <div class="col-lg-8 col-md-6 col-3 section-1-7"> 
+           <div class="col-lg-8 col-md-12 col-12 section-1-7"> 
                <div class="section-1-6">
                     <img src="{{URL::To('/public/employee')}}/assets/image/image4.jpg"  width="100%" />
                </div>
                <div class="row">
-                   <div class="col-lg-7 col-md-6 col-3"> 
-                        <div class="row">
-                           <div class="col-lg-6 col-md-6 col-3"> 
-                             <div class="section-1-8">
+                   <div class="col-lg-6 col-md-6 col-12"> 
+                        <div class="row banner-profile">
+                           <div class="col-lg-6 col-md-6 col-12"> 
+                             <div class="section-1-8 banner-profile-image">
                                <img  src="{{URL::to('public/storage/users/'.Auth::user()->profile_img)}}" width="80%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';"  width="80%" />
                              </div>
                            </div>
-                           <div class="col-lg-6 col-md-6 col-3"> 
-                              <div class="section-1-9">
+                           <div class="col-lg-6 col-md-6 col-12"> 
+                              <div class="section-1-9 banner-profile-text">
                                  <h2>{{Auth::user()->firstname.' '.Auth::user()->lastname}}</h2> 
                                  <p>{{Auth::user()->designation}}</p>
                               </div>
                            </div>
                         </div>
                    </div>
-                   <div class="col-lg-5 col-md-6 col-3"> 
-                      <div class="section-1-10">
+                   <div class="col-lg-6 col-md-6 col-12"> 
+                      <div class="section-1-10 buttons-holder1">
                          <span> 
                             @php $type = 1; @endphp
                             @if(!empty($lastClock))
-                                <button>{{date('d M Y', strtotime($lastClock->attempt_time))}}</button> 
-                                <button>{{date('h:i a', strtotime($lastClock->attempt_time))}}</button>
+                                <button class="custom-btn1">{{date('d M Y', strtotime($lastClock->attempt_time))}}</button> 
+                                <button class="custom-btn1">{{date('h:i a', strtotime($lastClock->attempt_time))}}</button>
                                 @if($lastClock->type == 2)
                                     @php $type = 1; @endphp
                                 @else
@@ -48,93 +48,75 @@
                                 @endif
                             @endif 
                             @if($type == 1)
-                                <button class="section-1-11 clockIn">Clock in</button>
+                                <button class="custom-btn2 section-1-11 clockIn">Clock in</button>
                             @else
-                                <button class="btn btn-default clockOut">Clock out</button>
+                                <button class="custom-btn2 btn btn-default clockOut">Clock out</button>
                             @endif
                         </span>
                       </div>
                    </div>
                </div>
-               <div class="row section-1-15">
-                  <div class="col-lg-3 col-md-8 col-2">
-                     <div class="row section-1-12">
-                        <div class="col-lg-5 col-md-6 col-3">
-                            <div class="section-1-13"> 
-                                 <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-3">
-                            <div class="section-1-14"> 
-                               <h2>Current Salary</h2>
+
+              
+
+               <div class="row m-t-20 m-b-20">
+
+               <div class="col-md-3 col-lg-3 col-sm-6 col-6">
+               <div class="icon-box1">
+               <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
+               <h2>Current Salary</h2>
                                <p>{{Auth::user()->basic_salary == 0 ? 'Un-Paid' : number_format(Auth::user()->basic_salary)}}</p>
-                            </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-md-8 col-2">
-                     <div class="row section-1-12">
-                        <div class="col-lg-5 col-md-6 col-3">
-                            <div class="section-1-13"> 
-                                 <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-3">
-                            <div class="section-1-14"> 
-                               <h2>Holidays</h2>
+               </div> 
+               </div> 
+
+
+               <div class="col-md-3 col-lg-3 col-sm-6 col-6">
+               <div class="icon-box1">
+               <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
+                <h2>Holidays</h2>
                                <p>{{count($holidays)}}</p>
-                            </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-md-8 col-2">
-                     <div class="row section-1-12">
-                        <div class="col-lg-5 col-md-6 col-3">
-                            <div class="section-1-13"> 
-                                 <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-3">
-                            <div class="section-1-14"> 
-                               <h2>Annual leaves</h2>
+               </div> 
+               </div> 
+
+
+               <div class="col-md-3 col-lg-3 col-sm-6 col-6">
+               <div class="icon-box1">
+                <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
+                <h2>Annual leaves</h2>
                                <p>24 | 05</p>
-                            </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-md-8 col-2">
-                     <div class="row section-1-12">
-                        <div class="col-lg-5 col-md-6 col-3">
-                            <div class="section-1-13"> 
-                                 <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-3">
-                            <div class="section-1-14"> 
-                               <h2>Awards</h2>
+               </div> 
+               </div> 
+
+
+
+               <div class="col-md-3 col-lg-3 col-sm-6 col-6">
+               <div class="icon-box1">
+               <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
+                 <h2>Awards</h2>
                                <p>Gold</p>
-                            </div>
-                        </div>
-                     </div>
-                  </div>
+               </div> 
+               </div> 
+
                </div>
+
+
                @foreach($notification as $val)
                    <div class="row section-1-19">
-                        <div class="col-lg-12 col-md-8 col-4">
+                        <div class="col-lg-12 col-md-12 col-12">
                              <div class="section-1-16">
                                  <div class="row">
-                                     <div class="col-lg-4 col-md-8 col-4">
+                                     <div class="col-lg-4 col-md-8 col-12">
                                          <div class="section-1-17">
                                              <h2>{{$val->title}}</h2> 
                                          </div>
                                      </div>
-                                     <div class="col-lg-8 col-md-8 col-4">
+                                     <div class="col-lg-8 col-md-8 col-12">
                                         <div class="section-1-18">
                                           <h3>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</h3>
                                         </div>  
                                      </div>
-                                     <div style="padding:15px;">{!! $val->description !!}</div>
-                                     <span><button>{{$val->department_id == '0' ? 'All Departments' : @$val->depart->name}}</button> <button class="btn">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
+                                     <div style="padding:15px;"> <p class="para-text1">  {!! $val->description !!} </p> </div>
+                                     <span><button class="custom-btn3">{{$val->department_id == '0' ? 'All Departments' : @$val->depart->name}}</button> <button class="btn custom-btn3">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
                                  </div>
                              </div>
                         </div>
@@ -142,92 +124,92 @@
                @endforeach
                @if(count($notification) == 0)
                     <div class="row section-1-19">
-                        <div class="col-lg-12 col-md-8 col-4">
+                        <div class="col-lg-12 col-md-12 col-12">
                              <h4>Nothing to show here.</h4>
                         </div>
                     </div>
                @endif
            </div>
-            <div class="col-lg-4 col-md-6 col-3 section-1-20">                        
-                <div class="accordion">
+            <div class="col-lg-4 col-md-12 col-12 section-1-20 right-sidebar2">                        
+                <div class="accordion sidebar-accord">
                     <div class="accordion-item">
                       <button id="accordion-button-1" aria-expanded="false">
                         <span class="accordion-title">Recent Projects</span>
                         <span class="icon" aria-hidden="true"></span>
                       </button>
                       <div class="accordion-content">
-                          <div class="row section-1-21">
-                             <div class="col-lg-6 col-md-8 col-3">
+                          <div class="row section-1-21 projects-head">
+                             <div class="col-lg-6 col-md-8 col-8">
                                 <div class="section-1-22">
                                   <h2>Projects Title</h2>
                                 </div>  
                              </div>
-                             <div class="col-lg-6 col-md-8 col-3">
+                             <div class="col-lg-6 col-md-4 col-4">
                                 <div class="section-1-23">
                                   <h2>Request Status</h2>
                                 </div>  
                              </div>
                           </div> 
-                          <div class="row section-1-21">
-                             <div class="col-lg-7 col-md-8 col-3">
+                          <div class="row section-1-21 projects-card">
+                             <div class="col-lg-7 col-md-8 col-8">
                                 <div class="section-1-24">
                                   <h2>Html Business Template</h2>
                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing  tincidunt arcu molestie.</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-5 col-md-8 col-3">
+                             <div class="col-lg-5 col-md-4 col-4">
                                 <div class="section-1-25">
                                     <a  class="btn btn-default">Accept</a>
                                 </div>  
                              </div>
                           </div> 
-                          <div class="row section-1-21">
-                             <div class="col-lg-7 col-md-8 col-3">
+                          <div class="row section-1-21 projects-card">
+                             <div class="col-lg-7 col-md-8 col-8">
                                 <div class="section-1-24">
                                   <h2>Adobe XD Eduction Template</h2>
                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing  tincidunt arcu molestie.</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-5 col-md-8 col-3">
+                             <div class="col-lg-5 col-md-4 col-4">
                                 <div class="section-1-25">
                                     <a  class="btn btn-default">Accept</a>
                                 </div>  
                              </div>
                           </div> 
-                          <div class="row section-1-21">
-                             <div class="col-lg-7 col-md-8 col-3">
+                          <div class="row section-1-21 projects-card">
+                             <div class="col-lg-7 col-md-8 col-8">
                                 <div class="section-1-24">
                                   <h2>Js recent Plugin Updated</h2>
                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing  tincidunt arcu molestie.</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-5 col-md-8 col-3">
+                             <div class="col-lg-5 col-md-4 col-4">
                                 <div class="section-1-25">
                                     <a  class="btn btn-default">Accept</a>
                                 </div>  
                              </div>
                           </div> 
-                            <div class="row section-1-21">
-                             <div class="col-lg-7 col-md-8 col-3">
+                            <div class="row section-1-21 projects-card">
+                             <div class="col-lg-7 col-md-8 col-8">
                                 <div class="section-1-24">
                                   <h2>Js recent Plugin Updated</h2>
                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing  tincidunt arcu molestie.</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-5 col-md-8 col-3">
+                             <div class="col-lg-5 col-md-4 col-4">
                                 <div class="section-1-25">
                                     <a  class="btn btn-default">Accept</a>
                                 </div>  
                              </div>
                           </div>
-                          <div class="row section-1-21">
-                             <div class="col-lg-7 col-md-8 col-3">
+                          <div class="row section-1-21 projects-card">
+                             <div class="col-lg-7 col-md-8 col-8">
                                 <div class="section-1-24">
                                   <h2>Angular Development</h2>
                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing  tincidunt arcu molestie.</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-5 col-md-8 col-3">
+                             <div class="col-lg-5 col-md-4 col-4">
                                 <div class="section-1-25">
                                     <a  class="btn btn-default">Complete</a>
                                 </div>  
@@ -244,16 +226,16 @@
                       </button>
                       <div class="accordion-content">
                         @foreach($birthdays as $val)
-                          <div class="row section-1-21">  
-                             <div class="col-lg-8 col-md-8 col-3">
-                                <div class="section-1-26">
+                          <div class="row section-1-21 center-row1 birth-card">  
+                             <div class="col-lg-8 col-md-8 col-9">
+                                <div class="section-1-26 card-textual">
                                   <img src="{{URL::to('public/storage/users/'.$val->profile_img)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';" width="100%" />  
                                   <h2>{{$val->firstname.' '.$val->lastname}}</h2>
                                   <p>{{date('d-M-Y', strtotime($val->dob))}} &nbsp; 26 Years old</p>
                                 </div>  
                              </div>
                              <div class="col-lg-4 col-md-4 col-3">
-                                <div class="section-1-27">
+                                <div class="section-1-27 card-textual-btn">
                                     <a href="javascript:void(0)" class="btn btn-default">
                                         @php
                                             $d = date('d', strtotime($val->dob));
@@ -281,20 +263,20 @@
                       </button>
                       <div class="accordion-content">
                         @foreach($holidays as $val)
-                          <div class="row section-1-30">  
-                             <div class="col-lg-3 col-md-8 col-3">
-                                <div class="section-1-29">
+                          <div class="row section-1-30 center-row1 holiday-card">  
+                             <div class="col-lg-3 col-md-3 col-3">
+                                <div class="section-1-29 holiday-date">
                                    <h3>{{date('d', strtotime($val->date))}}<br>{{date('M', strtotime($val->date))}}</h3> 
                                 </div>
                              </div>
-                             <div class="col-lg-6 col-md-8 col-3 no-pad">
-                                <div class="section-1-28">
+                             <div class="col-lg-6 col-md-6 col-6 no-pad">
+                                <div class="section-1-28 holiday-title">
                                   <h2>{{$val->title}}</h2>
                                   <p>{{date('l', strtotime($val->date))}}</p>
                                 </div>  
                              </div>
-                             <div class="col-lg-3 col-md-8 col-3">
-                                <div class="section-1-31">
+                             <div class="col-lg-3 col-md-3 col-3">
+                                <div class="section-1-31 holiday-desc">
                                     <a href="javascript:void(0)">
                                         <h2>
                                             @php
@@ -322,21 +304,23 @@
                 </div>
                 <div class="section-1-34">
                     <div class="row">
-                        <div class="col-lg-10 col-md-6 col-3">
+                        <div class="col-lg-12 col-md-12 col-12">
                             <div class="row">
-                                <div class="col-lg-3 col-md-8 col-3">
+                                <div class="col-lg-3 col-md-4 col-4">
                                     <div class="section-1-35">
                                         <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" />  
                                     </div>
                                 </div>
-                                <div class="col-lg-7 col-md-8 col-3">
-                                    <div class="section-1-36">
+                                <div class="col-lg-8 col-md-8 col-8">
+                                    <div class="section-1-36 awards-textual">
                                         <h3>Awards</h3>
                                          <h2>Gold </h2>
                                     </div>
                                 </div>
-                                <button class="btn btn-1">Completed</button>
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                                <button class="btn btn-1 custom-btn4">Completed</button>
                             </div>
+                          </div>
                         </div>
                     </div>
                 </div>

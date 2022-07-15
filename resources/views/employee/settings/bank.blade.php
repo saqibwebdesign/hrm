@@ -5,17 +5,16 @@
 <div class="page-wrapper">
     <div class="container-fluid">
         <div class="row"> 
-           <div class="col-lg-12 col-md-8 col-12 section-3-1"> 
-                <div class="row">
-                    <div class="col-lg-8 col-md-6 col-12">
+           <div class="col-lg-12 col-md-12 col-12 section-3-1"> 
+                <div class="row m-t-10">
+                    <div class="col-lg-6 col-md-6 col-12">
                         <div class="section-3-2">
-                            <h2>Bank Account</h2>
+                            <h2 class="page-title-text2">Bank Account</h2>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-6 col-12 no-pad">
-                                <div class="section-3-3">
+                    <div class="col-lg-6 col-md-6 col-12">
+                      <div class="form-holder1">
+                        <div class="section-3-3">
                                    <div class="search">
                                         <form action="/action_page.php">
                                           <input type="text" placeholder="Search.." name="search">
@@ -23,19 +22,16 @@
                                         </form>
                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="section-3-4">
-                                  <button data-toggle="modal" data-target="#myModal"><i style="font-size:14px;" class="fa fa-plus"></i>&nbsp; Add Account</button>
+                                  <button data-toggle="modal" data-target="#myModal"><i style="font-size:14px;" class="fa fa-plus"></i>&nbsp; Add Bank Account</button>
                                 </div>
-                            </div>
-                        </div>
+                              </div>
                     </div>
                 </div>
 
 
 
-             <div class="table-responsive section-3-5">
+             <div class="table-responsive section-3-5 m-t-40">
                 <table class="table">
                   <thead class="thead-dark section-3-6">
                       <tr>
