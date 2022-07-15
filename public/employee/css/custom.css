@@ -35,7 +35,7 @@ body
 .section-1-2.sidebar-nav > ul > li:hover > a i {
     color: #ee0005;
 }
-.section-1-2 a.has-arrow.waves-effect.waves-dark {
+.section-1-2 a.waves-effect.waves-dark {
     padding: 15px 20px !important;
 }
 .sidebar-nav .has-arrow:after {

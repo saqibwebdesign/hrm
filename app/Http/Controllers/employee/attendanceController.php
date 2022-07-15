@@ -18,4 +18,9 @@ class attendanceController extends Controller
 
         return redirect()->back();
     }
+
+    public function monthly(){
+
+        return view('employee.attendance.monthly');
+    }
 }
