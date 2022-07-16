@@ -15,7 +15,13 @@ class authController extends Controller
 
         $data = $request->all();
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])){
-            return redirect(route('employee.dashboard'))->with('success', 'Login Successful.');
+            $dob['m'] = date('m', strtotime(Auth::user()->dob));
+            $dob['d'] = date('d', strtotime(Auth::user()->dob));
+            if($dob['m'] == date('m') && $dob['d'] == date('d')){
+                return redirect(route('employee.dashboard'))->with('birthday', 'The whole team wishes you the happiest of birthdays and a great year.'); 
+            }else{
+                return redirect(route('employee.dashboard'))->with('success', 'Login Successful.');
+            }
         }else{
             return redirect()->back()->with('error', 'Authentication Failed.');
         }

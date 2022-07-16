@@ -27,3 +27,16 @@
 		);
 	</script>
 @endif
+@if(session()->has('birthday'))
+	<script type="text/javascript">
+		Swal.fire({
+		  title: 'Birthday!',
+		  text: '{{ session()->get("birthday") }}',
+		  imageUrl: '{{URL::to("/public/employee/assets/images/cake.png")}}',
+		  imageWidth: 250,
+		  imageHeight: 250,
+		  imageAlt: 'Custom image',
+  		  confirmButtonText: 'Thank you!',
+		});
+	</script>
+@endif
