@@ -4,6 +4,10 @@ body
   padding: 0px; 
   font-family: 'Roboto', sans-serif;                                                                                                                                          
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
 .no-pad{
     padding:0px !important; 
 }
@@ -1282,7 +1286,699 @@ thead.thead-dark.section-3-6 th {
     margin: 0px;
 }
 
+.sec-head2 h3 {
+    color: #17263A;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
 
+.sec-head2 ul {
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    grid-gap: 8px;
+}
+.sec-head2 ul li {
+    color: #7B7B7B;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.sec-head2 ul li a {
+    color: #17263A;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.sec-head2 {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.custom-border1 {
+    border: 1px solid #7A7A7A;
+    padding: 18px 15px;
+    border-radius: 5px;
+}
+
+.timeline-sheet-head {
+    float: left;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+
+.timeline-sheet-head h5 b {
+    color: #1C1C1C;
+    font-size: 16px;
+}
+
+ 
+.timeline-sheet-head h5 {
+    color: #6C6C6C;
+    margin: 0px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    font-size: 15px;
+}
+
+
+.art-tag {
+    float: left;
+    width: 100%;
+    background: #E8E8E8;
+    border-radius: 5px;
+    padding: 12px 15px;
+}
+
+
+.art-tag h5 {
+    color: #1C1C1C;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+
+.art-tag p {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.timeline-hours {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 18px 0px;
+}
+
+.timeline-hours span {
+    background: #E8E8E8;
+    border: 4px solid #D8D8D8;
+    border-radius: 100%;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    color: #373737;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+
+.custom-btn7 {
+    background: #FEC200;
+    color: white;
+    border: none;
+    font-weight: 400;
+    padding: 8px 20px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+}
+
+
+.timeline-tags {
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.break-tag {
+    background: #EDEDED;
+    text-align: center;
+    border: 1px solid #E1E1E1;
+    padding: 5px 25px;
+    font-size: 13px;
+    font-weight: 400;
+    color: black;
+    line-height: 17px;
+    border-radius: 5px;
+}
+
+.progress-bg1 {
+    background:#55CE63 !important;
+}
+.progress-bg2 {
+    background:#FEC200 !important;
+}
+.progress-bg3 {
+    background:#7F63F4 !important;
+}
+.progress-bg4 {
+    background:#FF0008 !important;
+}
+.progress-bg5 {
+    background:#009EFB !important;
+}
+
+.progress-1 {
+    float: left;
+    width: 100%;
+    height: auto;
+    display: block;
+    line-height: normal;
+    background: none;
+    margin-bottom: 18px;
+}
+
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+
+.progress-label b {
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    color: #5B5B5B;
+    font-weight: 500;
+}
+
+
+
+.progress-label span {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    color: #2D2D2D;
+    font-weight: 500;
+}
+.progress-bar-bg {
+    width: 100%;
+    background: #D9D9D9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-1 .progress-bar {
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.search-form1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 12px;
+}
+.search-form1>div {
+    width: 25%;
+    margin-bottom: 15px;
+}
+
+
+.field-style3 {
+    width: 100%;
+    display: block;
+    color: black;
+    border: 1px solid #DADADA;
+    font-size: 14px;
+    padding: 0px 10px;
+    height: 45px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.submit-btn1 {
+    width: 100%;
+    background: #71D875;
+    border: none;
+    height: 44px;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.table-wrapper {
+    float: left;
+    width: 100%;
+}
+table.table-1 {
+    width: 100%;
+    border: 1px solid #DADADA;
+}
+
+table.table-1 th {
+    color: black;
+    background: white;
+    padding: 12px 15px;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+table.table-1 td {
+    color: #424242;
+    background: white;
+    padding: 12px 15px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.table-1 tr:nth-child(odd) td {
+    background:#ECECEC;
+}
+
+.submit-btn1:hover {
+    background:#17263A;
+}
+
+
+
+/*Event Calendar CSS*/
+.event-title .title-content {
+    position: static;
+    width: 100%;
+    text-align: center;
+}
+.event-title .title-content button {
+    position: absolute;
+    top: 12px;
+    height: 40px;
+    text-align: center;
+    width: 140px;
+}
+.event-title .title-content button#last {
+    left: 12px;
+}
+.event-title .title-content button#next {
+    right: 12px;
+}
+.event-title .title-content span {
+    float: left;
+    margin: 8px 0 16px 0px;
+    width: 100%;
+    height: 40px;
+}
+.event-title .title-content span h1,
+.event-title .title-content span h2 {
+    clear: both;
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
+    width: 100%;
+}
+.event-title .title-content span h1 {
+    font-size: 24px;
+    line-height: 32px;
+}
+.event-title .title-content span h2 {
+    font-size: 14px;
+}
+.ci-cal-container {
+    top: 64px;
+    position: absolute;
+    border: 1px solid #CCC;
+    width: 100%;
+    height: calc(100% - 64px);}
+.ci-cal-container .ci-head {
+    top: 0;
+    background: #012d73;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+}
+.ci-cal-container .ci-head div {
+    line-height: 40px;
+    float: left;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    text-transform: uppercase;
+    height: 100%;
+    width: 14.28%;
+    width: -moz-calc(100%/7);
+    width: -webkit-calc(100%/7);
+    width: calc(100%/7);
+    position: relative;
+}
+.ci-cal-container .ci-head div:last-child {
+    border-right: 0px;}
+.ci-cal-container .ci-body {
+    top: 40px;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px);
+}
+.ci-cal-container .ci-body .ci-row {
+    clear: both;
+    float: left;
+    position: relative;
+    border-bottom: 1px solid #CCC;
+    width: 100%;
+    height: 16.6%}
+.ci-cal-container .ci-calendar.cal-rows-four .ci-body .ci-row {
+    width: 100%;
+    height: 25%}
+.ci-cal-container .ci-calendar.cal-rows-five .ci-body .ci-row {
+    width: 100%;
+    height: 20%}
+.ci-cal-container .ci-calendar.cal-rows-six .ci-body .ci-row {
+    width: 100%;
+    height: 16.666%}
+.ci-cal-container .ci-body .ci-row:last-child {
+    border-bottom: 0;}
+
+
+.ci-cal-container .ci-body .ci-row .ci-event-row {
+    position: absolute;
+    left: 0px;
+    padding: 3px;
+    height: 50%;
+    width: 100%;
+    z-index: 10;}
+
+    .ci-cal-container .ci-body .ci-row .ci-event-row:nth-child(1) {
+        top: 0px;}
+
+    .ci-cal-container .ci-body .ci-row .ci-event-row:nth-child(2) {
+        margin-top: -1px;
+        top: 50%;}
+
+.ci-cal-container .ci-body .ci-row>div {
+    box-shadow: inset 0px 0px 0px 1px white;
+    border-right: 1px solid #CCC;
+    overflow: hidden;
+    float: left;
+    height: 100%;
+    width: 14.28%;
+    width: -moz-calc(100%/7);
+    width: -webkit-calc(100%/7);
+    width: calc(100%/7);
+    position: relative;
+}
+.ci-cal-container .ci-body .ci-row>div.empty {
+    background: #f5f5f5;
+}
+.ci-cal-container .ci-body .ci-row>div.empty:before {
+    background:url(http://www.transparenttextures.com/patterns/black-twill.png);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.125;
+}
+.ci-cal-container .ci-body .ci-row>div.ci-today {
+    background: #f5f5f5;
+}
+.ci-cal-container .ci-body .ci-row>div:last-child {
+    border-right: 0;
+}
+.ci-cal-container .ci-body .ci-row>div .ci-date {
+    top: 12px;
+    left: 12px;
+    position: absolute;
+    font-size: 12px;
+}
+
+
+
+
+.ci-event {
+    border-radius: 3px;
+    border: 1px solid transparent;
+    /* box-shadow: inset 0px 0px 0px 1px white; */
+    position: absolute;
+    padding: 2px 12px;
+    height: calc(100% - 5px);
+    z-index: 20;}
+
+.end-cap,
+.start-cap {
+
+    top: 0.5px;
+    z-index: 1;
+    position: absolute;
+
+}
+
+.end-cap-border,
+.start-cap-border {
+
+    top: -1.75px;
+    z-index: 0;
+    position: absolute;
+
+}
+
+.end-cap,
+.end-cap-border,
+.start-cap,
+.start-cap-border {
+
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: transparent;
+
+}
+
+.ci-event.public .end-cap,
+.ci-event.public .start-cap {
+
+    border-color: transparent #e6f1cd;
+
+}
+
+.ci-event.public .end-cap-border,
+.ci-event.public .start-cap-border {
+
+    border-color: transparent #D1DBBB;
+
+}
+
+.ci-event.private .end-cap,
+.ci-event.private .start-cap {
+
+    border-color: transparent #cceff2;
+
+}
+
+.ci-event.private .end-cap-border,
+.ci-event.private .start-cap-border {
+
+    border-color: transparent #9FBABD;
+
+}
+
+.ci-event.public {
+
+    background: #e6f1cd;
+    border-color: #D1DBBB;
+
+}
+
+.ci-event.private {
+
+    background: #cceff2;
+    border-color: #9FBABD;
+
+}
+
+.ci-event label {
+
+    font-size: 12px;
+    font-weight: bold;
+    vertical-align: middle;
+
+}
+
+@media(max-width:360px) {
+
+ 
+
+    .ci-cal-container .ci-body {
+
+        float: left;
+        height: auto;
+        position: relative;
+
+    }
+
+    .ci-cal-container .ci-body .ci-row {
+
+        border: 0px;
+        height: auto !important;
+
+    }
+
+    .ci-cal-container .ci-body .ci-row .ci-event-row {
+
+        top: 0px;
+        clear: both;
+        float: left;
+        height: auto;
+        padding: 0px !important;
+        margin-top: 0px !important;
+        position: relative;
+
+    }
+
+    .ci-cal-container .ci-body .ci-row > div {
+
+        display: none;
+
+    }
+
+    .ci-event {
+
+        float: left;
+        position: relative;
+        min-height: 100px;
+        left: 0px !important;
+        margin: 5px !important;
+        width: calc(100% - 10px) !important;
+
+    }
+
+    .end-cap,
+    .end-cap-border,
+    .start-cap,
+    .start-cap-border {
+
+        display: none;
+
+    }
+
+}
+
+
+
+
+.ci-cal-container {
+    top: 0px;
+    position: absolute;
+    border: 1px solid #CCC;
+    width: 96%;
+    height: 100%;
+}
+
+.event-title {
+    float: left;
+    width: 100%;
+    background: #E8E8E8;
+    padding: 12px 20px !important;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 35px;
+}
+.event-title .title-content span {
+    float: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px;
+    grid-gap: 6px;
+}
+.event-title .title-content span h1 {
+    font-size: 25px;
+    line-height: 32px;
+    color: #17263A;
+    font-weight: 800;
+    text-transform: uppercase;
+    float: none;
+    width: auto;
+}
+.event-title .title-content span h2 {
+    font-size: 25px;
+    line-height: 32px;
+    color: #17263A;
+    font-weight: 800;
+    text-transform: uppercase;
+    float: none;
+    width: auto;
+}
+
+.event-title .title-content {
+    position: static;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+.event-title .title-content button {
+    position: static;
+    background: #17263A;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    border-radius: 4px;
+    font-size: 13px;
+    padding: 0px;
+    width: 100px;
+}
+
+ 
+
+
+.ci-cal-container .ci-head {
+    background: none;
+}
+
+
+.ci-cal-container .ci-body .ci-row>div {
+    box-shadow: none;
+ 
+}
+
+
+.ci-cal-container .ci-body .ci-row>div .ci-date {
+    top: 12px;
+    left: 12px;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    color: #17263A;
+    font-size: 18px;
+}
+
+
+
+.ci-cal-container .ci-head div {
+    color: #17263A !important;
+    background: none !important;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid silver;
+    border-right: 1px solid silver;
+}
+
+.event-title-mobile {
+    display: none;
+}
+
+
+.ci-event.public {
+    padding: 0px;
+    display: block;
+}
+
+.ci-event.public label {
+    margin: 0px !important;
+    font-size: 12px !important;
+    color: black;
+    font-weight: 400;
+}
 /*Media Queries Of Website*/
 
 /*Small Laptops*/
@@ -1311,6 +2007,54 @@ thead.thead-dark.section-3-6 th {
 .section-1-10 button {
     font-size: 11px !important;
     padding: 10px 17px !important;
+}
+.custom-border1 {
+    height: 100%;
+}
+.event-title {
+    display: none;
+}
+
+.event-title-mobile {
+    display: block;
+}
+
+.event-calendar1 {
+    float: left;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.ci-cal-container .ci-body .ci-row>div .ci-date {
+    top: 12px;
+    left: 12px;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    color: #17263A;
+    font-size: 15px;
+}
+.event-title-mobile {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px 10px !important;
+}
+.event-title .title-content span h1  , .event-title .title-content span h2 {
+    font-size: 20px;
+    line-height: 32px;
+    color: #17263A;
+    font-weight: 800;
+    text-transform: uppercase;
+    float: none;
+    width: auto;
+}
+.ci-cal-container {
+    top: 0px;
+    position: absolute;
+    border: 1px solid #CCC;
+    width: 100%;
+    height: 100%;
 }
 }
 
@@ -1502,6 +2246,87 @@ label.label-tag1 {
 .page-title-text2 {
     padding-top: 25px !important;
 }
+.table-wrapper::-webkit-scrollbar {
+    width: 5px;
+     height: 10px;
+}
+ 
+.table-wrapper::-webkit-scrollbar-track {
+    background: #dee5f7 !important;
+    height: 10px;
+}
+ 
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #17263A;
+  outline: 1px solid slategrey;
+      border-radius: 15px;
+}
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.search-form1 {
+    flex-wrap: wrap;
+}
+.search-form1>div {
+    width: 32%;
+    margin-bottom: 0px;
+}
+.search-form1 {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    grid-gap: 8px;
+}
+.normal-pad1 {
+    padding: 50px 15px 50px 45px !important;
+}
+
+.event-title {
+    display: none;
+}
+
+.event-title-mobile {
+    display: block;
+}
+
+.event-calendar1 {
+    float: left;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.ci-cal-container .ci-body .ci-row>div .ci-date {
+    top: 12px;
+    left: 12px;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    color: #17263A;
+    font-size: 15px;
+}
+.event-title-mobile {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px 10px !important;
+}
+.event-title .title-content span h1  , .event-title .title-content span h2 {
+    font-size: 20px;
+    line-height: 32px;
+    color: #17263A;
+    font-weight: 800;
+    text-transform: uppercase;
+    float: none;
+    width: auto;
+}
+.ci-cal-container {
+    top: 0px;
+    position: absolute;
+    border: 1px solid #CCC;
+    width: 100%;
+    height: 100%;
+}
+
 }
 
 
@@ -1677,5 +2502,91 @@ p.page-para-text1 {
 }
 .section-5-2 .card-body {
     padding: 35px 25px 35px 25px!important;
+}
+
+
+.table-wrapper::-webkit-scrollbar {
+    width: 5px;
+     height: 10px;
+}
+ 
+.table-wrapper::-webkit-scrollbar-track {
+    background: #dee5f7 !important;
+    height: 10px;
+}
+ 
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #17263A;
+  outline: 1px solid slategrey;
+      border-radius: 15px;
+}
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.search-form1 {
+    flex-wrap: wrap;
+}
+.search-form1>div {
+    width: 47%;
+    margin-bottom: 0px;
+}
+.search-form1 {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    grid-gap: 8px;
+}
+.normal-pad1 {
+    padding: 50px 15px 50px 45px !important;
+}
+
+.sec-head2 h3 {
+    font-size: 28px;
+}
+
+.event-title {
+    display: none;
+}
+
+.event-title-mobile {
+    display: block;
+}
+
+.event-calendar1 {
+    float: left;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.ci-cal-container .ci-body .ci-row>div .ci-date {
+    top: 12px;
+    left: 12px;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    color: #17263A;
+    font-size: 15px;
+}
+.event-title-mobile {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px 10px !important;
+}
+.event-title .title-content span h1  , .event-title .title-content span h2 {
+    font-size: 20px;
+    line-height: 32px;
+    color: #17263A;
+    font-weight: 800;
+    text-transform: uppercase;
+    float: none;
+    width: auto;
+}
+.ci-cal-container {
+    top: 0px;
+    position: absolute;
+    border: 1px solid #CCC;
+    width: 100%;
+    height: 100%;
 }
 }
