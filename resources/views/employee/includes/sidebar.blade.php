@@ -13,10 +13,15 @@
                     </ul>
                 </li>
                 <li> 
-                    <a class="waves-effect waves-dark" href="{{route('employee.monthly')}}" aria-expanded="false">
+                    <a class="waves-effect waves-dark" href="{{route('employee.attendance.monthly')}}" aria-expanded="false">
                         <span class="hide-menu">Attendence</span>
                     </a>
                 </li>
+                <!-- <li> 
+                    <a class="waves-effect waves-dark" href="{{route('employee.leaves')}}" aria-expanded="false">
+                        <span class="hide-menu">Leaves</span>
+                    </a>
+                </li> -->
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">General Settings</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{route('employee.settings.profile')}}">Basic Information</a></li>
