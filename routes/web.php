@@ -38,7 +38,7 @@ use App\Http\Controllers\admin\attendanceController as adminAttendance;
 
             //Attendance
             Route::prefix('attendance')->group(function(){
-                Route::get('/monthly', [attendanceController::class, 'monthly'])->name('employee.monthly');
+                Route::get('/', [attendanceController::class, 'monthly'])->name('employee.monthly');
                 Route::get('/clockAttempt/{id}', [attendanceController::class, 'clockAttempt']);
             });
 
