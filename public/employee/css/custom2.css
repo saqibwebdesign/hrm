@@ -1979,6 +1979,63 @@ table.table-1 td {
     color: black;
     font-weight: 400;
 }
+
+
+.event-title .title-content button  {
+    font-size: 0px;
+    width: 50px;
+}
+
+
+
+.event-title .title-content button#next::before {
+    content: '>';
+    font-family: cursive !important;
+    color: white;
+    font-size: 25px;
+    line-height: 25px;
+    width: 100%;
+    display: block;
+    padding-bottom: 5px;
+}
+
+
+.event-title .title-content button#last::before {
+    content: '<';
+    font-family: cursive !important;
+    color: white;
+    font-size: 25px;
+    line-height: 25px;
+    width: 100%;
+    display: block;
+    padding-bottom: 5px;
+}
+
+
+
+.ci-event.public {
+    padding: 0px;
+    display: block;
+    height: auto;
+    top: 40px;
+    margin-left: -3px;
+    background: red;
+}
+.ci-event.public label {
+    margin: 0px !important;
+    font-size: 12px !important;
+    color: white;
+    font-weight: 400;
+    padding: 0px 5px;
+    border: none !important;
+}
+
+.ci-cal-container .ci-body .ci-row .ci-event-row:nth-child(2) {
+    top: 32px;
+}
+
+
+
 /*Media Queries Of Website*/
 
 /*Small Laptops*/

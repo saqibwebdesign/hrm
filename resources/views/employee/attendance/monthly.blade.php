@@ -685,7 +685,7 @@
                    html_one += 'right:-' + Math.floor((_eventHeight/1.5) + 2) + 'px; border-width: ' + (_eventHeight + 2) + 'px 0px ' + (_eventHeight + 2) + 'px ' + Math.floor((_eventHeight / 1.5) + 2) + 'px;';
                    html_one += '"></span>';
    
-                   html_one += '<label>' + _event.details['title'] + '<br>starts: ' + _event.start['month'] + '/' + _event.start['day'] + ', ends: ' + _event.end['month'] + '/' + _event.end['day'] + '...</label>';
+                   html_one += '<label>' + _event.details['title'] /*+ '<br>starts: ' + _event.start['month'] + '/' + _event.start['day'] + ', ends: ' + _event.end['month'] + '/' + _event.end['day']*/ + '...</label>';
                    html_one += '</span>';
    
                if($_event_start_day.attr('data-events') <= 1) {
@@ -716,7 +716,7 @@
                      html_two += 'left:-' + Math.floor((_eventHeight/1.5) + 2) + 'px; border-width: ' + (_eventHeight + 2) + 'px ' + Math.floor((_eventHeight / 1.5) + 2) + 'px ' + (_eventHeight + 2) + 'px 0px;';
                      html_two += '"></span>';
    
-                     html_two += '<label>...' + _event.details['title'] + '<br>starts: ' + _event.start['month'] + '/' + _event.start['day'] + ', ends: ' + _event.end['month'] + '/' + _event.end['day'] + '</label>';
+                     html_two += '<label>...' + _event.details['title'] /*+ '<br>starts: ' + _event.start['month'] + '/' + _event.start['day'] + ', ends: ' + _event.end['month'] + '/' + _event.end['day']*/ + '</label>';
                      html_two += '</span>';
    
              if($_event_start_day.attr('data-events') <= 1) {
@@ -766,7 +766,7 @@
    
                    }
    
-                   html += '<label>' + _event.details['title'] + '<br>starts: ' + _event.start['month'] + '/' + _event.start['day'] + ', ends: ' + _event.end['month'] + '/' + _event.end['day'] + '</label>';
+                   html += '<label>' + _event.details['title'] /*+ '<br>starts: ' + _event.start['month'] + '/' + _event.start['day'] + ', ends: ' + _event.end['month'] + '/' + _event.end['day']*/ + '</label>';
                    html += '</span>';
    
                    if($_event_start_day.attr('data-events') <= 1) {
@@ -1236,10 +1236,10 @@
    
    details: {
    
-   title: 'Nabeel Birthday',
-   location: 'expo center',
-   country: 'united states',
-   city: 'san diego',
+   title: 'Weekend',
+   location: '',
+   country: '',
+   city: '',
    public: true
    
    },
@@ -1247,8 +1247,8 @@
    start: {
    
    time: '12:00pm',
-     month: 8,
-     day: 17,
+     month: 7,
+     day: 3,
      year: 2022,
    
    },
@@ -1256,8 +1256,8 @@
    end: {
    
    time: '5:00pm',
-     month: 8,
-     day: 18,
+     month: 7,
+     day: 3,
      year: 2022,
    
    }
@@ -1268,11 +1268,11 @@
    
    details: {
    
-   title: 'An event that shares days as another event',
-   location: 'expo center',
-   country: 'united states',
-   city: 'san diego',
-   public: true
+   title: 'Absent',
+   location: '',
+   country: '',
+   city: '',
+   public: false
    
    },
    
@@ -1280,8 +1280,8 @@
    
    time: '12:00pm',
      month: 7,
-     day: 20,
-     year: 2019,
+     day: 10,
+     year: 2022,
    
    },
    
@@ -1289,8 +1289,8 @@
    
    time: '12:00pm',
      month: 7,
-     day: 23,
-     year: 2019,
+     day: 10,
+     year: 2022,
    
    }
    
@@ -1300,10 +1300,10 @@
    
    details: {
    
-   title: 'This is a shorter single row event!',
-   location: 'expo center',
-   country: 'united states',
-   city: 'san diego',
+   title: 'Independence Day',
+   location: '',
+   country: 'Pakistan',
+   city: '',
    public: true
    
    },
@@ -1311,18 +1311,50 @@
    start: {
    
    time: '12:00pm',
-     month: 8,
-     day: 1,
-     year: 2019,
+     month: 7,
+     day: 17,
+     year: 2022,
    
    },
    
    end: {
    
    time: '12:00pm',
-     month: 8,
-     day: 3,
-     year: 2019,
+     month: 7,
+     day: 17,
+     year: 2022,
+   
+   }
+   
+   },
+
+   event = {
+   
+   details: {
+   
+   title: 'Clock In',
+   location: '',
+   country: '',
+   city: '',
+   public: true
+   
+   },
+   
+   start: {
+   
+   time: '12:00pm',
+     month: 7,
+     day: 24,
+     year: 2022,
+   
+   },
+   
+   end: {
+   
+   time: '12:00pm',
+     month: 7,
+     day: 24,
+     year: 2022,
    
    }
    
@@ -1332,10 +1364,10 @@
    
    details: {
    
-   title: 'Another short event sharing days',
-   location: 'expo center',
-   country: 'united states',
-   city: 'san diego',
+   title: 'Clock Out',
+   location: '',
+   country: '',
+   city: '',
    public: true
    
    },
@@ -1343,18 +1375,18 @@
    start: {
    
    time: '12:00pm',
-     month: 8,
-     day: 2,
-     year: 2019,
+     month: 7,
+     day: 24,
+     year: 2022,
    
    },
    
    end: {
    
    time: '12:00pm',
-     month: 8,
-     day: 5,
-     year: 2019,
+     month: 7,
+     day: 24,
+     year: 2022,
    
    }
    
