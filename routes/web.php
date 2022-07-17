@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\employee\employeeController;
 use App\Http\Controllers\employee\attendanceController;
+use App\Http\Controllers\employee\leaveController;
 use App\Http\Controllers\admin\adminController;
 use App\Http\Controllers\admin\employeeController as adminEmployee;
 use App\Http\Controllers\admin\portfolioController;
@@ -38,8 +39,13 @@ use App\Http\Controllers\admin\attendanceController as adminAttendance;
 
             //Attendance
             Route::prefix('attendance')->group(function(){
-                Route::get('/monthly', [attendanceController::class, 'monthly'])->name('employee.monthly');
+                Route::get('/', [attendanceController::class, 'monthly'])->name('employee.attendance.monthly');
                 Route::get('/clockAttempt/{id}', [attendanceController::class, 'clockAttempt']);
+            });
+
+            //Leaves
+            Route::prefix('leaves')->group(function(){
+                Route::get('/', [leaveController::class, 'index'])->name('employee.leaves');
             });
 
             //General Settings
