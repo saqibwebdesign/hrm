@@ -46,6 +46,7 @@ use App\Http\Controllers\admin\attendanceController as adminAttendance;
             //Leaves
             Route::prefix('leaves')->group(function(){
                 Route::get('/', [leaveController::class, 'index'])->name('employee.leaves');
+                Route::post('/add', [leaveController::class, 'add'])->name('employee.leaves.add');
             });
 
             //General Settings

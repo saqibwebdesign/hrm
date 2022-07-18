@@ -9,7 +9,7 @@
                <div class="sec-head2">
                   <h3> Attendence </h3>
                   <ul>
-                     <li> <a href=""> Dashboard /  </a>  </li>
+                     <li> <a href="javascript:void(0)"> Dashboard /  </a>  </li>
                      <li> Attendence </li>
                   </ul>
                </div>
