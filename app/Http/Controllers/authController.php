@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\notification;
 use Auth;
 use URL;
-use Carbon;
+use Carbon\Carbon;
 
 class authController extends Controller
 {
