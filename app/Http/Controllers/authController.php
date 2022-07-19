@@ -22,7 +22,7 @@ class authController extends Controller
             $dob['d'] = date('d', strtotime(Auth::user()->dob));
             if($dob['m'] == date('m') && $dob['d'] == date('d')){
  
-                $n = notification::where('user_id', Auth::id())->where('title', 'Happy Birthday.')whereDate('created_at', Carbon::today())->first();
+                $n = notification::where('user_id', Auth::id())->where('title', 'Happy Birthday.')->whereDate('created_at', Carbon::today())->first();
                 if(empty($n->id)){
                     $description = '
                         <img src="'.URL::to("/public/birthday.gif").'" style="width:200px; height:200px">
