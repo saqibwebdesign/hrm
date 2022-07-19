@@ -115,8 +115,17 @@
                                           <h3>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</h3>
                                         </div>  
                                      </div>
-                                     <div style="padding:15px;"> <p class="para-text1">  {!! $val->description !!} </p> </div>
-                                     <span><button class="custom-btn3">{{$val->department_id == '0' ? 'All Departments' : @$val->depart->name}}</button> <button class="btn custom-btn3">View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> </button></span>
+                                     <div style="padding:15px;" class="para-text1 col-lg-12"> {!! $val->description !!} </div>
+                                     <span>
+                                        @if(!empty($val->department_id))
+                                            <button class="custom-btn3">
+                                                {{$val->department_id == '0' ? 'All Departments' : @$val->depart->name}}
+                                            </button> 
+                                        @endif
+                                        <!-- <button class="btn custom-btn3">
+                                            View &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 
+                                        </button> -->
+                                    </span>
                                  </div>
                              </div>
                         </div>

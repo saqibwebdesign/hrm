@@ -9,12 +9,50 @@
       	<div class="order-section-chart ">
           	<div class="row">
 	            <div class="col-lg-12 col-md-12 col-12 sec-45">
+                    <div class="single_element">
+                        <div class="quick_activity">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="quick_activity_wrap">
+                                        <!-- single_quick_activity  -->
+                                        <div class="single_quick_activity">
+                                            <div class="count_content">
+                                                <h3>8 / 10 </h3>
+                                                <p>Total Present</p>
+                                            </div>
+                                        </div>
+                                        <!-- single_quick_activity  -->
+                                        <div class="single_quick_activity">
+                                            <div class="count_content">
+                                                <h3>2 <span>Today</span></h3>
+                                                <p>Planned Leaves</p>
+                                            </div>
+                                        </div>
+                                        <!-- single_quick_activity  -->
+                                        <div class="single_quick_activity">
+                                            <div class="count_content">
+                                                <h3>0 <span>Today</span></h3>
+                                                <p>Unplanned Leaves</p>
+                                            </div>
+                                        </div>
+                                        <!-- single_quick_activity  -->
+                                        <div class="single_quick_activity">
+                                            <div class="count_content">
+                                                <h3>10</h3>
+                                                <p>Pending Requests</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 	                <div class="white_box">
 	                   <div class="QA_section">
                             <div class="white_box_tittle list_header no-margin">
                                 <h2></h2>
                                 <div class="add_button m-b-20 pad-top-10">
-                                    <a href="#" class="bg-yellow" data-toggle="modal" data-target="#add-notification">Add New</a>
+                                    <!-- <a href="#" class="bg-yellow" data-toggle="modal" data-target="#add-notification">Add New</a> -->
                                 </div>
                             </div>
                             <hr>
@@ -22,19 +60,28 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                           <th> # </th>
+                                           <th> Employee </th>
                                            <th> Leave Type </th>
                                            <th> From </th>
                                            <th> To </th>
                                            <th> No. of Days </th>
                                            <th> Reason </th>
                                            <th> Status </th>
+                                           <th> Action </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($leaves as $key => $val)
                                             <tr>
-                                                <td> {{++$key}} </td>
+                                                <td> 
+                                                    <div class="card-image">
+                                                        <div class="user-tray">
+                                                            <img src="{{URL::to('public/storage/users/'.@$val->emp->profile_img)}}" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';" alt="Profile">
+                                                            <p>{{@$val->emp->firstname.' '.@$val->emp->lastname}}</p>
+                                                            <span>{{@$val->emp->designation}}</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                                 <td> {{@$val->type->type}} </td>
                                                 <td> {{date('d-M-Y', strtotime($val->from_date))}} </td>
                                                 <td> {{date('d-M-Y', strtotime($val->to_date))}} </td>
@@ -54,6 +101,27 @@
                                                         <label class="badge badge-danger">Rejected</label>
                                                         @break
                                                       @endswitch
+                                                </td>
+                                                <td class="text-right">
+                                                    <div class="dropdown">
+                                                      <a href="javascript:void(0)" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="material-icons">more_vert</i></a>
+                                                      <ul class="dropdown-menu">
+                                                        @if($val->status != '1')
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="text-success leaveStatus" data-type="1" data-id="{{base64_encode($val->id)}}">
+                                                                <i class="fa fa-check"></i> Approve
+                                                            </a>
+                                                        </li>
+                                                        @endif
+                                                        @if($val->status != '2')
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="text-danger leaveStatus" data-type="2" data-id="{{base64_encode($val->id)}}">
+                                                                <i class="fa fa-times"></i> &nbsp;Reject
+                                                            </a>
+                                                        </li>
+                                                        @endif
+                                                      </ul>
+                                                    </div>
                                                 </td>
                                             </tr>                               
                                         @endforeach             

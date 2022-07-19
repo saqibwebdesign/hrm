@@ -5,6 +5,7 @@ namespace App\Models\employee;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\leaveType;
+use App\Models\User;
 
 class leaves extends Model
 {
@@ -23,5 +24,8 @@ class leaves extends Model
 
     public function type(){
         return $this->belongsTo(leaveType::class, 'type_id');
+    }
+    public function emp(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -112,6 +112,29 @@ $(document).ready(function(){
             });
 
 
+        //Leaves
+            $(document).on('click', '.leaveStatus', function(){
+                var val = $(this).data('id');
+                var type = $(this).data('type');
+                var massage = type == '1' ? 'Want to approve this request!' : 'Want to reject this request!';
+                Swal.fire({
+                  title: 'Are you sure?',
+                  text: massage,
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, do it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = host+'/leaves/status/'+type+'/'+val;
+                    }else{
+                        Swal.close();
+                    }
+                });
+            });
+
+
         $(document).on("click", ".browseProfilePhoto", function () {
            
             var file = $(this).parents().find(".profilePicRes");
@@ -254,121 +277,5 @@ $(document).ready(function(){
             reader.readAsDataURL(this.files[0]);
         });
 
-        // driverstatus
-
-
-           $(document).on('click', '.driverEdit', function(){
-            var val = $(this).data('id');
-            Swal.fire({
-              title: 'Are you sure?',
-              text: "Want to edit this Driver!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, edit it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = host+'/drivers/edit/'+val;
-                }else{
-                    Swal.close();
-                }
-            });
-            
-        });
-
-           $(document).on('click', '.driverActive', function(){
-             var user_id = $(this).data('id');
-            var status = 1;
-            Swal.fire({
-              title: 'Are you sure?',
-              text: "Want to Block this Driver!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, Block it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = host+'/drivers/statusActive/'+user_id+'/'+status;
-                }else{
-                    Swal.close();
-                }
-            });
-            
-        });
-
-          $(document).on('click', '.driverBlock', function(){
-             var user_id = $(this).data('id');
-            var status = 2;
-            Swal.fire({
-              title: 'Are you sure?',
-              text: "Want to Block this Driver!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, Block it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = host+'/drivers/statusBlock/'+user_id+'/'+status;
-                }else{
-                    Swal.close();
-                }
-            });
-            
-        });
-
-         $(document).on('click', '.driverDeleted', function(){
-             var user_id = $(this).data('id');
-            var status = 3;
-            Swal.fire({
-              title: 'Are you sure?',
-              text: "Want to Delete this Driver!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, Delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = host+'/drivers/driverDeleted/'+user_id+'/'+status;
-                }else{
-                    Swal.close();
-                }
-            });
-            
-        });
-
-
-           $(document).on('click', '.driverRestore', function(){
-            var val = $(this).data('id');
-            Swal.fire({
-              title: 'Are you sure?',
-              text: "Want to restore this Driver!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, restore it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = host+'/drivers/restore/'+val;
-                }else{
-                    Swal.close();
-                }
-            });
-        });
-
-
-        //Driver Details
-
-        $(document).on('click', '.viewDriverDetail', function(){
-            var id = $(this).data('id');
-            $('#driverDetailModal').modal('show');
-            $('#driverModalContent').html('<div class="loaderBlock"><img src="'+host+'/../public/loader.gif"/></div>');
-            $.get(host+'/drivers/details/'+id, function(data){
-                $('#driverModalContent').html(data);
-            });
-        });
+       
 });

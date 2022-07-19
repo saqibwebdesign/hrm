@@ -102,3 +102,35 @@
 .text-warning.holiday {
     color: #309fff !important;
 }
+.count_content span {
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+}
+.single_element .single_quick_activity h3 {
+    font-size: 34px !important;
+    font-weight: 600 !important;
+    color: #000000 !important;
+}
+.single_element .single_quick_activity p {
+    font-size: 17px !important;
+    font-weight: normal !important;
+    color: #959595 !important;
+    margin-top: 20px;
+    margin-bottom: 0 !important;
+}
+.single_element .single_quick_activity .count_content{
+    margin-bottom: 0 !important;
+}
+.dropdown-toggle::after {
+    display: none !important;
+}
+.dropdown-menu li {
+    padding: 2px 10px;
+}
+.dropdown-menu{
+    padding: 0 !important;
+}
+.dropdown-menu li:hover {
+    background-color: #e6e6e6;
+}

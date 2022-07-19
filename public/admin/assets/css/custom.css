@@ -1865,6 +1865,7 @@ div#DataTables_Table_0_paginate .current {
 }
 .QA_table.restaurant-section {
     overflow-x: auto;
+    min-height: 250px;
 }
 /*admin close*/
 

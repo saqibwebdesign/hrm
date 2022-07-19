@@ -104,6 +104,7 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
                     //Leaves
                         Route::prefix('leaves')->group(function(){
                             Route::get('/', [adminLeaves::class, 'index'])->name('admin.leaves');
+                            Route::get('/status/{type}/{id}', [adminLeaves::class, 'statusChange']);
                         });
 
                     //Notification

@@ -24,6 +24,7 @@ class employeeController extends Controller
         $data['shift'] = array('in' => '17:00:00', 'out' => '02:00:00');
         $data['notification'] = notification::where('department_id', Auth::user()->department_id)
                                                 ->orWhere('department_id', '0')
+                                                ->orWhere('user_id', Auth::id())
                                                 ->orderBy('id', 'desc')
                                                 ->limit(5)
                                                 ->get();
