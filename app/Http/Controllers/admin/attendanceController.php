@@ -42,7 +42,7 @@ class attendanceController extends Controller
                 'clock_in' => empty($ad1->id) ? '-' : date('h:i a', strtotime($ad1->attempt_time)),
                 'break' => '-',
                 'clock_out' => ((!empty($ad2->id) && !empty($ad1->id)) && strtotime($ad1->attempt_time) >= strtotime($ad2->attempt_time)) || (empty($ad2->id) || empty($ad1->id)) ? '-' : date('h:i a', strtotime($ad2->attempt_time)),
-                'status' => empty($ad1->id) && empty($ad2->id) ? '0' : '1'
+                'status' => empty($ad1->id) ? '0' : '1'
             );
 
             array_push($data['employees'], $val);
