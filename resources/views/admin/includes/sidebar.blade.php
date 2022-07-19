@@ -29,6 +29,11 @@
             </ul>
         </li>
         <li>
+            <a href="{{route('admin.leaves')}}"  aria-expanded="false">
+              Leaves
+            </a>
+        </li>
+        <li>
             <a href="{{route('admin.notification')}}"  aria-expanded="false">
               Notifications
             </a>

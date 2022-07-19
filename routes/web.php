@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\notificationController;
 use App\Http\Controllers\admin\holidaysController;
 use App\Http\Controllers\admin\departmentController;
 use App\Http\Controllers\admin\attendanceController as adminAttendance;
+use App\Http\Controllers\admin\leaveController as adminLeaves;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,6 +99,11 @@ use App\Http\Controllers\admin\attendanceController as adminAttendance;
                             Route::get('employee/{id}', [adminAttendance::class, 'employee'])->name('admin.attendance.employee');
                             Route::get('today', [adminAttendance::class, 'today'])->name('admin.attendance.today');
                             Route::get('sheet', [adminAttendance::class, 'sheet'])->name('admin.attendance.sheet');
+                        });
+
+                    //Leaves
+                        Route::prefix('leaves')->group(function(){
+                            Route::get('/', [adminLeaves::class, 'index'])->name('admin.leaves');
                         });
 
                     //Notification

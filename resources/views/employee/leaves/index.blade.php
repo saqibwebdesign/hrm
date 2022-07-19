@@ -1,7 +1,16 @@
 @extends('employee.includes.layout')
 @section('title', 'Leaves')
+@section('addStyle')
+  <style type="text/css">
+    .section-3-16 .form-control {
+      min-height: 49px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+  </style>
+@endsection
 @section('content')
-
+@php $totalLeaves = 0; @endphp
 <div class="page-wrapper">
     <div class="container-fluid">
         <div class="row"> 
@@ -40,6 +49,7 @@
                   <div class="col-lg-12">
                     <div class="card-group">
                           @foreach($types as $val)
+                            @php $totalLeaves += $val->available; @endphp
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
@@ -60,7 +70,7 @@
                               <div class="card-body">
                                  <div class="row">
                                     <div class="col-12">
-                                       <h1 class="">24</h1>
+                                       <h1 class="">{{$totalLeaves - $approved}}</h1>
                                        <h6 class="card-subtitle">Remaining Leaves</h6></div>
                                        <div class="col-12">
                                           <div class="progress">
@@ -85,7 +95,6 @@
                            <th> No. of Days </th>
                            <th> Reason </th>
                            <th> Status </th>
-                           <th> Approved By </th>
                         </tr>
                      </thead>
                      <tbody>
@@ -112,7 +121,6 @@
                                     @break
                                   @endswitch
                              </td>
-                             <td> Admin </td>
                           </tr>
                         @endforeach
                         @if(count($leaves) == 0)
@@ -160,19 +168,15 @@
                                     </div>
                                     <div class="col-lg-12 col-md-6 mb-3">
                                      <label for="validationDefault02">From *</label>
-                                      <input type="date" class="form-control" name="from_date" required>
+                                      <input type="date" class="form-control" name="from_date" id="from_date" required>
                                     </div>
                                     <div class="col-lg-12 col-md-6 mb-3">
                                      <label for="validationDefault02">To *</label>
-                                     <input type="date" class="form-control" name="to_date" required>
+                                     <input type="date" class="form-control" name="to_date" id="to_date" required>
                                     </div>
                                     <div class="col-lg-12 col-md-6 mb-3">
                                      <label for="validationDefault02">Number of days</label>
-                                     <input type="number" class="form-control" name="days" readonly>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6 mb-3">
-                                     <label for="validationDefault02">Remaining Leaves</label>
-                                     <input type="number" class="form-control" name="remaining" readonly>
+                                     <input type="number" class="form-control" name="days" value="0" id="days" readonly>
                                     </div>
                                     <div class="col-lg-12 col-md-6 mb-3">
                                      <label for="validationDefault02">Leave Reason</label>

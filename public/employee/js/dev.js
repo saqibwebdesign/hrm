@@ -34,4 +34,27 @@ $(document).ready(function(){
 		  }
 		});
 	});
+
+
+
+	//Leaves
+	$(document).on('change', '#to_date', function(){
+		var from_date = $('#from_date').val();
+		var to_date = $(this).val();
+		var diff = datediff(parseDate(from_date), parseDate(to_date));
+		$('#days').val(diff);
+	});
 });
+
+
+
+function parseDate(str) {
+    //var mdy = str.split('/');
+    return new Date(str);
+}
+
+function datediff(first, second) {
+    // Take the difference between the dates and divide by milliseconds per day.
+    // Round to nearest whole number to deal with DST.
+    return (Math.round((second-first)/(1000*60*60*24)))+1;
+}
