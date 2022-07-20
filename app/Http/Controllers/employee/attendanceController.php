@@ -5,7 +5,9 @@ namespace App\Http\Controllers\employee;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\employee\attendance;
+use App\Models\notification;
 use App\Models\User;
+use Carbon\Carbon;
 use Auth;
 
 class attendanceController extends Controller
@@ -36,6 +38,38 @@ class attendanceController extends Controller
         foreach($users as $val){
             $shift_in = $val->shift->check_in;
             $shift_out = $val->shift->check_out;
+            $clockOutUpt = date('H:i:s', strtotime("+60 minutes", strtotime($shift_out)));
+            if(date('H:i:s') > $clockOutUpt){
+                $checkDate = $shift_in > $shift_out ? Carbon::yesterday() : Carbon::today();
+                $att_i = attendance::where('user_id', $val->id)
+                                    ->whereDate('attempt_time', $checkDate)
+                                    ->where('type', '1')->first();
+                $att_o = attendance::where('user_id', $val->id)
+                                    ->whereDate('attempt_time', Carbon::today())
+                                    ->where('type', '2')->first();
+                if(!empty($att_i) && empty($att_o->id)){
+                    $a = new attendance;
+                    $a->user_id = $val->id;
+                    $a->type = '2';
+                    $a->attempt_time = $shift_out;
+                    $a->save();
+
+                    $u = User::find($val->id);
+                    $u->clock_type = '2';
+                    $u->save();
+
+                    $description = '
+                        <p>You forgot to clock-out on date <strong>'.date('d-M-Y').'</p>
+                    ';
+
+                    $noti = new notification;
+                    $noti->user_id = $val->id;
+                    $noti->title = 'Forgot Clock-Out. Shift Date: '.date('d-M-Y');
+                    $noti->description = $description;
+                    $noti->status = '1';
+                    $noti->save();
+                }
+            }
         }
     }
 
