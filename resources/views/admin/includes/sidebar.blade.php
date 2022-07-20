@@ -26,6 +26,7 @@
             <ul>
               <li><a href="{{route('admin.attendance.today')}}">Today Attendance</a></li>
               <li><a href="{{route('admin.attendance.sheet')}}">Attendance Sheet</a></li>
+              <li><a href="{{route('admin.attendance.shift')}}">Manage Shifts</a></li>
             </ul>
         </li>
         <li>

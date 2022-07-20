@@ -138,7 +138,7 @@
                                     </div>
                                     <br><hr><br>
                                     <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-3">
                                             <div class="input-form res-section-1">
                                                 <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Department <span>*</span></label>
                                                 <select name="department_id" class="form-control" required>
@@ -156,10 +156,21 @@
                                                 <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-2">
                                             <div class="input-form res-section-1">
                                                 <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Basic Salary (pkr) <span>*</span></label>
                                                 <input type="number" name="basic_salary" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="input-form res-section-1">
+                                                <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Shift <span>*</span></label>
+                                                <select name="shift_id" class="form-control" required>
+                                                    <option value="" disabled selected></option>
+                                                    @foreach($shifts as $val)
+                                                        <option value="{{$val->id}}">{{$val->title}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-2">

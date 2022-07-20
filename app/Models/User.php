@@ -32,6 +32,7 @@ class User extends Authenticatable
         $c->country = $data['country'];
         $c->postal_code = $data['postal_code'];
         $c->department_id = $data['department_id'];
+        $c->shift_id = $data['shift_id'];
         $c->designation = $data['designation'];
         $c->basic_salary = $data['basic_salary'];
         $c->joining_date = date('Y-m-d', strtotime($data['joining_date']));
@@ -56,6 +57,7 @@ class User extends Authenticatable
         $c->country = $data['country'];
         $c->postal_code = $data['postal_code'];
         $c->department_id = $data['department_id'];
+        $c->shift_id = $data['shift_id'];
         $c->designation = $data['designation'];
         $c->basic_salary = $data['basic_salary'];
         $c->joining_date = date('Y-m-d', strtotime($data['joining_date']));

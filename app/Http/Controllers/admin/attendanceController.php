@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\departments;
 use App\Models\holidays;
 use App\Models\employee\attendance;
+use App\Models\shifts;
 
 class attendanceController extends Controller
 {
@@ -81,5 +82,19 @@ class attendanceController extends Controller
         }
 
         return view('admin.attendance.sheet')->with($data);
+    }
+
+    //Shift
+    public function shift(){
+        $data['shifts'] = shifts::where('status', '1')->get();
+        return view('admin.attendance.shift')->with($data);
+    }
+
+    public function shiftAdd(Request $request){
+        $data = $request->all();
+        $data['status'] = '1';
+        shifts::create($data);
+
+        return redirect()->back()->with('success', 'Shift successfully added.');
     }
 }

@@ -99,6 +99,11 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
                             Route::get('employee/{id}', [adminAttendance::class, 'employee'])->name('admin.attendance.employee');
                             Route::get('today', [adminAttendance::class, 'today'])->name('admin.attendance.today');
                             Route::get('sheet', [adminAttendance::class, 'sheet'])->name('admin.attendance.sheet');
+
+                            Route::prefix('shift')->group(function(){
+                                Route::get('/', [adminAttendance::class, 'shift'])->name('admin.attendance.shift');
+                                Route::post('add', [adminAttendance::class, 'shiftAdd'])->name('admin.attendance.shift.add');
+                            });
                         });
 
                     //Leaves
