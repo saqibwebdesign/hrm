@@ -48,7 +48,7 @@ class attendanceController extends Controller
                                     ->whereDate('attempt_time', Carbon::today())
                                     ->where('type', '2')->first();
                 if(!empty($att_i) && empty($att_o->id)){
-                    echo $shift_in.' | '.$shift_out.' --------'.$clockOutUpt.'<br>';
+                    //echo $shift_in.' | '.$shift_out.' --------'.$clockOutUpt.'<br>';
                     
                     $a = new attendance;
                     $a->user_id = $val->id;
