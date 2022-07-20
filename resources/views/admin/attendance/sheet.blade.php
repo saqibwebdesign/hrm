@@ -8,7 +8,7 @@
     margin-bottom: -30px;
     border-radius: 5%;
     margin-left: -34px;
-    margin-bottom: -46px;
+    margin-bottom: -40px;
 }
 .white_box table tr td p {    
     font-size: 14px !important;
@@ -19,7 +19,10 @@
     padding-left: 30px;
 }
 .white_box .table thead th {
-    padding: 12px 12px;
+    padding: 10px 5px;
+}
+.white_box .table tbody td {
+    padding: 10px 10px;
 }
 </style>
 <div class="main_content_iner">
@@ -30,68 +33,70 @@
 	                <div class="white_box">
                         <h4>Month: {{date('F-Y')}}</h4>
                         <hr>
-                        <table class="table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th width="10">Employee</th>
-                                    @for($i=1; $i<=31; $i++)
-                                        <th style="width:10px">{{$i}}</th>
-                                    @endfor
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($employees as $key => $val)
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered">
+                                <thead>
                                     <tr>
-                                        <td>
-                                            <div class="card-image">
-                                                <div class="user-tray">
-                                                    <img src="{{URL::to('public/storage/users/'.$val['profile_img'])}}" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';" alt="Profile">
-                                                    <p>{{$val['name']}}</p>
-                                                </div>
-                                            </div> 
-                                        </td>
+                                        <th width="10">Employee</th>
                                         @for($i=1; $i<=31; $i++)
+                                            <th style="width:10px">{{$i}}</th>
+                                        @endfor
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($employees as $key => $val)
+                                        <tr>
                                             <td>
-                                                @if(date('l', strtotime(date('Y-m-'.$i))) == 'Sunday')
-                                                    <i class="fa fa-star text-warning"  data-toggle="tooltip" title="Weekend"></i>
-                                                @else
-                                                    @php $holi = 0; @endphp
-                                                    @foreach($holiday as $hol)
-                                                        @if($hol->date == date('Y-m-'.sprintf("%02d", $i)))
-                                                            @php $holi = $hol->title; @endphp
-                                                        @endif
-                                                    @endforeach
-                                                    @if($holi != 0)
-                                                        <i class="fa fa-star text-warning holiday"  data-toggle="tooltip" title="{{$holi}}"></i>
+                                                <div class="card-image">
+                                                    <div class="user-tray">
+                                                        <img src="{{URL::to('public/storage/users/'.$val['profile_img'])}}" onerror="this.onerror=null;this.src='{{URL::to('/public/user.jpg')}}';" alt="Profile">
+                                                        <p>{{$val['name']}}</p>
+                                                    </div>
+                                                </div> 
+                                            </td>
+                                            @for($i=1; $i<=31; $i++)
+                                                <td>
+                                                    @if(date('l', strtotime(date('Y-m-'.$i))) == 'Sunday')
+                                                        <i class="fa fa-star text-warning"  data-toggle="tooltip" title="Weekend"></i>
                                                     @else
-                                                        @if(strtotime(date('Y-m-'.$i)) > strtotime(date('Y-m-d')))
-                                                            -
+                                                        @php $holi = 0; @endphp
+                                                        @foreach($holiday as $hol)
+                                                            @if($hol->date == date('Y-m-'.sprintf("%02d", $i)))
+                                                                @php $holi = $hol->title; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                        @if($holi != 0)
+                                                            <i class="fa fa-star text-warning holiday"  data-toggle="tooltip" title="{{$holi}}"></i>
                                                         @else
-                                                            @php $present = 0 @endphp
-                                                            @foreach($val['clock_in'] as $clIn)
-                                                                @if(date('Y-m-d', strtotime($clIn->attempt_time)) == date('Y-m-'.sprintf("%02d", $i)))
-                                                                    @php $present = 1; @endphp
-                                                                @endif
-                                                            @endforeach 
-                                                            @if($present == 1)
-                                                                <i class="fa fa-check-circle text-success" data-toggle="tooltip" title="Present"></i>
+                                                            @if(strtotime(date('Y-m-'.$i)) > strtotime(date('Y-m-d')))
+                                                                -
                                                             @else
-                                                                <i class="fa fa-times text-danger" data-toggle="tooltip" title="Absent"></i>
+                                                                @php $present = 0 @endphp
+                                                                @foreach($val['clock_in'] as $clIn)
+                                                                    @if(date('Y-m-d', strtotime($clIn->attempt_time)) == date('Y-m-'.sprintf("%02d", $i)))
+                                                                        @php $present = 1; @endphp
+                                                                    @endif
+                                                                @endforeach 
+                                                                @if($present == 1)
+                                                                    <i class="fa fa-check-circle text-success" data-toggle="tooltip" title="Present"></i>
+                                                                @else
+                                                                    <i class="fa fa-times text-danger" data-toggle="tooltip" title="Absent"></i>
+                                                                @endif
                                                             @endif
                                                         @endif
                                                     @endif
-                                                @endif
-                                            </td>
-                                        @endfor
-                                    </tr>                               
-                                @endforeach
-                                @if(count($employees) == 0)
-                                    <tr>
-                                        <td colspan="7">&nbsp;&nbsp;&nbsp;No Employee found.</td>
-                                    </tr>
-                                @endif             
-                            </tbody>
-                        </table>                  		
+                                                </td>
+                                            @endfor
+                                        </tr>                               
+                                    @endforeach
+                                    @if(count($employees) == 0)
+                                        <tr>
+                                            <td colspan="7">&nbsp;&nbsp;&nbsp;No Employee found.</td>
+                                        </tr>
+                                    @endif             
+                                </tbody>
+                            </table>                  		
+                        </div>
 	                </div>
 	            </div>
             </div>
