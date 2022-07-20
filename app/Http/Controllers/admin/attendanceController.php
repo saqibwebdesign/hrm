@@ -97,4 +97,32 @@ class attendanceController extends Controller
 
         return redirect()->back()->with('success', 'Shift successfully added.');
     }
+
+    function shiftDelete($id){
+        $id = base64_decode($id);
+        $d = shifts::find($id);
+        if(count($d->emp) > 0){
+            return redirect()->back()->with('error', 'Cannot delete, this shift had employees.');
+        }else{
+            shifts::destroy($id);
+        }
+        return redirect()->back()->with('success', 'Shift Successfully Deleted.');
+    }
+    function shiftEdit($id){
+        $id = base64_decode($id);
+        $data['data'] = shifts::find($id);
+
+        return view('admin.attendance.response.editShift')->with($data);
+    }
+    public function shiftUpdate(Request $request){
+        $data = $request->all();
+        $s = shifts::find(base64_decode($data['shift_id']));
+        $s->title = $data['title'];
+        $s->check_in = $data['check_in'];
+        $s->check_out = $data['check_out'];
+        $s->grace_time = $data['grace_time'];
+        $s->save();
+
+        return redirect()->back()->with('success', 'Shift successfully updated.');
+    }
 }

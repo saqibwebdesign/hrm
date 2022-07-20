@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\departments;
+use App\Models\shifts;
 
 class User extends Authenticatable
 {
@@ -105,5 +106,8 @@ class User extends Authenticatable
 
     public function department(){
         return $this->belongsTo(departments::class, 'department_id');
+    }
+    public function shift(){
+        return $this->belongsTo(shifts::class, 'shift_id');
     }
 }

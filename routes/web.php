@@ -31,6 +31,7 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
     Route::post('login', [authController::class,'loginAttempt'])->name('login');
     Route::get('logout', [authController::class,'logout'])->name('logout');
 
+    Route::get('/attendanceCheck', [attendanceController::class, 'attendanceCheck']);
     Route::middleware('employeeAuth')->group(function(){
         Route::get('/',[authController::class, 'check']);
         //Employee
@@ -103,6 +104,9 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
                             Route::prefix('shift')->group(function(){
                                 Route::get('/', [adminAttendance::class, 'shift'])->name('admin.attendance.shift');
                                 Route::post('add', [adminAttendance::class, 'shiftAdd'])->name('admin.attendance.shift.add');
+                                Route::get('/delete/{id}', [adminAttendance::class, 'shiftDelete']);
+                                Route::get('/edit/{id}', [adminAttendance::class, 'shiftEdit']);
+                                Route::post('update', [adminAttendance::class, 'shiftUpdate'])->name('admin.attendance.shift.update');
                             });
                         });
 

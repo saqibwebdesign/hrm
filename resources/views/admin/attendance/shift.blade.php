@@ -15,7 +15,7 @@
                             <div class="white_box_tittle list_header no-margin">
                                 <h3></h3>
                                 <div class="add_button m-b-20 pad-top-10">
-                                    <a href="#" class="bg-yellow" data-toggle="modal" data-target="#add-notification">Add New</a>
+                                    <a href="#" class="bg-yellow" data-toggle="modal" data-target="#add-shift">Add New</a>
                                 </div>
                             </div>
                             <hr>
@@ -41,8 +41,8 @@
                                                 <td>{{count($val->emp)}}</td>
                                                 <td style=" text-align: right;">
                                                     <div class="action-tray" style=" text-align: right;">
-                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-primary editNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
-                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-danger deleteNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
+                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-primary editShift" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-danger deleteShift" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>                               
@@ -60,7 +60,7 @@
 
 <!-- General add popup -->
 
-    <div class="modal fade" id="add-notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="add-shift" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 30%;" role="document">
             <div class="modal-content">
                 <div class="modal-header sec-46">
@@ -119,11 +119,11 @@
         </div>
     </div>
 
-    <div class="modal fade" id="edit-notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="edit-shift" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
             <div class="modal-content">
                 <div class="modal-header sec-46">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Notification</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Shift</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

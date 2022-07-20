@@ -112,6 +112,36 @@ $(document).ready(function(){
             });
 
 
+        //Shift
+            $(document).on('click', '.deleteShift', function(){
+                var val = $(this).data('id');
+                Swal.fire({
+                  title: 'Are you sure?',
+                  text: "Want to delete this shift!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = host+'/attendance/shift/delete/'+val;
+                    }else{
+                        Swal.close();
+                    }
+                });
+            });
+
+            $(document).on('click', '.editShift', function(){
+                var val = $(this).data('id');
+                $('#edit-shift').modal('show');
+                $('#edit-shift .row').html('<img src="'+host+'/../public/loader.gif" />');
+                $.get(host+'/attendance/shift/edit/'+val, function(data){
+                    $('#edit-shift .row').html(data);
+                });
+            });
+
+
         //Leaves
             $(document).on('click', '.leaveStatus', function(){
                 var val = $(this).data('id');
