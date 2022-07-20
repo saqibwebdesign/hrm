@@ -53,7 +53,7 @@ class attendanceController extends Controller
                     $a = new attendance;
                     $a->user_id = $val->id;
                     $a->type = '2';
-                    $a->attempt_time = $shift_out;
+                    $a->attempt_time = date('Y-m-d').' '.$shift_out;
                     $a->save();
 
                     $u = User::find($val->id);
