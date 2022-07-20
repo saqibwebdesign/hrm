@@ -38,7 +38,7 @@ class attendanceController extends Controller
         foreach($users as $val){
             $shift_in = $val->shift->check_in;
             $shift_out = $val->shift->check_out;
-            $clockOutUpt = date('H:i:s', strtotime("+60 minutes", strtotime($shift_out)));
+            $clockOutUpt = date('H:i:s', strtotime("+50 minutes", strtotime($shift_out)));
             if(date('H:i:s') > $clockOutUpt){
                 $checkDate = $shift_in > $shift_out ? Carbon::yesterday() : Carbon::today();
                 $att_i = attendance::where('user_id', $val->id)
