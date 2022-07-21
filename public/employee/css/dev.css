@@ -3,3 +3,82 @@
     margin-bottom: 15px;
     color: #000000;
 }
+.custom-btn7.danger {
+    background-color: red;
+}
+.Paginate {
+    float: right;
+}
+.page-item.disabled .page-link {
+    color: #ffffff;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #d7d7d7;
+    border-color: #dee2e6;
+}
+.pagination {
+    padding-top: 30px;
+}
+.left-arrow, .rigt-arrow {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: #A098AE;
+    padding: 12px 20px;
+    border-radius: 16px !important;
+}
+.left-arrow:hover, .rigt-arrow:hover {
+    color: #fff;
+    background-color: #a21c8d;
+    border-color: transparent;
+    padding: 12px 20px;
+    border-radius: 16px !important;
+}
+.page-link-nav {
+    background-color: rgba(248, 182, 2, 0.1) !important;
+}
+
+.page-link-nav:hover {
+    color: #fff !important;
+    background: #a21c8d !important;
+    border-radius: 16px !important;
+    padding: 12px 20px;
+    border-color: #a21c8d;
+}
+.page-item.active a {
+    background: #a21c8d !important;
+    color: white !important;
+}
+.page-item.disable a {
+    background: #d3d3d3 !important;
+    color: white !important;
+}
+.page-item {
+    padding: 5px;
+    display: flex;
+}
+.page-link-nav {
+    position: relative;
+    margin-left: 0px;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 12px 20px;
+    align-items: center;
+    border: none;
+    display: unset;
+    font-size: 16px;
+    line-height: 27px;
+    color: #2E2E2E;
+}
+
+.page-shows p{
+    font-size: 12px;
+}
+.page-shows-col, .page-shows.nav {
+    display: flex;
+    align-items: center;
+}
+tr.danger td {
+    background-color: #ffc7c7 !important;
+}

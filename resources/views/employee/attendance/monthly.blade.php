@@ -35,25 +35,45 @@
                         <div class="col-lg-12 col-sm-12 col-md-6 col-12">
                            <div class="block-element custom-border1 m-b-20">
                               <div class="timeline-sheet-head">
-                                 <h5> <b> TimeSheet </b>  15 July 2022 </h5>
+                                 <h5> <b> TimeSheet: </b>  {{date('d M Y')}} </h5>
                               </div>
                               <div class="art-tag">
-                                 <h5> Pinch In art </h5>
-                                 <p> Friday 15 July 2022 05.35 PM </p>
+                                 <h5> Shift Start: <strong>{{date('h:i A', strtotime(Auth::user()->shift->check_in))}}</strong></h5>
+                                 <p> 
+                                    Today Clock-in: 
+                                    <strong>
+                                       {{$lastClock->type == '1' ? date('h:i A', strtotime($lastClock->attempt_time)) : '-'}}
+                                    </strong> 
+                                 </p>
                               </div>
                               <div class="timeline-hours">
-                                 <span> 3.45 Hours </span>
+                                 <span> 
+                                    @if(Auth::user()->clock_type == 2)
+                                       -
+                                    @else
+                                       @php
+                                          $time1 = strtotime(date('H:i:s', strtotime($lastClock->attempt_time)));
+                                          $time2 = strtotime(date('H:i:s'));
+                                          $difference = round(abs($time2 - $time1) / 3600,2);
+                                          echo $difference.' hours';
+                                       @endphp
+                                    @endif
+                                 </span>
                               </div>
                               <div class="block-element text-center">
-                                 <button class="custom-btn7"> Punch Out </button>    
+                                 @if(Auth::user()->clock_type == 2)
+                                    <button class="custom-btn7 clockIn">Clock in</button>
+                                 @else
+                                    <button class="custom-btn7 danger clockOut">Clock out</button>
+                                 @endif    
                               </div>
                               <div class="timeline-tags">
-                                 <div class="break-tag">
+                                 <!-- <div class="break-tag">
                                     Break <br/> 1.12 Hours
                                  </div>
                                  <div class="break-tag">
                                     Overtime  <br/> 3 Hours
-                                 </div>
+                                 </div> -->
                               </div>
                            </div>
                         </div>
@@ -87,7 +107,7 @@
                                        <div class="progress-bar progress-bg3" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                  </div>
-                                 <div class="progress progress-1">
+                                 <!-- <div class="progress progress-1">
                                     <div class="progress-label">
                                        <b> Remaining </b> <span> 90/140 hrs </span>
                                     </div>
@@ -102,7 +122,7 @@
                                     <div class="progress-bar-bg">
                                        <div class="progress-bar progress-bg5" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                 </div>
+                                 </div> -->
                               </div>
                            </div>
                         </div>
@@ -163,35 +183,46 @@
                                     <tr>
                                        <th> # </th>
                                        <th> Date </th>
-                                       <th> Punch In </th>
-                                       <th> Punch Out </th>
-                                       <th> Production </th>
-                                       <th> Break </th>
-                                       <th> Overtime </th>
+                                       <th> Punch Time </th>
+                                       <th> Punch Type </th>
+                                       <th> Status </th>
                                     </tr>
                                  </thead>
                                  <tbody>
-                                    <tr>
-                                       <td> 2 </td>
-                                       <td> 19 Feb 2019 </td>
-                                       <td> 10 PM </td>
-                                       <td> 7 PM </td>
-                                       <td> 9 hrs </td>
-                                       <td> 1 hrs </td>
-                                       <td> 5 </td>
-                                    </tr>
-                                    <tr>
-                                       <td> 1 </td>
-                                       <td> 19 Feb 2019 </td>
-                                       <td> 10 PM </td>
-                                       <td> 7 PM </td>
-                                       <td> 9 hrs </td>
-                                       <td> 1 hrs </td>
-                                       <td> 5 </td>
-                                    </tr>
+                                    @foreach($attendance as $key => $val)
+                                       @php
+                                          $status = 1;
+                                          if($val->type == 1){
+                                             $cs = date('H:i:s', strtotime($val->attempt_time));
+                                             if($cs > $clockInUpt){
+                                                $status = 0;
+                                             }
+                                          }
+                                       @endphp
+                                       <tr class="{{$status == 0 ? 'danger' : ''}}">
+                                          <td> {{++$key}} </td>
+                                          <td> {{date('d-M-Y', strtotime($val->attempt_time))}} </td>
+                                          <td> {{date('h:i A', strtotime($val->attempt_time))}} </td>
+                                          <td> 
+                                             @if($val->type == '1')
+                                                <label class="badge badge-primary">Clock In</label>
+                                             @else
+                                                <label class="badge badge-info">Clock Out</label>
+                                             @endif
+                                          </td>
+                                          <td>
+                                             @if($status == 1)
+                                                <label class="badge badge-success">On Time</label>
+                                             @else
+                                                <label class="badge badge-danger">{{$val->type == 1 ? 'Late coming' : 'Early Leave'}}</label>
+                                             @endif
+                                          </td>
+                                       </tr>
+                                    @endforeach
                                  </tbody>
                               </table>
                            </div>
+                           {{$attendance->links('vendor.pagination.default')}}
                         </div>
                      </div>
                   </div>
