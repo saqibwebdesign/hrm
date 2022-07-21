@@ -32,20 +32,6 @@
                             @if(!empty($lastClock))
                                 <button class="custom-btn1">{{date('d M Y', strtotime($lastClock->attempt_time))}}</button> 
                                 <button class="custom-btn1">{{date('h:i a', strtotime($lastClock->attempt_time))}}</button>
-                                <!-- @if($lastClock->type == 2)
-                                    @php $type = 1; @endphp
-                                @else
-                                    @if(date('Y-m-d', strtotime($lastClock->attempt_time)) == date('Y-m-d'))
-                                        @php $type = 2; @endphp
-                                    @else
-                                        @php $end = date('Y-m-d H:i:s', strtotime($shift['out'].'+1 hour')); @endphp
-                                        @if(date('H:i:s') <= $end)
-                                            @php $type = 2; @endphp
-                                        @else
-                                            @php $type = 1; @endphp
-                                        @endif
-                                    @endif
-                                @endif -->
                             @endif 
                             @if(Auth::user()->clock_type == 2)
                                 <button class="custom-btn2 section-1-11 clockIn">Clock in</button>
