@@ -81,4 +81,5 @@
 }
 tr.danger td {
     background-color: #ffc7c7 !important;
+    border-bottom: 1px solid #fff;
 }
