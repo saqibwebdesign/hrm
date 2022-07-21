@@ -38,7 +38,11 @@
                                  <h5> <b> TimeSheet: </b>  {{date('d M Y')}} </h5>
                               </div>
                               <div class="art-tag">
-                                 <h5> Shift Start: <strong>{{date('h:i A', strtotime(Auth::user()->shift->check_in))}}</strong></h5>
+                                 <h5> 
+                                    Shift Start: <strong>{{date('h:i A', strtotime(Auth::user()->shift->check_in))}}</strong>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
+                                    Shift End: <strong>{{date('h:i A', strtotime(Auth::user()->shift->check_out))}}</strong>
+                                 </h5>
                                  <p> 
                                     Today Clock-in: 
                                     <strong>
