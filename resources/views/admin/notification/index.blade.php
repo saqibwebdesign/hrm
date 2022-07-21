@@ -47,7 +47,9 @@
                                                 <td>{{++$key}}</td>
                                                 <td><label class="badge badge-primary">{{$val->department_id == 0 ? 'All Departments' : @$val->depart->name}}</label></td>
                                                 <td>{{$val->title}}</td>
-                                                <td><p class="cut-second-line" title="{{$val->description}}">{{$val->description}}</p></td>
+                                                <td>
+                                                    <div class="cut-second-line" title="{{$val->description}}">{!! $val->description !!}</div>
+                                                </td>
                                                 <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}
                                                 <td style=" text-align: right;">
                                                     <div class="action-tray" style=" text-align: right;">
