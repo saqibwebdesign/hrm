@@ -16,7 +16,7 @@ class notificationController extends Controller
         if($cat > 0){
             $data['notification'] = notification::where('department_id', $cat)->orderBy('id', 'desc')->get();
         }else{
-            $data['notification'] = notification::orderBy('id', 'desc')->paginate(15);
+            $data['notification'] = notification::where('department_id', '!=', null)->orderBy('id', 'desc')->paginate(15);
         }
         $data['cat'] = $cat;
         $data['departs'] = departments::orderBy('name')->get();

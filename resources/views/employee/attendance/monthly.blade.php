@@ -243,50 +243,32 @@
 @endsection
 @section('addScript')
 <script type="text/javascript">
-   ;(function($, window, undefined) {
+   (function($, window, undefined) {
+      'use strict'
    
-   'use strict';
+      $.ciCalendar = function(options, element) {
+         this.$el = $(element);
+         this._init(options);
+      };
    
-   $.ciCalendar = function(options, element) {
-   
-   this.$el = $(element);
-   this._init(options);
-   
-   };
-   
-   // set the calendars default options
-   $.ciCalendar.defaults = {
-   
-    // array of the different days of the week
-    // 'days' for the full string of each day
-    // '_days' for the abbreviation of each day
-    days : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-   _days : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-   
-   // array of the different months of the year
-   // 'months' for the full string of each month
-   // '_months' for the abbreviation of each month
-   months : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-   _months : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-   
-   // toggle abbreviations for
-   // how days are displayed
-   abbr_days: false,
-   
-   // toggle abbreviations for
-   // how months are displayed
-   abbr_months: false,
-   
-   // set the left most day in the calendar
-   // 0 for sunday, 1 for monday, etc.
-   start_day: 0,
-   
-   events: {},
-   
-   // event handler for when a day (in the current month) is clicked
-   dateClick: function($el, $content, dateProperties){ return false; }
-   
-   };
+      $.ciCalendar.defaults = {
+      
+          days : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+         _days : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+         
+         months : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+         _months : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+         
+         abbr_days: false,
+         abbr_months: false,
+         start_day: 1,
+         
+         events: {},
+         
+         // event handler for when a day (in the current month) is clicked
+         dateClick: function($el, $content, dateProperties){ return false; }
+      
+      };
    
    // begin the prototype
    $.ciCalendar.prototype = {
@@ -301,105 +283,95 @@
    *
    */
    
-   _init: function(options) {
+      _init: function(options) {
+      
+         // set the prototype options
+         // pulls from defaults unless manually changed
+         this.options = $.extend(true, {}, $.ciCalendar.defaults, options);
+         
+         // set todays date
+         this.today = new Date();
+         
+         // set the current month
+         this.month = (isNaN(this.options.month) || this.options.month == null) ? this.today.getMonth() : this.options.month - 1;
+         
+         // set the current year
+         this.year = (isNaN(this.options.year) || this.options.year == null) ? this.today.getFullYear() : this.options.year;
+         
+         // set the data array
+         this.data = this.options.data || {};
+         
+         // generate the calendar template
+         this._generate();
+         
+         // initialize the events
+         this._initEvents();
+      
+      },
    
-   // set the prototype options
-   // pulls from defaults unless manually changed
-   this.options = $.extend(true, {}, $.ciCalendar.defaults, options);
+      /*
+      * _initEvents
+      *
+      * Initializes global events such as
+      * calendar cell clicks.
+      *
+      */
+      
+      _initEvents: function() {
+      
+         // internalize
+         var self = this;
+         
+         // handle calendar cell click events
+         this.$el.on('click.calendar', 'div.ci-row > div', function() {
+         
+            var $cell = $(this),
+            idx = $cell.index(),
+            $content = $cell.children('div'),
+            dateProp = {
+               day: $cell.children('span.ci-date').text(),
+               month: self.month + 1,
+               monthname: self.options.abbr_months ? self.options._months[self.month] : self.options.months[self.month],
+               year: self.year,
+               weekday: idx + self.options.start_day - 2,
+               weekdayname: self.options.days[idx + self.options.start_day - 2]
+            };
+            if(dateProp.day) {
+               self.options.dateClick($cell, $content, dateProp);         
+            }
+         });
+      },
    
-   // set todays date
-   this.today = new Date();
-   
-   // set the current month
-   this.month = (isNaN(this.options.month) || this.options.month == null) ? this.today.getMonth() : this.options.month - 1;
-   
-   // set the current year
-   this.year = (isNaN(this.options.year) || this.options.year == null) ? this.today.getFullYear() : this.options.year;
-   
-   // set the data array
-   this.data = this.options.data || {};
-   
-   // generate the calendar template
-   this._generate();
-   
-   // initialize the events
-   this._initEvents();
-   
-   },
-   
-   /*
-   * _initEvents
-   *
-   * Initializes global events such as
-   * calendar cell clicks.
-   *
-   */
-   
-   _initEvents: function() {
-   
-   // internalize
-   var self = this;
-   
-   // handle calendar cell click events
-   this.$el.on('click.calendar', 'div.ci-row > div', function() {
-   
-     var $cell = $(this),
-       idx = $cell.index(),
-       $content = $cell.children('div'),
-       dateProp = {
-         day: $cell.children('span.ci-date').text(),
-         month: self.month + 1,
-         monthname: self.options.abbr_months ? self.options._months[self.month] : self.options.months[self.month],
-         year: self.year,
-         weekday: idx + self.options.start_day - 2,
-         weekdayname: self.options.days[idx + self.options.start_day - 2]
-       };
-   
-     if(dateProp.day) {
-   
-       self.options.dateClick($cell, $content, dateProp);
-   
-     }
-   
-   });
-   
-   },
-   
-   /*
-   * _generate
-   *
-   * Generates a fresh view of the calendar
-   * based on the current year and month.
-   *
-   * @param callback
-   * @return dom
-   *
-   */
-   
-   _generate: function(callback) {
-   
-   var head = this._getHead(),
-     body = this._getDays(),
-     rowClass;
-   
-   switch(this.rowTotal) {
-   
-     case 4 : rowClass = 'cal-rows-four'; break;
-     case 5 : rowClass = 'cal-rows-five'; break;
-     case 6 : rowClass = 'cal-rows-six'; break;
-   
-   }
-   
-   this.$cal = $('<div class="ci-calendar ' + rowClass + '">').append(head, body);
-   this.$el.find('div.ci-calendar').remove().end().append(this.$cal);
-   
-   if(callback) {
-   
-     callback.call();
-   
-   }
-   
-   },
+      /*
+      * _generate
+      *
+      * Generates a fresh view of the calendar
+      * based on the current year and month.
+      *
+      * @param callback
+      * @return dom
+      *
+      */
+      
+      _generate: function(callback) {
+      
+         var head = this._getHead(),
+         body = this._getDays(),
+         rowClass;
+         
+         switch(this.rowTotal) {
+           case 4 : rowClass = 'cal-rows-four'; break;
+           case 5 : rowClass = 'cal-rows-five'; break;
+           case 6 : rowClass = 'cal-rows-six'; break;
+         }
+         
+         this.$cal = $('<div class="ci-calendar ' + rowClass + '">').append(head, body);
+         this.$el.find('div.ci-calendar').remove().end().append(this.$cal);
+         
+         if(callback) {
+           callback.call();      
+         }   
+      },
    
    /*
    * _getHead
@@ -414,22 +386,19 @@
    
    _getHead: function() {
    
-   var html =  '<div class="ci-head">';
-   
-   for(var i = 0; i <= 6; i++) {
-   
-     var pos = i + this.options.start_day,
-       j = pos > 6 ? pos - 6 - 1 : pos;
-   
-     html += '<div>';
-     html += this.options.abbr_days ? this.options._days[j] : this.options._days[j];
-     html += '</div>';
-   
-   }
-   
-   html += '</div>';
-   
-   return html;
+      var html =  '<div class="ci-head">';
+      
+      for(var i = 0; i <= 6; i++) {
+      
+        var pos = i + this.options.start_day,
+          j = pos > 6 ? pos - 6 - 1 : pos;
+      
+        html += '<div>';
+        html += this.options.abbr_days ? this.options._days[j] : this.options._days[j];
+        html += '</div>';
+      }
+      html += '</div>';
+      return html;
    
    },
    
