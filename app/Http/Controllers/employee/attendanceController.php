@@ -85,6 +85,7 @@ class attendanceController extends Controller
         $data['clockOut'] = Auth::user()->shift->check_out;
         $buffer = Auth::user()->shift->grace_time;
         $data['clockInUpt'] = date('H:i:s', strtotime("+".$buffer." minutes", strtotime($data['clockIn'])));
+        $data['clockOutUpt'] = date('H:i:s', strtotime("+".$buffer." minutes", strtotime($data['clockOut'])));
         return view('employee.attendance.monthly')->with($data);
     }
 }
