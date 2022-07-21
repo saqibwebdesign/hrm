@@ -48,12 +48,13 @@
                                                 <td><label class="badge badge-primary">{{$val->department_id == 0 ? 'All Departments' : @$val->depart->name}}</label></td>
                                                 <td>{{$val->title}}</td>
                                                 <td>
-                                                    <div class="cut-second-line" title="{!! $val->description !!}">{!! $val->description !!}</div>
+                                                    <div class="cut-second-line">{!! $val->description !!}</div>
                                                 </td>
                                                 <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}
                                                 <td style=" text-align: right;">
                                                     <div class="action-tray" style=" text-align: right;">
-                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-primary editNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                                    	<a href="javascript:void(0)" class="btn btn-sm btn-info viewNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-eye"></i></a>
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-primary editNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
                                                     	<a href="javascript:void(0)" class="btn btn-sm btn-danger deleteNotification" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
                                                     </div>
                                                 </td>
@@ -133,6 +134,21 @@
             <div class="modal-content">
                 <div class="modal-header sec-46">
                     <h5 class="modal-title" id="exampleModalLongTitle">Edit Notification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row">
+                </div>                 
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="view-notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
+            <div class="modal-content">
+                <div class="modal-header sec-46" style="border-bottom: 1px solid;">
+                    <h5 class="modal-title" id="exampleModalLongTitle">View Notification</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

@@ -123,6 +123,7 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
                             Route::get('/edit/{id}', [notificationController::class, 'notificationEdit']);
                             Route::post('/add', [notificationController::class, 'notificationAdd'])->name('admin.notification.add');
                             Route::post('/update', [notificationController::class, 'notificationUpdate'])->name('admin.notification.update');
+                            Route::get('/view/{id}', [notificationController::class, 'notificationView']);
                         });
 
 

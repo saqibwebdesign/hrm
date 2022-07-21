@@ -50,4 +50,10 @@ class notificationController extends Controller
 
         return redirect()->back()->with('success', 'Notification Successfully Deleted.');
     }
+    function notificationView($id){
+        $id = base64_decode($id);
+        $data['data'] = notification::find($id);
+
+        return view('admin.notification.response.view')->with($data);
+    }
 }

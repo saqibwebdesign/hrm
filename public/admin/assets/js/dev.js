@@ -32,6 +32,15 @@ $(document).ready(function(){
                 });
             });
 
+            $(document).on('click', '.viewNotification', function(){
+                var val = $(this).data('id');
+                $('#view-notification').modal('show');
+                $('#view-notification .row').html('<img src="'+host+'/../public/loader.gif" />');
+                $.get(host+'/notification/view/'+val, function(data){
+                    $('#view-notification .row').html(data);
+                });
+            });
+
 
         //Holidays
             $(document).on('click', '.deleteHoliday', function(){
