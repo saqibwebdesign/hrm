@@ -61,7 +61,7 @@ class attendanceController extends Controller
                     $u->save();
 
                     $description = '
-                        <p>You forgot to clock-out on date <strong>'.date('d-M-Y').'</p>
+                        <p>You forgot to clock-out on date <strong>'.date('d-M-Y').'</strong></p>
                     ';
 
                     $noti = new notification;
