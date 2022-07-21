@@ -192,9 +192,13 @@
                                     @foreach($attendance as $key => $val)
                                        @php
                                           $status = 1;
+                                          $cs = date('H:i:s', strtotime($val->attempt_time));
                                           if($val->type == 1){
-                                             $cs = date('H:i:s', strtotime($val->attempt_time));
                                              if($cs > $clockInUpt){
+                                                $status = 0;
+                                             }
+                                          }else{
+                                             if($cs < $clockOut){
                                                 $status = 0;
                                              }
                                           }
