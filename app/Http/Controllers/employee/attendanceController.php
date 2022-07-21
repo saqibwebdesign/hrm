@@ -82,7 +82,8 @@ class attendanceController extends Controller
         $data['attendance'] = attendance::where('user_id', Auth::id())
                                         ->orderBy('id', 'desc')->paginate(25);
         $data['clockIn'] = Auth::user()->shift->check_in;
-        $data['clockInUpt'] = date('H:i:s', strtotime("+20 minutes", strtotime($data['clockIn'])));
+        $buffer = Auth::user()->shift->grace_time;
+        $data['clockInUpt'] = date('H:i:s', strtotime("+".$buffer." minutes", strtotime($data['clockIn'])));
         return view('employee.attendance.monthly')->with($data);
     }
 }
