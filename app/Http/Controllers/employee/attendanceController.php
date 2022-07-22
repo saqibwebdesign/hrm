@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\employee\attendance;
 use App\Models\notification;
+use App\Models\holidays;
 use App\Models\User;
 use Carbon\Carbon;
 use Auth;
@@ -86,6 +87,25 @@ class attendanceController extends Controller
         $buffer = Auth::user()->shift->grace_time;
         $data['clockInUpt'] = date('H:i:s', strtotime("+".$buffer." minutes", strtotime($data['clockIn'])));
         $data['clockOutUpt'] = date('H:i:s', strtotime("+".$buffer." minutes", strtotime($data['clockOut'])));
+
+
+        $data['holiday'] = holidays::where('date', '>=', date('Y-m-1'))->where('date', '<=', date('Y-m-31'))->get();
+        
+        $ad1 = attendance::whereDate('attempt_time', '>=', date('Y-m-1'))->whereDate('attempt_time', '<=', date('Y-m-31'))
+                            ->where('user_id', Auth::id())
+                            ->where('type', '1')
+                            ->orderBy('attempt_time', 'desc')
+                            ->get();
+        $ad2 = attendance::whereDate('attempt_time', '>=', date('Y-m-1'))->whereDate('attempt_time', '<=', date('Y-m-31'))
+                            ->where('user_id', Auth::id())
+                            ->where('type', '2')
+                            ->orderBy('attempt_time', 'desc')
+                            ->get();
+        $data['employees'] = array(
+            'clock_in' => $ad1,
+            'clock_out' => $ad2,
+        );
+
         return view('employee.attendance.monthly')->with($data);
     }
 }
