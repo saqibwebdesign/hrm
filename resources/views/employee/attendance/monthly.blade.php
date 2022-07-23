@@ -264,25 +264,7 @@
       <?php
          for($i=1; $i<=31; $i++){
              if(date('l', strtotime(date('Y-m-'.$i))) == 'Sunday'){
-                 echo 'event = {
-                     details: {
-                        title: "Weekend",
-                        type: "weekend",
-                        public: true
-                     },
-                     start: {
-                        time: "12:00am",
-                        month: '.date('m').',
-                        day: '.$i.',
-                        year: '.date('Y').',
-                     },
-                     end: {
-                        time: "11:59pm",
-                        month: '.date('m').',
-                        day: '.$i.',
-                        year: '.date('Y').',
-                     }
-                  },';
+                 
             }else{
                $holi = 0;
                foreach($holiday as $hol){

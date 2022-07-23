@@ -145,9 +145,10 @@
          for(var i = 0; i <= 6; i++) {
             var pos = i + this.options.start_day,
             j = pos > 6 ? pos - 6 - 1 : pos;
-         
-            html += '<div>';
-            html += this.options.abbr_days ? this.options._days[j] : this.options._days[j];
+            let weekday = this.options.abbr_days ? this.options._days[j] : this.options._days[j];
+            let weekdayClass = weekday == "Sun" ? "weekend" : "";
+            html += '<div class="'+weekdayClass+'">';
+            html += weekday;
             html += '</div>';
          }
          html += '</div>';
@@ -194,10 +195,10 @@
                inner = '',
                today = this.month === this.today.getMonth() && this.year === this.today.getFullYear() && day === this.today.getDate(),
                content = '';
-         
+                let weekdayClass = j == 6 ? 'weekend' : '';
              if(day <= monthLength && (i > 0 || j >= p)) {
          
-               html += '<div class="' + cellClasses + '" data-month="' + (this.month + 1) + '" data-day="' + day + '" data-events="0">';
+               html += '<div class="' + cellClasses +' '+ weekdayClass + '" data-month="' + (this.month + 1) + '" data-day="' + day + '" data-events="0">';
          
                inner += '<span class="ci-date">' + day + '</span>';
          

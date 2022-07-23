@@ -143,3 +143,9 @@ tr.danger td {
     border: none;
     font-weight: 800;
 }
+.ci-cal-container .ci-head .weekend {
+    background: #ffe4a8 !important;
+}
+.ci-cal-container .ci-body .ci-row .weekend{
+    background: #ffe4a8 !important;    
+}
