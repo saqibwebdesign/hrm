@@ -5,6 +5,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\employee\employeeController;
 use App\Http\Controllers\employee\attendanceController;
 use App\Http\Controllers\employee\leaveController;
+use App\Http\Controllers\employee\payrollController;
 use App\Http\Controllers\admin\adminController;
 use App\Http\Controllers\admin\employeeController as adminEmployee;
 use App\Http\Controllers\admin\portfolioController;
@@ -50,6 +51,11 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
                 Route::get('/', [leaveController::class, 'index'])->name('employee.leaves');
                 Route::post('/add', [leaveController::class, 'add'])->name('employee.leaves.add');
             });
+
+            //Payroll
+                Route::prefix('payroll')->group(function(){
+                    Route::get('/current', [payrollController::class, 'current'])->name('employee.payroll.current');
+                });
 
             //General Settings
             Route::prefix('settings')->group(function(){

@@ -149,3 +149,124 @@ tr.danger td {
 .ci-cal-container .ci-body .ci-row .weekend{
     background: #ffe4a8 !important;    
 }
+.modal-1 .modal-body img {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+.modal-1 .modal-body p {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    padding-top: 30px;
+    margin: 0px !important;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+.modal-1 .modal-content {
+    margin: auto;
+    border: 1px solid #888;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+.modal-1 .modal-content h2 {
+    text-align: left;
+    color: black;
+    font-size: 28px;
+    font-weight: 700;
+    border-bottom: 1px solid #C1BDBD;
+    padding: 0px 30px 20px 30px;
+}
+.modal-1.close {
+    color: #FF0008 !important;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+.modal-1.modal-1.close:hover,
+.modal-1.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-2 h3 {
+    font-size: 18px;
+    color: #1A1A1A;
+    margin: 0;
+    font-weight: 500;
+}
+.modal-3 p {
+    padding: 0px !important;
+    color: #2F2F2F;
+    font-size: 18px !important;
+    text-align: left !important;
+    padding-bottom: 5px !important;
+}
+.modal-4 {
+    padding-top: 50px;
+    border-bottom: 2px solid #000000;
+}
+.modal-5 h1 {
+    font-size: 22px;
+    margin: 0;
+    color: #1A1A1A;
+    font-weight: 600;
+    text-align: left;
+}
+.modal-6 h1 {
+    font-size: 22px;
+    margin: 0;
+    color: #1A1A1A;
+    font-weight: 600;
+    text-align: right;
+}
+
+.modal-7 {
+    border-bottom: 1.5px solid #B1B1B1;
+}
+.modal-8 h1 {
+    font-size: 16px;
+    margin: 0;
+    color: #2F2F2F;
+    font-weight: 500;
+    text-align: left;
+}
+.modal-9 h1 {
+    font-size: 16px;
+    margin: 0;
+    color: #2F2F2F;
+    font-weight: 500;
+    text-align: right;
+}
+
+.modal-10 {
+    border-top: 1px solid #000000;
+    margin-top: 30px;
+    border-bottom: 1px solid #000000;
+    background: #ECECEC;
+}
+.modal-11 h1 {
+    font-size: 16px;
+    margin: 0;
+    color: #2F2F2F;
+    font-weight: 700;
+    text-align: right;
+}
+
+.modal-1 h4 {
+    text-align: center;
+    font-size: 20px;
+    color: #292929;
+    font-weight: 500;
+    padding-top: 30px;
+    margin:0px;
+}
+.p-60{
+    padding: 60px;
+}
+.modal-7 td, .modal-10 td {
+    padding: 0 10px;
+}
