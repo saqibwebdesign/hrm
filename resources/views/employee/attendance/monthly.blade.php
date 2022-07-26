@@ -46,7 +46,7 @@
                                  <p> 
                                     Today Clock-in: 
                                     <strong>
-                                       {{$lastClock->type == '1' ? date('h:i A', strtotime($lastClock->attempt_time)) : '-'}}
+                                       {{!empty($lastClock->type) && $lastClock->type == '1' ? date('h:i A', strtotime($lastClock->attempt_time)) : '-'}}
                                     </strong> 
                                  </p>
                               </div>
