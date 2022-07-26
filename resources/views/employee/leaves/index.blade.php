@@ -49,12 +49,12 @@
                   <div class="col-lg-12">
                     <div class="card-group">
                           @foreach($types as $val)
-                            @php $totalLeaves += $val->available; @endphp
+                            @php $totalLeaves += empty($val->leaves) ? 0 : $val->leaves->available; @endphp
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-12">
-                                         <h1 class="">{{$val->available}}</h1>
+                                         <h1 class="">{{number_format(@$val->leaves->available)}}</h1>
                                          <h6 class="card-subtitle">{{$val->type}}</h6></div>
                                          <div class="col-12">
                                             <div class="progress">
