@@ -117,7 +117,7 @@
                       @php $totalDeduction += $d_fullday; @endphp
                     </tr>
                     <tr class="modal-7">
-                      <td class="modal-8"><h1>Halfday Off</h1></td>
+                      <td class="modal-8"><h1>Halfday Off <small>({{$d_halfday_no}} days)</small></h1></td>
                       <td class="modal-9"><h1>{{number_format($d_halfday)}}</h1></td>
                       @php $totalDeduction += $d_halfday; @endphp
                     </tr>
