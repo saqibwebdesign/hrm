@@ -5,6 +5,7 @@ namespace App\Http\Controllers\employee;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\employee\attendance;
+use App\Models\employee\leaves;
 use App\Models\notification;
 use App\Models\holidays;
 use App\Models\User;
@@ -105,6 +106,9 @@ class attendanceController extends Controller
             'clock_in' => $ad1,
             'clock_out' => $ad2,
         );
+        $data['leave'] = leaves::where('user_id', Auth::id())
+                            ->where('status', '1')
+                            ->get();
 
         return view('employee.attendance.monthly')->with($data);
     }

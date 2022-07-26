@@ -131,6 +131,19 @@ tr.danger td {
     border: none;
     font-weight: 800;
 }
+.ci-event.public.leave {
+    padding: 0px;
+    display: flex;
+    height: 50px;
+    top: 58px;
+    margin-left: 5px;
+    background: #aa00e1;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-weight: 800;
+}
+
 .ci-event.public.clock_in {
     padding: 0px;
     display: flex;

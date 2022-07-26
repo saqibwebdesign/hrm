@@ -5,6 +5,7 @@ namespace App\Http\Controllers\employee;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\employee\attendance;
+use App\Models\employee\leaves;
 use App\Models\holidays;
 use Auth;
 
@@ -29,6 +30,7 @@ class payrollController extends Controller
         $data['d_fullday'] = 0;
         $data['d_fullday_no'] = 0;
         $data['d_halfday'] = 0;
+        $data['d_halfday_no'] = 0;
         $data['d_latecoming'] = 0;
         $data['d_latecoming_no'] = 0;
         $data['d_loan'] = 0;
@@ -38,6 +40,7 @@ class payrollController extends Controller
         $_clockOut = Auth::user()->shift->check_out;
         $_buffer = Auth::user()->shift->grace_time;
         $clockInUpt = date('H:i:s', strtotime("+".$_buffer." minutes", strtotime($_clockIn)));
+        $_clockInUpt = date('H:i:s', strtotime("+150 minutes", strtotime($_clockIn)));
 
         $holiday = holidays::where('date', '>=', date('Y-m-1'))->where('date', '<=', date('Y-m-31'))->get();
         
@@ -56,6 +59,9 @@ class payrollController extends Controller
             'clock_out' => $ad2,
         );
 
+        $leave = leaves::where('user_id', Auth::id())
+                            ->where('status', '1')
+                            ->get();
         for($i=1; $i<=31; $i++){
             if(date('l', strtotime(date('Y-m-'.$i))) !== 'Sunday'){
                 $holi = 0;
@@ -65,27 +71,37 @@ class payrollController extends Controller
                     }
                 }
                 if($holi == 0){
-                    if(strtotime(date('Y-m-'.$i)) <= strtotime(date('Y-m-d'))){
+                    if(strtotime(date('Y-m-'.sprintf("%02d", $i))) <= strtotime(date('Y-m-d'))){
                         $present = 0; $checkIn = '';
                         foreach($employees['clock_in'] as $clIn){
                             if(date('Y-m-d', strtotime($clIn->attempt_time)) == date('Y-m-'.sprintf("%02d", $i))){
                                 $present = 1; $clockIn = date('h:ia', strtotime($clIn->attempt_time));
                                 $cs = date('H:i:s', strtotime($clIn->attempt_time));
-                                if($cs > $clockInUpt){
+                                if($cs > $clockInUpt && $cs < $_clockInUpt){
                                     $data['d_latecoming_no']++;
                                     $data['d_latecoming'] += $data['d_latecoming_no'] > 3 ? $salaryUnit*0.5 : 0;
+                                }elseif($cs > $_clockInUpt){
+                                    $data['d_halfday_no']++;
+                                    $data['d_halfday'] += $salaryUnit*0.5;
                                 }
                             }
                         } 
                         if($present !== 1){
-                            $data['d_fullday'] += $salaryUnit;
-                            $data['d_fullday_no']++;
+                            $l = 0; 
+                            foreach($leave as $le){
+                                if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
+                                    $l = 1;
+                                }
+                            }      
+                            if($l == 0){
+                                $data['d_fullday'] += $salaryUnit;
+                                $data['d_fullday_no']++;
+                            }
                         }
                     }
                 }  
             }
         }
-
         return view('employee.payroll.current')->with($data);
     }
 }

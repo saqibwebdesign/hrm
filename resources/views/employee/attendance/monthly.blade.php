@@ -342,25 +342,53 @@
                         },';
 
                      }else{
-                        echo 'event = {
-                           details: {
-                              title: "Absent",
-                              type: "absent",
-                              public: true
-                           },
-                           start: {
-                              time: "12:00am",
-                              month: '.date('m').',
-                              day: '.$i.',
-                              year: '.date('Y').',
-                           },
-                           end: {
-                              time: "11:59pm",
-                              month: '.date('m').',
-                              day: '.$i.',
-                              year: '.date('Y').',
+                        $l = 0; $l_title = 'Leave';
+                        foreach($leave as $le){
+                           if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
+                              $l = 1; $l_title = empty($le->type) ? 'Leave' : $le->type->type;
                            }
-                        },';
+                        }      
+                        if($l == 0){
+                           echo 'event = {
+                              details: {
+                                 title: "Absent",
+                                 type: "absent",
+                                 public: true
+                              },
+                              start: {
+                                 time: "12:00am",
+                                 month: '.date('m').',
+                                 day: '.$i.',
+                                 year: '.date('Y').',
+                              },
+                              end: {
+                                 time: "11:59pm",
+                                 month: '.date('m').',
+                                 day: '.$i.',
+                                 year: '.date('Y').',
+                              }
+                           },';
+                        }else{
+                           echo 'event = {
+                              details: {
+                                 title: "'.$l_title.'",
+                                 type: "leave",
+                                 public: true
+                              },
+                              start: {
+                                 time: "12:00am",
+                                 month: '.date('m').',
+                                 day: '.$i.',
+                                 year: '.date('Y').',
+                              },
+                              end: {
+                                 time: "11:59pm",
+                                 month: '.date('m').',
+                                 day: '.$i.',
+                                 year: '.date('Y').',
+                              }
+                           },';
+                        }
                      }
                   }
                }  
