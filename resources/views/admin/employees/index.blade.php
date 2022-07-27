@@ -83,7 +83,7 @@
                                                       </button>
                                                       <div class="dropdown-menu dropdown-menu-left" style="">
                                                         <a class="dropdown-item editEmployee" href="javascript:void(0)" data-id="{{base64_encode($val->id)}}">Edit</a>
-                                                        <a class="dropdown-item" href="{{route('admin.attendance.employee', base64_encode($val->id))}}">Attendance</a>
+                                                        <a class="dropdown-item employeeLeaves" href="javascript:void(0)" data-href="{{route('admin.leaves.assign', base64_encode($val->id))}}">Leaves</a>
                                                       </div>
                                                     </div>
                                                 </td>
@@ -108,4 +108,19 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="update-leaves" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 30%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header sec-46">
+                <h5 class="modal-title" id="exampleModalLongTitle">Leaves - {{date('Y')}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="row">
+            </div>                 
+        </div>
+    </div>
+</div>
 @endsection

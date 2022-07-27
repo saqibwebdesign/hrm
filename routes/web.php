@@ -120,6 +120,8 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
                         Route::prefix('leaves')->group(function(){
                             Route::get('/', [adminLeaves::class, 'index'])->name('admin.leaves');
                             Route::get('/status/{type}/{id}', [adminLeaves::class, 'statusChange']);
+                            Route::get('/assign/{id}', [adminLeaves::class, 'assign'])->name('admin.leaves.assign');
+                            Route::post('/update', [adminLeaves::class, 'leaveUpdate'])->name('admin.leaves.assign.update');
                         });
 
                     //Notification

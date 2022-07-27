@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\departments;
 use App\Models\leaveType;
 use App\Models\employee\leaves;
+use App\Models\employee\leaveAssigned;
 use App\Models\notification;
+use App\Models\User;
 
 class leaveController extends Controller
 {
@@ -62,5 +64,42 @@ class leaveController extends Controller
         $noti->save();
 
         return redirect()->back()->with('success', 'Status successfully updated.');
+    }
+
+    public function assign($id){
+        $id = base64_decode($id);
+        $data['user'] = User::find($id);
+        $data['type'] = leaveType::where('status', '1')->get();
+        $data['assigned'] = array();
+        foreach($data['type'] as $val){
+            $la = leaveAssigned::where('user_id', $id)
+                                 ->where('type_id', $val->id)
+                                 ->where('year', date('Y'))
+                                 ->first();
+            $data['assigned'][$val->id] = empty($la->available) ? 0 : $la->available;
+        }
+        return view('admin.leaves.response.update')->with($data);
+    }
+
+    public function leaveUpdate(Request $request){
+        $data = $request->all();
+        $id = base64_decode($data['id']);
+        $type = leaveType::where('status', '1')->get();
+        foreach($type as $val){
+            $la = leaveAssigned::where('user_id', $id)
+                                 ->where('type_id', $val->id)
+                                 ->where('year', date('Y'))
+                                 ->first();
+            if(empty($la->id)){
+                $la = new leaveAssigned;
+                $la->user_id = $id;
+                $la->type_id = $val->id;
+                $la->year = date('Y');
+            }
+            $la->available = $data['leaves_'.$val->id];
+            $la->save();
+        }
+        
+        return redirect()->back()->with('success', 'Leaves successfully updated.');
     }
 }

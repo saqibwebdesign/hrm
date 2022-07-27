@@ -173,6 +173,15 @@ $(document).ready(function(){
                 });
             });
 
+            $(document).on('click', '.employeeLeaves', function(){
+                var href = $(this).data('href');
+                $('#update-leaves').modal('show');
+                $('#update-leaves .row').html('<img src="'+host+'/../public/loader.gif" />');
+                $.get(href, function(data){
+                    $('#update-leaves .row').html(data);
+                });
+            });
+
 
         $(document).on("click", ".browseProfilePhoto", function () {
            

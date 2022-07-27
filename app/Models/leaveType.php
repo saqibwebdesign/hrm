@@ -14,6 +14,6 @@ class leaveType extends Model
 
 
     public function leaves(){
-        return $this->belongsTo(leaveAssigned::class, 'type_id')->where('user_id', Auth::id())->where('year', date('Y'));
+        return $this->belongsTo(leaveAssigned::class, 'id', 'type_id')->where('user_id', Auth::id())->where('year', date('Y'));
     }
 }
