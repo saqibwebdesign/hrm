@@ -9,6 +9,7 @@ use App\Models\employee\bankAccount;
 use App\Models\employee\experience;
 use App\Models\employee\qualification;
 use App\Models\employee\attendance;
+use App\Models\employee\leaveAssigned;
 use App\Models\notification;
 use App\Models\holidays;
 use App\Models\eduLevel;
@@ -32,6 +33,11 @@ class employeeController extends Controller
                                         ->where('date', '<=', date('Y-12-25'))
                                         ->orderBy('date', 'asc')
                                         ->get();
+        $leave = leaveAssigned::where('user_id', Auth::id())
+                                ->where('type_id', '1')
+                                ->where('year', date('Y'))
+                                ->first();
+        $data['annualLeaves'] = empty($leave->id) ? 0 : $leave->available;
         $date = now();
         $data['birthdays'] = DB::select("select * from `tbl_users_info` where month(`dob`) > ".$date->month." or (month(`dob`) = ".$date->month." and day(`dob`) >= ".$date->day.") ORDER BY DATE_FORMAT(`dob`,'%m'), DATE_FORMAT(`dob`,'%d') LIMIT 4");
                                    //dd($data['birthdays']);
