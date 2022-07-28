@@ -76,7 +76,7 @@
                                                 <td><label class="badge badge-primary">{{@$val->department->name}}</label></td>
                                                 <td>
                                                     @php
-                                                        $pd = date('Y-m-d', strtotime("+3 months", strtotime($val->joinning_date)));
+                                                        $pd = date('Y-m-d', strtotime("+3 months", strtotime($val->joining_date)));
                                                     @endphp
                                                     @if($pd < date('Y-m-d'))
                                                         <label class="badge badge-success">Permanent</label>
