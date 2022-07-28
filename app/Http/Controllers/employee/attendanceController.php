@@ -108,6 +108,7 @@ class attendanceController extends Controller
         );
         $data['leave'] = leaves::where('user_id', Auth::id())
                             ->where('status', '1')
+                            ->where('is_halfday', '0')
                             ->get();
 
         return view('employee.attendance.monthly')->with($data);

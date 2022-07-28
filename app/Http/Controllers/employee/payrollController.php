@@ -61,6 +61,11 @@ class payrollController extends Controller
 
         $leave = leaves::where('user_id', Auth::id())
                             ->where('status', '1')
+                            ->where('is_halfday', '0')
+                            ->get();
+        $leave_half = leaves::where('user_id', Auth::id())
+                            ->where('status', '1')
+                            ->where('is_halfday', '1')
                             ->get();
         for($i=1; $i<=31; $i++){
             if(date('l', strtotime(date('Y-m-'.$i))) !== 'Sunday'){
@@ -81,8 +86,16 @@ class payrollController extends Controller
                                     $data['d_latecoming_no']++;
                                     $data['d_latecoming'] += $data['d_latecoming_no'] > 3 ? $salaryUnit*0.5 : 0;
                                 }elseif($cs > $_clockInUpt){
-                                    $data['d_halfday_no']++;
-                                    $data['d_halfday'] += $salaryUnit*0.5;
+                                    $l = 0; 
+                                    foreach($leave_half as $le){
+                                        if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
+                                            $l = 1;
+                                        }
+                                    }      
+                                    if($l == 0){
+                                        $data['d_halfday_no']++;
+                                        $data['d_halfday'] += $salaryUnit*0.5;
+                                    }
                                 }
                             }
                         } 

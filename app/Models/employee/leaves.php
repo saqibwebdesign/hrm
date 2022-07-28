@@ -20,6 +20,7 @@ class leaves extends Model
         'days',
         'reason',
         'status',
+        'is_halfday'
     ];
 
     public function type(){

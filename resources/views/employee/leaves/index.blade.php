@@ -182,6 +182,10 @@
                                      <label for="validationDefault02">Leave Reason</label>
                                      <textarea class="form-control" name="reason" rows="7" required></textarea>
                                     </div>
+                                    <div class="col-lg-12 col-md-6 mb-3">
+                                     <input type="checkbox" name="is_halfday" value="1" id="is_half">
+                                     <label for="is_half">Halfday</label>
+                                    </div>
                                     <div class="col-lg-12 col-md-6 mb-3 text-right">
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                       <button type="submit" class="btn btn-primary">&nbsp;&nbsp;Add&nbsp;&nbsp;</button>
