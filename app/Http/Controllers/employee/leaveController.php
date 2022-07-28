@@ -22,6 +22,10 @@ class leaveController extends Controller
 
     public function add(Request $request){
         $data = $request->all();
+        $pd = date('Y-m-d', strtotime("+3 months", strtotime(Auth::user()->joining_date)));
+        if($pd > date('Y-m-d')){
+            return redirect()->back()->with('error', 'You can`t submit leave due to incompletion of probation period.');
+        }
         $type = leaveType::find($data['type_id']);
         $leaves = leaveAssigned::where('user_id', Auth::id())
                                 ->where('type_id', '1')
