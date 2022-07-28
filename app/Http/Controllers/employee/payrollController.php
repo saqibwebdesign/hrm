@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\employee\attendance;
 use App\Models\employee\leaves;
 use App\Models\holidays;
+use App\Models\payroll;
+use App\Models\payrollDetail;
 use Auth;
 
 class payrollController extends Controller
 {
     public function current(){
+        $p = payroll::where('month', date('F-Y'))->first();
+        if(!empty($p->id)){
+            return redirect(route('employee.payroll.payslip'))->with('error', 'Payslip of current month is generated.');
+        }
         $start = strtotime(date('Y-m-1'));
         $end = strtotime(date('Y-m-31'));
         $count = 0;
@@ -86,13 +92,13 @@ class payrollController extends Controller
                                     $data['d_latecoming_no']++;
                                     $data['d_latecoming'] += $data['d_latecoming_no'] > 3 ? $salaryUnit*0.5 : 0;
                                 }elseif($cs > $_clockInUpt){
-                                    $l = 0; 
+                                    $lh = 0; 
                                     foreach($leave_half as $le){
                                         if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
-                                            $l = 1;
+                                            $lh = 1;
                                         }
                                     }      
-                                    if($l == 0){
+                                    if($lh == 0){
                                         $data['d_halfday_no']++;
                                         $data['d_halfday'] += $salaryUnit*0.5;
                                     }
@@ -116,5 +122,11 @@ class payrollController extends Controller
             }
         }
         return view('employee.payroll.current')->with($data);
+    }
+
+    public function payslip(){
+        $data['payslip'] = payrollDetail::where('user_id', Auth::id())->get();
+
+        return view('employee.payroll.payslip')->with($data);
     }
 }

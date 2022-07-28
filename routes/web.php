@@ -15,6 +15,7 @@ use App\Http\Controllers\admin\holidaysController;
 use App\Http\Controllers\admin\departmentController;
 use App\Http\Controllers\admin\attendanceController as adminAttendance;
 use App\Http\Controllers\admin\leaveController as adminLeaves;
+use App\Http\Controllers\admin\payrollController as adminPayroll;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,7 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
             //Payroll
                 Route::prefix('payroll')->group(function(){
                     Route::get('/current', [payrollController::class, 'current'])->name('employee.payroll.current');
+                    Route::get('/payslip', [payrollController::class, 'payslip'])->name('employee.payroll.payslip');
                 });
 
             //General Settings
@@ -122,6 +124,12 @@ use App\Http\Controllers\admin\leaveController as adminLeaves;
                             Route::get('/status/{type}/{id}', [adminLeaves::class, 'statusChange']);
                             Route::get('/assign/{id}', [adminLeaves::class, 'assign'])->name('admin.leaves.assign');
                             Route::post('/update', [adminLeaves::class, 'leaveUpdate'])->name('admin.leaves.assign.update');
+                        });
+
+                    //Payroll
+                        Route::prefix('payroll')->group(function(){
+                            Route::get('/', [adminPayroll::class, 'index'])->name('admin.payroll');
+                            Route::get('generate', [adminPayroll::class, 'generate'])->name('admin.payroll.generate');
                         });
 
                     //Notification

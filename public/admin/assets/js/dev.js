@@ -182,6 +182,30 @@ $(document).ready(function(){
                 });
             });
 
+        //Payroll
+            $(document).on('click', '.generatePayroll', function(){
+                var href = $(this).data('href');
+                Swal.fire({
+                  title: 'Are you sure?',
+                  text: "Want to generate payroll of current month!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, generate it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = href;
+                    }else{
+                        Swal.close();
+                    }
+                });
+            });
+
+
+
+
+//==========================================================================================
 
         $(document).on("click", ".browseProfilePhoto", function () {
            

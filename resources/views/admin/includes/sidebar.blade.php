@@ -35,6 +35,11 @@
             </a>
         </li>
         <li>
+            <a href="{{route('admin.payroll')}}"  aria-expanded="false">
+              Payroll
+            </a>
+        </li>
+        <li>
             <a href="{{route('admin.notification')}}"  aria-expanded="false">
               Notifications
             </a>
