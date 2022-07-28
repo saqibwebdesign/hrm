@@ -53,6 +53,7 @@
                                             <th scope="col">#</th>
                                             <th scope="col" style="width:40%">Employee</th>
                                             <th scope="col" style="width:20%">Department</th>
+                                            <th scope="col" style="width:20%">Employment</th>
                                             <th scope="col" style="width:10%">Gender</th>
                                             <th scope="col" style="width:10%">Phone</th>
                                             <th scope="col" style="width:10%">Basic Salary</th>
@@ -73,6 +74,16 @@
                                                     </div> 
                                                 </td>
                                                 <td><label class="badge badge-primary">{{@$val->department->name}}</label></td>
+                                                <td>
+                                                    @php
+                                                        $pd = date('Y-m-d', strtotime("+3 months", strtotime($val->joinning_date)));
+                                                    @endphp
+                                                    @if($pd < date('Y-m-d'))
+                                                        <label class="badge badge-success">Permanent</label>
+                                                    @else
+                                                        <label class="badge badge-warning">Probation</label>
+                                                    @endif
+                                                </td>
                                                 <td>{{$val->gender}}</td>
                                                 <td>{{$val->phone}}</td>
                                                 <td>{{number_format($val->basic_salary)}}</td>

@@ -168,11 +168,11 @@
                                     </div>
                                     <div class="col-lg-12 col-md-6 mb-3">
                                      <label for="validationDefault02">From *</label>
-                                      <input type="date" class="form-control" name="from_date" id="from_date" required>
+                                      <input type="date" class="form-control" name="from_date" min="<?php echo date("Y-m-01"); ?>" id="from_date" required>
                                     </div>
                                     <div class="col-lg-12 col-md-6 mb-3">
                                      <label for="validationDefault02">To *</label>
-                                     <input type="date" class="form-control" name="to_date" id="to_date" required>
+                                     <input type="date" class="form-control" name="to_date" min="<?php echo date("Y-m-01"); ?>" id="to_date" required>
                                     </div>
                                     <div class="col-lg-12 col-md-6 mb-3">
                                      <label for="validationDefault02">Number of days</label>
