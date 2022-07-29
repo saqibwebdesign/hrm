@@ -283,3 +283,6 @@ tr.danger td {
 .modal-7 td, .modal-10 td {
     padding: 0 10px;
 }
+.modal-8 a h1 {
+    color: #2700fd;
+}

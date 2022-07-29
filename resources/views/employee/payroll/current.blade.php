@@ -117,12 +117,12 @@
                       @php $totalDeduction += $d_fullday; @endphp
                     </tr>
                     <tr class="modal-7">
-                      <td class="modal-8"><h1>Halfday Off <small>({{$d_halfday_no}} days)</small></h1></td>
+                      <td class="modal-8"><a href="javascript:void(0)"  data-toggle="modal" data-target="#halfday_off"><h1>Halfday Off <small>({{$d_halfday_no}} days)</small></h1></a></td>
                       <td class="modal-9"><h1>{{number_format($d_halfday)}}</h1></td>
                       @php $totalDeduction += $d_halfday; @endphp
                     </tr>
                     <tr class="modal-7">
-                      <td class="modal-8"><h1>Late Comming <small>({{$d_latecoming_no}} days)</small></h1></td>
+                      <td class="modal-8"><a href="javascript:void(0)"  data-toggle="modal" data-target="#late_comming"><h1>Late Comming <small>({{$d_latecoming_no}} days)</small></h1></a></td>
                       <td class="modal-9"><h1>{{number_format($d_latecoming)}}</h1></td>
                       @php $totalDeduction += $d_latecoming; @endphp
                     </tr>
@@ -218,20 +218,54 @@
     <div class="modal-dialog modal-1" style="max-width:30% !important">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 style="padding-top: 0;">Fullday off Dates</h3>
+                <h3 style="padding-top: 0;">Halfday off Dates</h3>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                <div class="row">
                   <div class="col-lg-12">
                       <table class="table table-striped">
-                          @foreach($d_fullday_dates as $key => $val)
+                          @foreach($d_halfday_dates as $key => $val)
                           <tr>
                               <th>{{++$key}}</th>
                               <th>{{date('d-M-Y', strtotime($val))}}</th>
                           </tr>
                           @endforeach
-                          @if(count($d_fullday_dates) == 0)
+                          @if(count($d_halfday_dates) == 0)
+                            <tr>
+                                <th colspan="2">No Dates Found.</th>
+                            </tr>
+                          @else
+                            <tr>
+                                <th colspan="2" class="text-right"><a href="{{route('employee.leaves')}}" class="btn btn-success">Apply For Leave</a></th>
+                            </tr>
+                          @endif
+                      </table>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="late_comming" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-1" style="max-width:30% !important">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="padding-top: 0;">Late Coming Dates</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+               <div class="row">
+                  <div class="col-lg-12">
+                      <table class="table table-striped">
+                          @foreach($d_latecoming_dates as $key => $val)
+                          <tr>
+                              <th>{{++$key}}</th>
+                              <th>{{date('d-M-Y', strtotime($val))}}</th>
+                          </tr>
+                          @endforeach
+                          @if(count($d_latecoming_dates) == 0)
                             <tr>
                                 <th colspan="2">No Dates Found.</th>
                             </tr>
