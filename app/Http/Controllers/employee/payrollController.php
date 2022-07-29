@@ -35,10 +35,13 @@ class payrollController extends Controller
 
         $data['d_fullday'] = 0;
         $data['d_fullday_no'] = 0;
+        $data['d_fullday_dates'] = array();
         $data['d_halfday'] = 0;
         $data['d_halfday_no'] = 0;
+        $data['d_halfday_dates'] = array();
         $data['d_latecoming'] = 0;
         $data['d_latecoming_no'] = 0;
+        $data['d_latecoming_dates'] = array();
         $data['d_loan'] = 0;
 
 
@@ -91,6 +94,7 @@ class payrollController extends Controller
                                 if($cs > $clockInUpt && $cs < $_clockInUpt){
                                     $data['d_latecoming_no']++;
                                     $data['d_latecoming'] += $data['d_latecoming_no'] > 3 ? $salaryUnit*0.5 : 0;
+                                    array_push($data['d_latecoming_dates'], date('Y-m-'.sprintf("%02d", $i)));
                                 }elseif($cs > $_clockInUpt){
                                     $lh = 0; 
                                     foreach($leave_half as $le){
@@ -101,6 +105,7 @@ class payrollController extends Controller
                                     if($lh == 0){
                                         $data['d_halfday_no']++;
                                         $data['d_halfday'] += $salaryUnit*0.5;
+                                        array_push($data['d_halfday_dates'], date('Y-m-'.sprintf("%02d", $i)));
                                     }
                                 }
                             }
@@ -115,6 +120,8 @@ class payrollController extends Controller
                             if($l == 0){
                                 $data['d_fullday'] += $salaryUnit;
                                 $data['d_fullday_no']++;
+                                array_push($data['d_fullday_dates'], date('Y-m-'.sprintf("%02d", $i)));
+
                             }
                         }
                     }
