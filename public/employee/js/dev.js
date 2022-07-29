@@ -36,6 +36,18 @@ $(document).ready(function(){
 	});
 
 
+	//Payslip
+    $(document).on('click', '.viewPayslip', function(){
+        var href = $(this).data('href');
+        $('#payslip-modal').modal('show');
+        $('#payslip-modal .modal-body').html('<img src="'+host+'/../public/loader.gif" />');
+        $.get(href, function(data){
+            $('#payslip-modal .modal-body').html(data);
+        });
+    });
+
+
+
 
 	//Leaves
 	$(document).on('change', '#to_date', function(){

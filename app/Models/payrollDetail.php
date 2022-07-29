@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\payroll;
+use App\Models\User;
 
 class payrollDetail extends Model
 {
@@ -14,5 +15,9 @@ class payrollDetail extends Model
 
     public function payroll(){
         return $this->belongsTo(payroll::class, 'payroll_id');
+    }
+
+    public function emp(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

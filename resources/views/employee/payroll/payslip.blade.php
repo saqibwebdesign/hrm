@@ -45,8 +45,8 @@
                      <td>{{number_format($val->total_deduction)}}/-</td>
                      <td><strong>{{number_format($val->net_salary)}}/-</strong></td>                     
                      <td>
-                        <a  href="#">
-                          <i class="fa fa-eye section-3-8" data-toggle="modal" data-target="#myModal" aria-hidden="true"></i>
+                        <a  href="javascript:void(0)" class="viewPayslip" data-href="{{route('employee.payroll.payslip.detail',base64_encode($val->id))}}">
+                          Payslip
                         </a>
                       </td>
                   </tr>
@@ -64,6 +64,18 @@
   </div>
 </div>
 
+<div id="payslip-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-1" style="max-width:65% !important">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+               
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('addScript')
 <script type="text/javascript">

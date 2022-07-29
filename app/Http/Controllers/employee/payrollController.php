@@ -129,4 +129,11 @@ class payrollController extends Controller
 
         return view('employee.payroll.payslip')->with($data);
     }
+
+    public function payslipDetail($id){
+        $id = base64_decode($id);
+        $data['payslip'] = payrollDetail::find($id);
+
+        return view('employee.payroll.response.slip')->with($data);
+    }
 }
