@@ -169,4 +169,19 @@ class payrollController extends Controller
             return redirect()->back()->with('success', 'Payroll successfully generated.');
         }
     }
+
+    public function details($id){
+        $id = base64_decode($id);
+        $data['payroll'] = payroll::find($id);
+        $data['payslip'] = payrollDetail::where('payroll_id', $id)->get();
+
+        return view('admin.payroll.payslip')->with($data);
+    }
+
+    public function payslip($id){
+        $id = base64_decode($id);
+        $data['payslip'] = payrollDetail::find($id);
+
+        return view('admin.payroll.response.slip')->with($data);
+    }
 }

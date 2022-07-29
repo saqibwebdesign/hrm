@@ -202,6 +202,14 @@ $(document).ready(function(){
                 });
             });
 
+            $(document).on('click', '.viewPayslip', function(){
+                var id = $(this).data('id');
+                $('#payslip-modal').modal('show');
+                $('#payslip-modal .modal-body').html('<img src="'+host+'/../public/loader.gif" />');
+                $.get(host+'/payroll/payslip/'+id, function(data){
+                    $('#payslip-modal .modal-body').html(data);
+                });
+            });
 
 
 

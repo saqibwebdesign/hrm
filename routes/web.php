@@ -57,6 +57,7 @@ use App\Http\Controllers\admin\payrollController as adminPayroll;
                 Route::prefix('payroll')->group(function(){
                     Route::get('/current', [payrollController::class, 'current'])->name('employee.payroll.current');
                     Route::get('/payslip', [payrollController::class, 'payslip'])->name('employee.payroll.payslip');
+                    Route::get('/payslip/detail/{id}', [payrollController::class, 'payslipDetail'])->name('employee.payroll.payslip.detail');
                 });
 
             //General Settings
@@ -130,6 +131,8 @@ use App\Http\Controllers\admin\payrollController as adminPayroll;
                         Route::prefix('payroll')->group(function(){
                             Route::get('/', [adminPayroll::class, 'index'])->name('admin.payroll');
                             Route::get('generate', [adminPayroll::class, 'generate'])->name('admin.payroll.generate');
+                            Route::get('details/{id}', [adminPayroll::class, 'details'])->name('admin.payroll.details');
+                            Route::get('payslip/{id}', [adminPayroll::class, 'payslip']);
                         });
 
                     //Notification
