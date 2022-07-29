@@ -13,19 +13,19 @@
                        <div class="row">
                           <div class="col-lg-4 col-md-6 col-12">
                              <div class="hrm-2">
-                                <h2>25</h2>
+                                <h2>{{$total_employees}}</h2>
                                 <h4>Total Employees</h4>
                              </div>
                           </div>
                           <div class="col-lg-4 col-md-6 col-12">
                              <div class="hrm-2">
-                                <h2>20</h2>
+                                <h2>{{$total_present}}</h2>
                                 <h4>Total Present</h4>
                              </div>
                           </div>
                           <div class="col-lg-4 col-md-6 col-12">
                              <div class="hrm-2">
-                                <h2>3</h2>
+                                <h2>{{$total_absent}}</h2>
                                 <h4>Total Absent</h4>
                              </div>
                           </div>
@@ -33,19 +33,19 @@
                        <div class="row m-t-30 hrm-4">
                           <div class="col-lg-4 col-md-6 col-12">
                              <div class="hrm-2">
-                                <h2>5</h2>
+                                <h2>{{$total_late}}</h2>
                                 <h4>Late Coming</h4>
                              </div>
                           </div>
                           <div class="col-lg-4 col-md-6 col-12">
                              <div class="hrm-2">
-                                <h2>1</h2>
+                                <h2>{{$total_halfday}}</h2>
                                 <h4>Today Half Day</h4>
                              </div>
                           </div>
                           <div class="col-lg-4 col-md-6 col-12">
                              <div class="hrm-2">
-                                <h2>1</h2>
+                                <h2>{{$total_leave}}</h2>
                                 <h4>Today Leave</h4>
                              </div>
                           </div>
