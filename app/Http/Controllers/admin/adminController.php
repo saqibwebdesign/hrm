@@ -22,6 +22,7 @@ class adminController extends Controller
         $data['total_late'] = 0;
         $data['total_halfday'] = 0;
         $data['total_leave'] = 0;
+        $data['departments'] = departments::orderBy('name')->get();
         $h = holidays::where('date', date('Y-m-d'))->first();
         $data['holiday'] = empty($h->id) ? '0' : '1';
         foreach ($employees as $key => $value) {
@@ -66,19 +67,6 @@ class adminController extends Controller
                     $data['total_leave']++;
                 }
             }
-
-
-            $val = array(
-                'id' => $value->id,
-                'profile_img' => $value->profile_img,
-                'name' => $value->firstname.' '.$value->lastname,
-                'designation' => $value->designation,
-                'department' => @$value->department->name,
-                'clock_in' => empty($ad1->id) ? '-' : date('h:i a', strtotime($ad1->attempt_time)),
-                'break' => '-',
-                'clock_out' => ((!empty($ad2->id) && !empty($ad1->id)) && strtotime($ad1->attempt_time) >= strtotime($ad2->attempt_time)) || (empty($ad2->id) || empty($ad1->id)) ? '-' : date('h:i a', strtotime($ad2->attempt_time)),
-                'status' => empty($ad1->id) ? '0' : '1'
-            );
         }
 
         return view('admin.index')->with($data);

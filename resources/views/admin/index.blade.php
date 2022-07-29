@@ -56,40 +56,28 @@
                     <div class="hrm-1">
                       <h2 class="pad-bot-20">Employees Salary</h2>  
                        <div class="row">
+                           @php $tsl = 0; @endphp
+                           @foreach($departments as $val)
+                              @php 
+                                 $sl = 0;
+                                 foreach($val->users as $us){
+                                    $sl += $us->basic_salary;
+                                 }
+                                 $tsl += $sl;
+                              @endphp 
+                              <div class="col-lg-4 col-md-6 col-12 m-b-30">
+                                <div class="hrm-3">
+                                   <h4>{{$val->name}}</h4>
+                                   <h2>{{number_format($sl)}} <small>PKR</small></h2>
+                                </div>
+                              </div>
+                           @endforeach
+                          
                           <div class="col-lg-4 col-md-6 col-12">
-                             <div class="hrm-3">
-                                <h4>Web Developer</h4>
-                                <h2>18960 PKR</h2>
-                             </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6 col-12">
-                             <div class="hrm-3">
-                                <h4>Web Developer</h4>
-                                <h2>18960 PKR</h2>
-                             </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6 col-12">
-                             <div class="hrm-3">
-                                <h4>Web Developer</h4>
-                                <h2>18960 PKR</h2>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="row m-t-30 hrm-4">
-                          <div class="col-lg-4 col-md-6 col-12">
-                             <div class="hrm-3">
-                                <h4>Web Developer</h4>
-                                <h2>18960 PKR</h2>
-                             </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6 col-12">
-                             <div class="hrm-3">
-                                <h4>Web Developer</h4>
-                                <h2>18960 PKR</h2>
-                             </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6 col-12">
-                            
+                            <div class="hrm-3">
+                                   <h4>Total Payroll</h4>
+                                   <h2>{{$tsl}} <small>PKR</small></h2>
+                                </div>
                           </div>
                        </div>
                     </div>
