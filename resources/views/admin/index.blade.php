@@ -6,7 +6,95 @@
 <div class="main_content_iner">
     <div class="container-fluid">
       	<div class="order-section-chart ">
-          	
+          	<div class="row">
+               <div class="col-lg-6 col-md-6 col-12 hrm-5">
+                    <div class="hrm-1">
+                      <h2 class="pad-bot-20">Employees Availability </h2>  
+                       <div class="row">
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-2">
+                                <h2>25</h2>
+                                <h4>Total Employees</h4>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-2">
+                                <h2>20</h2>
+                                <h4>Total Present</h4>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-2">
+                                <h2>3</h2>
+                                <h4>Total Absent</h4>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="row m-t-30 hrm-4">
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-2">
+                                <h2>5</h2>
+                                <h4>Late Coming</h4>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-2">
+                                <h2>1</h2>
+                                <h4>Today Half Day</h4>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-2">
+                                <h2>1</h2>
+                                <h4>Today Leave</h4>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+               </div>
+               <div class="col-lg-6 col-md-6 col-12">
+                    <div class="hrm-1">
+                      <h2 class="pad-bot-20">Employees Salary</h2>  
+                       <div class="row">
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-3">
+                                <h4>Web Developer</h4>
+                                <h2>18960 PKR</h2>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-3">
+                                <h4>Web Developer</h4>
+                                <h2>18960 PKR</h2>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-3">
+                                <h4>Web Developer</h4>
+                                <h2>18960 PKR</h2>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="row m-t-30 hrm-4">
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-3">
+                                <h4>Web Developer</h4>
+                                <h2>18960 PKR</h2>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                             <div class="hrm-3">
+                                <h4>Web Developer</h4>
+                                <h2>18960 PKR</h2>
+                             </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-12">
+                            
+                          </div>
+                       </div>
+                    </div>
+               </div>
+            </div>
         </div>
     </div>
 </div>
