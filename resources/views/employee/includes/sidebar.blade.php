@@ -25,7 +25,7 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">Payroll</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{route('employee.payroll.current')}}">Current Month</a></li>
-                        <li><a href="#">Payslip</a></li>
+                        <li><a href="{{route('employee.payroll.payslip')}}">Payslip</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">General Settings</span></a>
