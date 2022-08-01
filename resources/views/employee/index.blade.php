@@ -69,7 +69,7 @@
                <div class="icon-box1">
                 <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
                 <h2>Annual leaves</h2>
-                               <p>{{$annualLeaves}}</p>
+                               <p>{{($annualLeaves-$availed_leave).' | '.$annualLeaves}}</p>
                </div> 
                </div> 
 

@@ -15,6 +15,13 @@ class leaveController extends Controller
 {
     public function index(){
         $data['leaves'] = leaves::latest()->paginate(25);
+        $data['total_pending'] = leaves::where('status', '0')->count();
+        $data['total_unplanned'] = leaves::where('created_at', '>', 'from_date')->where('status', '0')->count();
+        $data['total_planned'] = leaves::where('created_at', '<', 'from_date')->where('status', '0')->count();
+        $data['today_leave'] = leaves::where('status', '1')
+                                        ->where('from_date', '<=', date('Y-m-d'))
+                                        ->where('to_date', '>=', date('Y-m-d'))
+                                        ->count();
         return view('admin.leaves.index')->with($data);
     }
 

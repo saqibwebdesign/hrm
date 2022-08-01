@@ -17,29 +17,29 @@
                                         <!-- single_quick_activity  -->
                                         <div class="single_quick_activity">
                                             <div class="count_content">
-                                                <h3>8 / 10 </h3>
-                                                <p>Total Present</p>
+                                                <h3>{{$total_pending}}</h3>
+                                                <p>Pending Requests</p>
                                             </div>
                                         </div>
                                         <!-- single_quick_activity  -->
                                         <div class="single_quick_activity">
                                             <div class="count_content">
-                                                <h3>2 <span>Today</span></h3>
+                                                <h3>{{$total_planned}}</h3>
                                                 <p>Planned Leaves</p>
                                             </div>
                                         </div>
                                         <!-- single_quick_activity  -->
                                         <div class="single_quick_activity">
                                             <div class="count_content">
-                                                <h3>0 <span>Today</span></h3>
+                                                <h3>{{$total_unplanned}}</h3>
                                                 <p>Unplanned Leaves</p>
                                             </div>
                                         </div>
                                         <!-- single_quick_activity  -->
                                         <div class="single_quick_activity">
                                             <div class="count_content">
-                                                <h3>10</h3>
-                                                <p>Pending Requests</p>
+                                                <h3>{{$today_leave}}</h3>
+                                                <p>Today`s Leaves</p>
                                             </div>
                                         </div>
                                     </div>

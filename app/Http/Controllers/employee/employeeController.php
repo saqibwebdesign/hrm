@@ -10,6 +10,7 @@ use App\Models\employee\experience;
 use App\Models\employee\qualification;
 use App\Models\employee\attendance;
 use App\Models\employee\leaveAssigned;
+use App\Models\employee\leaves;
 use App\Models\notification;
 use App\Models\holidays;
 use App\Models\eduLevel;
@@ -34,10 +35,18 @@ class employeeController extends Controller
                                         ->orderBy('date', 'asc')
                                         ->get();
         $leave = leaveAssigned::where('user_id', Auth::id())
-                                ->where('type_id', '1')
                                 ->where('year', date('Y'))
-                                ->first();
-        $data['annualLeaves'] = empty($leave->id) ? 0 : $leave->available;
+                                ->sum('available');
+        $data['annualLeaves'] = empty($leave) ? 0 : $leave;
+        $leave_full = leaves::where('user_id', Auth::id())
+                            ->where('status', '1')
+                            ->where('is_halfday', '0')
+                            ->count();
+        $leave_half = leaves::where('user_id', Auth::id())
+                            ->where('status', '1')
+                            ->where('is_halfday', '1')
+                            ->count();
+        $data['availed_leave'] = $leave_full+($leave_half*0.5);
         $date = now();
         $data['birthdays'] = DB::select("select * from `tbl_users_info` where month(`dob`) > ".$date->month." or (month(`dob`) = ".$date->month." and day(`dob`) >= ".$date->day.") ORDER BY DATE_FORMAT(`dob`,'%m'), DATE_FORMAT(`dob`,'%d') LIMIT 4");
                                    //dd($data['birthdays']);
