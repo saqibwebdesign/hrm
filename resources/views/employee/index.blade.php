@@ -51,7 +51,7 @@
                <div class="icon-box1">
                <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
                <h2>Current Salary</h2>
-                               <p>{{Auth::user()->basic_salary == 0 ? 'Un-Paid' : number_format(Auth::user()->basic_salary)}}</p>
+                    <p>{{Auth::user()->basic_salary == 0 ? 'Un-Paid' : number_format(Auth::user()->basic_salary)}}</p>
                </div> 
                </div> 
 
@@ -60,7 +60,7 @@
                <div class="icon-box1">
                <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
                 <h2>Holidays</h2>
-                               <p>{{count($holidays)}}</p>
+                    <p>{{count($holidays)}}</p>
                </div> 
                </div> 
 
@@ -69,7 +69,7 @@
                <div class="icon-box1">
                 <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
                 <h2>Annual leaves</h2>
-                               <p>{{($annualLeaves-$availed_leave).' | '.$annualLeaves}}</p>
+                    <p>{{($annualLeaves-$availed_leave).' | '.$annualLeaves}}</p>
                </div> 
                </div> 
 
@@ -79,7 +79,7 @@
                <div class="icon-box1">
                <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
                  <h2>Awards</h2>
-                               <p>Gold</p>
+                    <p>Gold</p>
                </div> 
                </div> 
 
@@ -126,7 +126,7 @@
                @endif
            </div>
             <div class="col-lg-4 col-md-12 col-12 section-1-20 right-sidebar2">                        
-                <div class="accordion sidebar-accord">
+                <!-- <div class="accordion sidebar-accord">
                     <div class="accordion-item">
                       <button id="accordion-button-1" aria-expanded="false">
                         <span class="accordion-title">Recent Projects</span>
@@ -212,7 +212,48 @@
                           </div>  
                       </div>
                     </div>
-                </div>
+                </div> -->
+                @if(Auth::user()->basic_salary != 0)
+                    <div class="accordion sidebar-accord">
+                        <div class="accordion-item">
+                          <button id="accordion-button-1" aria-expanded="true">
+                            <span class="accordion-title">
+                                <label class="badge badge-primary"><i class="fa fa-dollar"></i></label>&nbsp;&nbsp;Salary Snapshot
+                            </span>
+                            <a href="{{route('employee.payroll.current')}}" class="btn btn-info btn-sm salary_snapshot_details">View Details</a>
+                          </button>
+                          <div class="accordion-content no-scroll">
+                              <div class="row section-1-21 projects-head">
+                                 <div class="col-lg-12 col-md-12 col-8">
+                                    <div class="salary_snapshot">
+                                        <ul>
+                                            <li>
+                                                <label>>&nbsp;Gross Salary</label>
+                                                <label>{{number_format(Auth::user()->basic_salary)}}</label>  
+                                            </li>
+                                            <li class="line_break"></li>     
+                                            <li class="text-success">
+                                                <label>>&nbsp;Addition</label>
+                                                <label>{{number_format($ss_addition)}}</label> 
+                                            </li>
+                                            <li class="line_break"></li>
+                                            <li class="text-danger">
+                                                <label>>&nbsp;Deduction</label>
+                                                <label>{{number_format($ss_deduction)}}</label>        
+                                            </li>
+                                            <li class="line_break"></li>
+                                            <li class="text-bold text-black">
+                                                <label>Net Payable</label>
+                                                <label>{{number_format((Auth::user()->basic_salary+$ss_addition)-$ss_deduction)}}</label>         
+                                            </li>
+                                        </ul>
+                                    </div>   
+                                 </div>
+                              </div>  
+                          </div>
+                        </div>
+                    </div>
+                @endif
                 <div class="accordion">
                     <div class="accordion-item">
                       <button id="accordion-button-1" aria-expanded="false">

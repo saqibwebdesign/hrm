@@ -286,3 +286,34 @@ tr.danger td {
 .modal-8 a h1 {
     color: #2700fd;
 }
+.salary_snapshot ul li {
+    list-style: none;
+    padding: 10px 5px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    height: 29px;
+}
+.salary_snapshot ul {
+    padding: 0;
+}
+.text-bold{
+    font-weight: bold;
+}
+.text-black{
+    color: #263871;
+}
+.salary_snapshot ul .line_break {
+    border-bottom: 1px solid #e6e6e6;
+    height: 0 !important;
+}
+.salary_snapshot .text-center {
+    padding-bottom: 12px;
+}
+.salary_snapshot_details {
+    float: right;
+    margin-top: -34px;
+}
+.no-scroll {
+    overflow-y: hidden !important;
+}
