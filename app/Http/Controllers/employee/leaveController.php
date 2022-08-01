@@ -14,8 +14,9 @@ class leaveController extends Controller
     
     public function index(){
         $data['types'] = leaveType::where('status', '1')->get();
-        $data['leaves'] = leaves::where('user_id', Auth::id())->latest()->get();
-        $data['approved'] = leaves::where('user_id', Auth::id())->where('status', '1')->count();
+        $data['leaves'] = leaves::where('user_id', Auth::id())->whereYear('created_at', date('Y'))->latest()->get();
+        $data['approved'] = leaves::where('user_id', Auth::id())->whereYear('created_at', date('Y'))->where('is_halfday', '0')->where('status', '1')->count();
+        $data['_approved'] = leaves::where('user_id', Auth::id())->whereYear('created_at', date('Y'))->where('is_halfday', '1')->where('status', '1')->count();
         
         return view('employee.leaves.index')->with($data);
     }

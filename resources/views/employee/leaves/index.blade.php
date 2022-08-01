@@ -70,7 +70,7 @@
                               <div class="card-body">
                                  <div class="row">
                                     <div class="col-12">
-                                       <h1 class="">{{$totalLeaves - $approved}}</h1>
+                                       <h1 class="">{{$totalLeaves - ($approved+($_approved*0.5))}}</h1>
                                        <h6 class="card-subtitle">Remaining Leaves</h6></div>
                                        <div class="col-12">
                                           <div class="progress">
