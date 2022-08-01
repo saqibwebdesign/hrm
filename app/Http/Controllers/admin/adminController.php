@@ -38,9 +38,9 @@ class adminController extends Controller
                                 ->first();
             $data['total_absent'] += empty($ad1->id) ? 1 : 0;
 
-            $data['clockIn'] = Auth::user()->shift->check_in;
-            $data['clockOut'] = Auth::user()->shift->check_out;
-            $buffer = Auth::user()->shift->grace_time;
+            $data['clockIn'] = $value->shift->check_in;
+            $data['clockOut'] = $value->shift->check_out;
+            $buffer = $value->shift->grace_time;
             $data['clockInUpt'] = date('H:i:s', strtotime("+".$buffer." minutes", strtotime($data['clockIn'])));
             $halfday = date('H:i:s', strtotime("+150 minutes", strtotime($data['clockIn'])));
 
