@@ -78,50 +78,54 @@ class payrollController extends Controller
                             ->get();
         for($i=1; $i<=31; $i++){
             if(date('l', strtotime(date('Y-m-'.$i))) !== 'Sunday'){
-                $holi = 0;
-                foreach($holiday as $hol){
-                    if($hol->date == date('Y-m-'.sprintf("%02d", $i))){
-                        $holi = $hol->title;
+                if(date('Y-m-'.sprintf("%02d", $i)) == date('Y-m-d') && $clockInUpt > date('H:i:s')){
+
+                }else{
+                    $holi = 0;
+                    foreach($holiday as $hol){
+                        if($hol->date == date('Y-m-'.sprintf("%02d", $i))){
+                            $holi = $hol->title;
+                        }
                     }
-                }
-                if($holi == 0){
-                    if(strtotime(date('Y-m-'.sprintf("%02d", $i))) <= strtotime(date('Y-m-d'))){
-                        $present = 0; $checkIn = '';
-                        foreach($employees['clock_in'] as $clIn){
-                            if(date('Y-m-d', strtotime($clIn->attempt_time)) == date('Y-m-'.sprintf("%02d", $i))){
-                                $present = 1; $clockIn = date('h:ia', strtotime($clIn->attempt_time));
-                                $cs = date('H:i:s', strtotime($clIn->attempt_time));
-                                if($cs > $clockInUpt && $cs < $_clockInUpt){
-                                    $data['d_latecoming_no']++;
-                                    $data['d_latecoming'] += $data['d_latecoming_no'] > 3 ? $salaryUnit*0.5 : 0;
-                                    array_push($data['d_latecoming_dates'], date('Y-m-'.sprintf("%02d", $i)));
-                                }elseif($cs > $_clockInUpt){
-                                    $lh = 0; 
-                                    foreach($leave_half as $le){
-                                        if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
-                                            $lh = 1;
+                    if($holi == 0){
+                        if(strtotime(date('Y-m-'.sprintf("%02d", $i))) <= strtotime(date('Y-m-d'))){
+                            $present = 0; $checkIn = '';
+                            foreach($employees['clock_in'] as $clIn){
+                                if(date('Y-m-d', strtotime($clIn->attempt_time)) == date('Y-m-'.sprintf("%02d", $i))){
+                                    $present = 1; $clockIn = date('h:ia', strtotime($clIn->attempt_time));
+                                    $cs = date('H:i:s', strtotime($clIn->attempt_time));
+                                    if($cs > $clockInUpt && $cs < $_clockInUpt){
+                                        $data['d_latecoming_no']++;
+                                        $data['d_latecoming'] += $data['d_latecoming_no'] > 3 ? $salaryUnit*0.5 : 0;
+                                        array_push($data['d_latecoming_dates'], date('Y-m-'.sprintf("%02d", $i)));
+                                    }elseif($cs > $_clockInUpt){
+                                        $lh = 0; 
+                                        foreach($leave_half as $le){
+                                            if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
+                                                $lh = 1;
+                                            }
+                                        }      
+                                        if($lh == 0){
+                                            $data['d_halfday_no']++;
+                                            $data['d_halfday'] += $salaryUnit*0.5;
+                                            array_push($data['d_halfday_dates'], date('Y-m-'.sprintf("%02d", $i)));
                                         }
-                                    }      
-                                    if($lh == 0){
-                                        $data['d_halfday_no']++;
-                                        $data['d_halfday'] += $salaryUnit*0.5;
-                                        array_push($data['d_halfday_dates'], date('Y-m-'.sprintf("%02d", $i)));
                                     }
                                 }
-                            }
-                        } 
-                        if($present !== 1){
-                            $l = 0; 
-                            foreach($leave as $le){
-                                if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
-                                    $l = 1;
-                                }
-                            }      
-                            if($l == 0){
-                                $data['d_fullday'] += $salaryUnit;
-                                $data['d_fullday_no']++;
-                                array_push($data['d_fullday_dates'], date('Y-m-'.sprintf("%02d", $i)));
+                            } 
+                            if($present !== 1){
+                                $l = 0; 
+                                foreach($leave as $le){
+                                    if($le->from_date <= date('Y-m-'.sprintf("%02d", $i)) && $le->to_date >= date('Y-m-'.sprintf("%02d", $i))){
+                                        $l = 1;
+                                    }
+                                }      
+                                if($l == 0){
+                                    $data['d_fullday'] += $salaryUnit;
+                                    $data['d_fullday_no']++;
+                                    array_push($data['d_fullday_dates'], date('Y-m-'.sprintf("%02d", $i)));
 
+                                }
                             }
                         }
                     }

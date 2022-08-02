@@ -265,6 +265,8 @@
          for($i=1; $i<=31; $i++){
              if(date('l', strtotime(date('Y-m-'.$i))) == 'Sunday'){
                  
+            }elseif(date('Y-m-'.sprintf("%02d", $i)) == date('Y-m-d') && $clockInUpt > date('H:i:s')){
+
             }else{
                $holi = 0;
                foreach($holiday as $hol){

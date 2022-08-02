@@ -24,23 +24,6 @@
             <div class="row">
               <div class="col-lg-2 col-md-6 col-3"> 
                 <div class="modal-2">
-                  <h3>Date of joining :</h3>
-                  <h3>Pay Period :</h3>
-                  <h3>Working Days  :</h3>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-6 col-3"> 
-                <div class="modal-3">
-                  <p>{{date('d-M-Y', strtotime(Auth::user()->joining_date))}}</p>
-                  <p>{{date('F Y')}}</p>
-                  <p>
-                    {{$workingDays}}
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-3"></div>
-              <div class="col-lg-2 col-md-6 col-3"> 
-                <div class="modal-2">
                   <h3>Employee Name :</h3>
                   <h3>Designation :</h3>
                   <h3>Department :</h3>
@@ -48,9 +31,26 @@
               </div>
               <div class="col-lg-3 col-md-6 col-3"> 
                 <div class="modal-3">
-                  <p>{{Auth::user()->firstname.' '.Auth::user()->lastname}}</p>
-                  <p>{{Auth::user()->designation}}</p>
-                  <p>{{Auth::user()->department->name}}</p>
+                  <p class=" text-left">{{Auth::user()->firstname.' '.Auth::user()->lastname}}</p>
+                  <p class=" text-left">{{Auth::user()->designation}}</p>
+                  <p class=" text-left">{{Auth::user()->department->name}}</p>
+                </div>
+              </div>
+              <div class="col-lg-3"></div>
+              <div class="col-lg-2 col-md-6 col-3"> 
+                <div class="modal-2">
+                  <h3>Date of joining :</h3>
+                  <h3>Pay Period :</h3>
+                  <!-- <h3>Working Days  :</h3> -->
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-6 col-3"> 
+                <div class="modal-3">
+                  <p class=" text-right">{{date('d-M-Y', strtotime(Auth::user()->joining_date))}}</p>
+                  <p class=" text-right">{{date('F Y')}}</p>
+                  <!-- <p>
+                    {{$workingDays}}
+                  </p> -->
                 </div>
               </div>
             </div>

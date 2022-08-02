@@ -215,7 +215,7 @@ tr.danger td {
     padding: 0px !important;
     color: #2F2F2F;
     font-size: 18px !important;
-    text-align: left !important;
+    text-align: left;
     padding-bottom: 5px !important;
 }
 .modal-4 {
