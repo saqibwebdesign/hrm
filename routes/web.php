@@ -16,6 +16,7 @@ use App\Http\Controllers\admin\departmentController;
 use App\Http\Controllers\admin\attendanceController as adminAttendance;
 use App\Http\Controllers\admin\leaveController as adminLeaves;
 use App\Http\Controllers\admin\payrollController as adminPayroll;
+use App\Http\Controllers\employee\sales\projectController as salesProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,15 @@ use App\Http\Controllers\admin\payrollController as adminPayroll;
                     Route::get('/current', [payrollController::class, 'current'])->name('employee.payroll.current');
                     Route::get('/payslip', [payrollController::class, 'payslip'])->name('employee.payroll.payslip');
                     Route::get('/payslip/detail/{id}', [payrollController::class, 'payslipDetail'])->name('employee.payroll.payslip.detail');
+                });
+
+            //Sales
+                Route::prefix('sales')->namespace('sales')->group(function(){
+                    //Project
+                        Route::prefix('project')->group(function(){
+                            Route::get('/', [salesProjectController::class, 'index'])->name('employee.sales.project');
+                            Route::get('create', [salesProjectController::class, 'create'])->name('employee.sales.project.create');
+                        });
                 });
 
             //General Settings

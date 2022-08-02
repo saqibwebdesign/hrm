@@ -32,8 +32,13 @@
                 @if(Auth::user()->role_id == '1')
                     <li class="nav-small-cap">Sales</li>
                     <li> 
-                        <a class="waves-effect waves-dark" href="{{route('employee.leaves')}}" aria-expanded="false">
+                        <a class="waves-effect waves-dark" href="{{route('employee.sales.project')}}" aria-expanded="false">
                             <span class="hide-menu">Projects</span>
+                        </a>
+                    </li>
+                    <li> 
+                        <a class="waves-effect waves-dark" href="{{route('employee.sales.project.create')}}" aria-expanded="false">
+                            <span class="hide-menu">Create Projects</span>
                         </a>
                     </li>
                 @endif
