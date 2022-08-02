@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'Today`s Attendance')
+@section('title', empty($search_date) ? 'Today`s Attendance' : date('d-M-Y', strtotime($search_date)).' - Attendance')
 
 @section('content')
 <style type="text/css">
@@ -29,9 +29,25 @@
 	            <div class="col-lg-12 col-md-12 col-12 sec-45">
 	                <div class="white_box">
 	                   <div class="QA_section">
-                            
+                            <form method="post">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <input type="date" name="date" class="form-control" value="{{empty($search_date) ? '' : $search_date}}" max="{{date('Y-m-d')}}" required>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <button type="submit" class="btn btn-success">Result</button>
+                                        @if(!empty($search_date))
+                                            <a href="{{route('admin.attendance.today')}}" class="btn btn-default">
+                                                <i class="fa fa-refresh"></i> reset
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </form>
+                            <hr>
                             <div class="QA_table restaurant-section">
-                                <table class="table table-striped lms_table_active ">
+                                <table class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th scope="col" style="width:5%">#</th>

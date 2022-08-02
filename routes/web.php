@@ -108,6 +108,7 @@ use App\Http\Controllers\admin\payrollController as adminPayroll;
                         Route::prefix('attendance')->group(function(){
                             Route::get('employee/{id}', [adminAttendance::class, 'employee'])->name('admin.attendance.employee');
                             Route::get('today', [adminAttendance::class, 'today'])->name('admin.attendance.today');
+                            Route::post('today', [adminAttendance::class, 'todayFilter'])->name('admin.attendance.today');
                             Route::get('sheet', [adminAttendance::class, 'sheet'])->name('admin.attendance.sheet');
 
                             Route::prefix('shift')->group(function(){

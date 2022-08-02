@@ -52,6 +52,42 @@ class attendanceController extends Controller
         return view('admin.attendance.today')->with($data);
     }
 
+    public function todayFilter(Request $request){
+        $req = $request->all();
+        $employees = User::orderBy('id')->get();
+        $data['search_date'] = $req['date'];
+        $data['employees'] = array();
+        $h = holidays::where('date', date('Y-m-d', strtotime($req['date'])))->first();
+        $data['holiday'] = empty($h->id) ? '0' : '1';
+        foreach ($employees as $key => $value) {
+            $ad1 = attendance::whereDate('attempt_time', '=', date('Y-m-d', strtotime($req['date'])))
+                                ->where('user_id', $value->id)
+                                ->where('type', '1')
+                                ->orderBy('attempt_time', 'desc')
+                                ->first();
+            $ad2 = attendance::whereDate('attempt_time', '=', date('Y-m-d', strtotime($req['date'])))
+                                ->where('user_id', $value->id)
+                                ->where('type', '2')
+                                ->orderBy('attempt_time', 'desc')
+                                ->first();
+            $val = array(
+                'id' => $value->id,
+                'profile_img' => $value->profile_img,
+                'name' => $value->firstname.' '.$value->lastname,
+                'designation' => $value->designation,
+                'department' => @$value->department->name,
+                'clock_in' => empty($ad1->id) ? '-' : date('h:i a', strtotime($ad1->attempt_time)),
+                'break' => '-',
+                'clock_out' => ((!empty($ad2->id) && !empty($ad1->id)) && strtotime($ad1->attempt_time) >= strtotime($ad2->attempt_time)) || (empty($ad2->id) || empty($ad1->id)) ? '-' : date('h:i a', strtotime($ad2->attempt_time)),
+                'status' => empty($ad1->id) ? '0' : '1'
+            );
+
+            array_push($data['employees'], $val);
+        }
+
+        return view('admin.attendance.today')->with($data);
+    }
+
     public function sheet(){
         $employees = User::orderBy('id')->get();
         $data['employees'] = array();
