@@ -6,6 +6,7 @@
                     <span class="hide-menu">Dashboard </span>
                 </a>
                 </li>
+                <li class="nav-small-cap">Human Resource</li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">Organization</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="#">Announcement</a></li>
@@ -28,7 +29,16 @@
                         <li><a href="{{route('employee.payroll.payslip')}}">Payslip</a></li>
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">General Settings</span></a>
+                @if(Auth::user()->role_id == '1')
+                    <li class="nav-small-cap">Sales</li>
+                    <li> 
+                        <a class="waves-effect waves-dark" href="{{route('employee.leaves')}}" aria-expanded="false">
+                            <span class="hide-menu">Projects</span>
+                        </a>
+                    </li>
+                @endif
+                <li class="nav-small-cap">General</li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">Settings</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{route('employee.settings.profile')}}">Basic Information</a></li>
                         <li><a href="{{route('employee.settings.social')}}">Social links</a></li>

@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\departments;
 use App\Models\shifts;
+use App\Models\role;
 
 class User extends Authenticatable
 {
@@ -33,6 +34,7 @@ class User extends Authenticatable
         $c->country = $data['country'];
         $c->postal_code = $data['postal_code'];
         $c->department_id = $data['department_id'];
+        $c->role_id = $data['role_id'];
         $c->shift_id = $data['shift_id'];
         $c->designation = $data['designation'];
         $c->basic_salary = $data['basic_salary'];
@@ -58,6 +60,7 @@ class User extends Authenticatable
         $c->country = $data['country'];
         $c->postal_code = $data['postal_code'];
         $c->department_id = $data['department_id'];
+        $c->role_id = $data['role_id'];
         $c->shift_id = $data['shift_id'];
         $c->designation = $data['designation'];
         $c->basic_salary = $data['basic_salary'];
@@ -109,5 +112,8 @@ class User extends Authenticatable
     }
     public function shift(){
         return $this->belongsTo(shifts::class, 'shift_id');
+    }
+    public function role(){
+        return $this->belongsTo(role::class, 'role_id');
     }
 }

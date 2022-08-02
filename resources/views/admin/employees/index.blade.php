@@ -53,7 +53,8 @@
                                             <th scope="col">#</th>
                                             <th scope="col" style="width:40%">Employee</th>
                                             <th scope="col" style="width:20%">Department</th>
-                                            <th scope="col" style="width:20%">Employment</th>
+                                            <th scope="col" style="width:10%">Employment</th>
+                                            <th scope="col" style="width:10%">User Role</th>
                                             <th scope="col" style="width:10%">Gender</th>
                                             <th scope="col" style="width:10%">Phone</th>
                                             <th scope="col" style="width:10%">Basic Salary</th>
@@ -84,6 +85,7 @@
                                                         <label class="badge badge-warning">Probation</label>
                                                     @endif
                                                 </td>
+                                                <td><label class="badge badge-info">{{@$val->role->role}}</label></td>
                                                 <td>{{$val->gender}}</td>
                                                 <td>{{$val->phone}}</td>
                                                 <td>{{number_format($val->basic_salary)}}</td>

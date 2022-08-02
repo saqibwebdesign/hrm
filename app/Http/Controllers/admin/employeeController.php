@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\departments;
 use App\Models\shifts;
+use App\Models\role;
 
 class employeeController extends Controller
 {
@@ -25,6 +26,7 @@ class employeeController extends Controller
     function employeeAdd(){
         $data['departs'] = departments::orderBy('name')->get();
         $data['shifts'] = shifts::where('status', '1')->orderBy('title')->get();
+        $data['roles'] = role::orderBy('role')->get();
 
         return view('admin.employees.add')->with($data);
     }
@@ -48,6 +50,7 @@ class employeeController extends Controller
         $data['data'] = User::find($id);
         $data['departs'] = departments::orderBy('name')->get();
         $data['shifts'] = shifts::where('status', '1')->orderBy('title')->get();
+        $data['roles'] = role::orderBy('role')->get();
 
         return view('admin.employees.edit')->with($data);
     }

@@ -179,6 +179,17 @@
                                                 <input type="date" name="joining_date" class="form-control" required>
                                             </div>
                                         </div>
+                                        <div class="col-lg-3">
+                                            <div class="input-form res-section-1">
+                                                <label for="inputCurrentPassword"  class="no-margin pad-bot-10">User Role <span>*</span></label>
+                                                <select name="role_id" class="form-control" required>
+                                                    <option value=""></option>
+                                                    @foreach($roles as $val)
+                                                        <option value="{{$val->id}}">{{$val->role}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="row">
