@@ -56,16 +56,20 @@ class attendanceController extends Controller
         $req = $request->all();
         $employees = User::orderBy('id')->get();
         $data['search_date'] = $req['date'];
+        $checkin_date = $req['date'];
         $data['employees'] = array();
         $h = holidays::where('date', date('Y-m-d', strtotime($req['date'])))->first();
         $data['holiday'] = empty($h->id) ? '0' : '1';
         foreach ($employees as $key => $value) {
-            $ad1 = attendance::whereDate('attempt_time', '=', date('Y-m-d', strtotime($req['date'])))
+            $_clockIn = $value->shift->check_in;
+            $_clockOut = $value->shift->check_out;
+            $checkout_date = $_clockIn > $_clockOut ? date('Y-m-d', strtotime('+1 day', strtotime($req['date']))) : $req['date'];
+            $ad1 = attendance::whereDate('attempt_time', '=', date('Y-m-d', strtotime($checkin_date)))
                                 ->where('user_id', $value->id)
                                 ->where('type', '1')
                                 ->orderBy('attempt_time', 'desc')
                                 ->first();
-            $ad2 = attendance::whereDate('attempt_time', '=', date('Y-m-d', strtotime($req['date'])))
+            $ad2 = attendance::whereDate('attempt_time', '=', date('Y-m-d', strtotime($checkout_date)))
                                 ->where('user_id', $value->id)
                                 ->where('type', '2')
                                 ->orderBy('attempt_time', 'desc')
