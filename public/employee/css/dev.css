@@ -322,3 +322,67 @@ li.nav-small-cap {
     padding: 5px 5px !important;
     border-bottom: 1px solid #777;
 }
+.card-heading h2 {
+    padding: 0;
+    margin-bottom: 22px;
+}
+label.input-group-text {
+    position: absolute;
+    top: 14px !important;
+    left: -37px !important;
+    height: 42px;
+    background: #e6e6e6;
+    padding: 0px 25px;
+}
+#inputGroupFile {
+    min-height: 42px !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 162px !important;
+}
+.btn-submit {
+    float: right;
+    background: #FEC200;
+    padding: 10px 35px;
+}
+.section-divider {
+    padding: 10px;
+}
+.project_block {
+    float: left;
+    width: 100%;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    position: relative;
+}
+.project_block .project-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.project_block .project-head h4 {
+    color: #000;
+    font-size: 17px;
+    font-weight: 600;
+}
+.project-body p {
+    font-size: 14px;
+}
+.cut-text-6{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+.project_block .project-body .item label {
+    font-size: 13px;
+    color: #000;
+    line-height: 7px;
+    font-weight: 500;
+}
+.project_block .project-body .item p {
+    font-size: 16px;
+}
