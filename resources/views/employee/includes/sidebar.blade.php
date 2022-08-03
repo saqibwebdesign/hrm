@@ -36,11 +36,6 @@
                             <span class="hide-menu">Projects</span>
                         </a>
                     </li>
-                    <li> 
-                        <a class="waves-effect waves-dark" href="{{route('employee.sales.project.create')}}" aria-expanded="false">
-                            <span class="hide-menu">Create Projects</span>
-                        </a>
-                    </li>
                 @endif
                 <li class="nav-small-cap">General</li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">Settings</span></a>
