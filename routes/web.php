@@ -67,6 +67,7 @@ use App\Http\Controllers\employee\sales\projectController as salesProjectControl
                         Route::prefix('project')->group(function(){
                             Route::get('/', [salesProjectController::class, 'index'])->name('employee.sales.project');
                             Route::get('create', [salesProjectController::class, 'create'])->name('employee.sales.project.create');
+                            Route::post('create', [salesProjectController::class, 'createSubmit']);
                         });
                 });
 

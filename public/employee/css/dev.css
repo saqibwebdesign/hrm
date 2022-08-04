@@ -374,8 +374,11 @@ label.input-group-text {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
+    height: 145px;
+    font-size: 14px !important;
+    margin-bottom: 10px;
 }
 .project_block .project-body .item label {
     font-size: 13px;
@@ -385,4 +388,7 @@ label.input-group-text {
 }
 .project_block .project-body .item p {
     font-size: 16px;
+}
+label.label-tag1 span {
+    color: red;
 }

@@ -48,176 +48,84 @@
             <div class="icon-box1">
               <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
               <h2>Total Projects</h2>
-              <p>5</p>
+              <p>{{$total_projects}}</p>
             </div> 
           </div> 
           <div class="col-md-3 col-lg-3 col-sm-6 col-6">
             <div class="icon-box1">
               <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
               <h2>In-Progress</h2>
-              <p>5</p>
+              <p>{{$total_inprogress}}</p>
             </div> 
           </div> 
           <div class="col-md-3 col-lg-3 col-sm-6 col-6">
             <div class="icon-box1">
               <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
               <h2>Pending Projects</h2>
-              <p>5</p>
+              <p>{{$total_pending}}</p>
             </div> 
           </div> 
           <div class="col-md-3 col-lg-3 col-sm-6 col-6">
             <div class="icon-box1">
               <img src="{{URL::To('/public/employee')}}/assets/image/image6.png"  width="100%" /> 
               <h2>Completed Projects</h2>
-              <p>5</p>
+              <p>{{$total_completed}}</p>
             </div> 
           </div> 
         </div>
         <div class="section-divider"><hr></div>
         <div  class="row m-t-20 m-b-20">
-          <div class="col-md-3 col-lg-3 col-sm-6 col-6">
-            <div class="project_block">
-              <div class="project-head">
-                <div>
-                  <h4>Website Design</h4>
-                  <label class="badge badge-success">Completed</label>
-                </div>
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="fa fa-ellipsis-v"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-body">
-                <p class="cut-text-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo odio tortor nunc. Id vulputate cursus vitae, blandit diam. Bibendum hac bibendum dolor, ornare sed ac tortor, proin vitae. Lobortis ut diam iaculis lectus sit dolor sit amet.</p>
-                <div class="item">
-                  <label>Category</label>
-                  <p>Website Designing</p>
-                </div>
-                <div class="item">
-                  <label>Deadline</label>
-                  <p>08-Aug-2022</p>
-                </div>
-                <div class="item">
-                  <label>Price</label>
-                  <p>$500</p>
-                </div>
-              </div>
-            </div>
-          </div> 
+          @foreach($projects as $val)
+            <div class="col-md-3 col-lg-3 col-sm-6 col-6">
+              <div class="project_block">
+                <div class="project-head">
+                  <div>
+                    <h4>{{$val->project_name}}</h4>
+                    @switch($val->status)
+                      @case('0')
+                        <label class="badge badge-info">Pending</label>
+                        @break
 
-          <div class="col-md-3 col-lg-3 col-sm-6 col-6">
-            <div class="project_block">
-              <div class="project-head">
-                <div>
-                  <h4>Website Design</h4>
-                  <label class="badge badge-success">Completed</label>
-                </div>
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="fa fa-ellipsis-v"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-body">
-                <p class="cut-text-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo odio tortor nunc. Id vulputate cursus vitae, blandit diam. Bibendum hac bibendum dolor, ornare sed ac tortor, proin vitae. Lobortis ut diam iaculis lectus sit dolor sit amet.</p>
-                <div class="item">
-                  <label>Category</label>
-                  <p>Website Designing</p>
-                </div>
-                <div class="item">
-                  <label>Deadline</label>
-                  <p>08-Aug-2022</p>
-                </div>
-                <div class="item">
-                  <label>Price</label>
-                  <p>$500</p>
-                </div>
-              </div>
-            </div>
-          </div> 
+                      @case('1')
+                        <label class="badge badge-primary">In-Progress</label>
+                        @break
 
-          <div class="col-md-3 col-lg-3 col-sm-6 col-6">
-            <div class="project_block">
-              <div class="project-head">
-                <div>
-                  <h4>Website Design</h4>
-                  <label class="badge badge-success">Completed</label>
+                      @case('2')
+                        <label class="badge badge-success">Completed</label>
+                        @break
+                    @endswitch
+                  </div>
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                      <span class="fa fa-ellipsis-v"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">HTML</a></li>
+                      <li><a href="#">CSS</a></li>
+                      <li><a href="#">JavaScript</a></li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="fa fa-ellipsis-v"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-body">
-                <p class="cut-text-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo odio tortor nunc. Id vulputate cursus vitae, blandit diam. Bibendum hac bibendum dolor, ornare sed ac tortor, proin vitae. Lobortis ut diam iaculis lectus sit dolor sit amet.</p>
-                <div class="item">
-                  <label>Category</label>
-                  <p>Website Designing</p>
-                </div>
-                <div class="item">
-                  <label>Deadline</label>
-                  <p>08-Aug-2022</p>
-                </div>
-                <div class="item">
-                  <label>Price</label>
-                  <p>$500</p>
-                </div>
-              </div>
-            </div>
-          </div> 
-
-          <div class="col-md-3 col-lg-3 col-sm-6 col-6">
-            <div class="project_block">
-              <div class="project-head">
-                <div>
-                  <h4>Website Design</h4>
-                  <label class="badge badge-success">Completed</label>
-                </div>
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="fa fa-ellipsis-v"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                  </ul>
+                <div class="project-body">
+                  <div class="cut-text-6">
+                    {!! $val->description !!}
+                  </div>
+                  <!-- <div class="item">
+                    <label>Category</label>
+                    <p>Website Designing</p>
+                  </div> -->
+                  <div class="item">
+                    <label>Deadline</label>
+                    <p>{{date('d-M-Y', strtotime($val->end_date))}}</p>
+                  </div>
+                  <div class="item">
+                    <label>Price</label>
+                    <p>${{number_format($val->rate, 2)}}</p>
+                  </div>
                 </div>
               </div>
-              <div class="project-body">
-                <p class="cut-text-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo odio tortor nunc. Id vulputate cursus vitae, blandit diam. Bibendum hac bibendum dolor, ornare sed ac tortor, proin vitae. Lobortis ut diam iaculis lectus sit dolor sit amet.</p>
-                <div class="item">
-                  <label>Category</label>
-                  <p>Website Designing</p>
-                </div>
-                <div class="item">
-                  <label>Deadline</label>
-                  <p>08-Aug-2022</p>
-                </div>
-                <div class="item">
-                  <label>Price</label>
-                  <p>$500</p>
-                </div>
-              </div>
-            </div>
-          </div>  
+            </div> 
+          @endforeach  
         </div>
       </div>  
     </div>   
