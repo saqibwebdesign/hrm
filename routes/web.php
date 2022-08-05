@@ -17,6 +17,7 @@ use App\Http\Controllers\admin\attendanceController as adminAttendance;
 use App\Http\Controllers\admin\leaveController as adminLeaves;
 use App\Http\Controllers\admin\payrollController as adminPayroll;
 use App\Http\Controllers\employee\sales\projectController as salesProjectController;
+use App\Http\Controllers\employee\manager\projectController as managerProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,12 +63,21 @@ use App\Http\Controllers\employee\sales\projectController as salesProjectControl
                 });
 
             //Sales
-                Route::prefix('sales')->namespace('sales')->group(function(){
+                Route::prefix('sales')->namespace('sales')->middleware('salesAuth')->group(function(){
                     //Project
                         Route::prefix('project')->group(function(){
                             Route::get('/', [salesProjectController::class, 'index'])->name('employee.sales.project');
                             Route::get('create', [salesProjectController::class, 'create'])->name('employee.sales.project.create');
                             Route::post('create', [salesProjectController::class, 'createSubmit']);
+                        });
+                });
+
+            //Project Management
+                Route::prefix('management')->namespace('manager')->middleware('managerAuth')->group(function(){
+                    //Project
+                        Route::prefix('project')->group(function(){
+                            Route::get('/', [salesProjectController::class, 'index'])->name('employee.sales.project');
+                            Route::get('detail', [managerProjectController::class, 'detail'])->name('employee.sales.project.detail');
                         });
                 });
 

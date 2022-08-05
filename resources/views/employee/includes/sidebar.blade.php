@@ -29,11 +29,19 @@
                         <li><a href="{{route('employee.payroll.payslip')}}">Payslip</a></li>
                     </ul>
                 </li>
-                @if(Auth::user()->role_id == '1')
+                @if(Auth::user()->role_id == '1' || Auth::user()->role_id == '2')
                     <li class="nav-small-cap">Sales</li>
                     <li> 
                         <a class="waves-effect waves-dark" href="{{route('employee.sales.project')}}" aria-expanded="false">
                             <span class="hide-menu">Projects</span>
+                        </a>
+                    </li>
+                @endif
+                @if(Auth::user()->role_id == '2')
+                    <li class="nav-small-cap">Project Management</li>
+                    <li> 
+                        <a class="waves-effect waves-dark" href="{{route('employee.sales.project.detail')}}" aria-expanded="false">
+                            <span class="hide-menu">Manage Projects</span>
                         </a>
                     </li>
                 @endif
