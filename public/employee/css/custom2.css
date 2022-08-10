@@ -11,6 +11,9 @@ body
 .no-pad{
     padding:0px !important; 
 }
+.col-white{
+    background: white !important;
+}
 .mailbox .message-center a .mail-contnet {
     padding-left: 10px;
 }
@@ -1802,6 +1805,208 @@ table.table-1 td {
 
 }
 
+.btn-submit-1 {
+    float: right;
+    background: #FEC200;
+    padding: 10px 35px;
+    color: white !important;
+    border-radius: 7px;
+}
+.pro-1 {
+    padding: 25px 10px !important;
+    /*background: white;*/
+}
+.pro-1 h2 {
+    color: #17263A;
+    font-size: 25px;
+    font-weight: 500;
+}
+.pro-1 h3 {
+    font-size: 20px;
+    color: #2D3744;
+    font-weight: 400;
+    padding-bottom: 10px;    
+}
+.pro-2 {
+    overflow-y: scroll;
+    height: 55vh;
+}
+.pro-2 p {
+    color: #999999;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 35px;
+    padding-right: 10px;
+}
+.pro-3 {
+   padding: 25px 10px !important;
+}
+.pro-3 h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #17263A;
+    padding-left: 15px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+
+table.pro-4 {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.pro-4 td, th {
+    border: 0px solid transparent;
+    text-align: left;
+    padding: 10px 8px 10px 20px;
+    width: 63% !important;
+    color: #434343;
+    font-size: 18px;
+}
+.pro-4 tr:nth-child(odd) {
+  background-color: #E5EDFF;
+}
+.pro-5 {
+    padding: 25px 25px !important;
+    margin-top: 20px;
+}   
+.pro-5 h2 {
+     font-size: 20px;
+    font-weight: 600;
+    color: #17263A;
+    margin: 0;
+    padding-bottom:   10px;
+}
+.pro-6 ul {
+    color: #0065FD;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0;
+}
+.pro-6 a {
+    text-decoration: underline;
+}
+.pro-6 {
+    overflow-y: scroll;
+    height: 14vh;
+}
+.pro-7 {
+    margin-top: 20px;
+}
+
+
+.pro-7 .tab {
+    overflow: hidden;
+    display: flex !important;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #bababa;
+}
+.pro-7 .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px;
+    color: #8C8C8C;
+    font-weight: 400;
+}
+
+.pro-7 .tab button.active {
+       color: #17263A;
+    font-weight: 500;
+}
+
+.pro-7 .tabcontent {
+    display: none;
+    padding: 10px 0px 50px 0px;
+    border-top: none;
+}
+
+.accordion.pro-8 {
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+    border-bottom: 1px solid #999999;
+    background: white;
+    color: #A0A0A0;
+}
+
+/*.active, .accordion.pro-8 :hover {
+  background-color: #ccc; 
+}*/
+
+.accordion.pro-8 .panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+.pro-9 {
+    background: #f1f4fb;
+    padding: 30px 40px 30px 40px !important;
+    height: 150vh !important;
+}
+.panel {
+    padding-top: 20px;
+    padding-left: 50px;
+    border-bottom: 1px solid #999999;
+    padding-bottom: 40px;
+}
+.panel span i {
+    background: #EEEEEE;
+    padding: 12px 13px;
+    border-radius: 30px;
+    margin-right: 8px;
+}
+.panel p {
+    font-size: 18px;
+    color: #999999;
+    padding-right: 200px;
+}
+
+.accordion.pro-8 i {
+    color: #17263A;
+}
+.pro-10 {
+    display: inline;
+}
+.pro-11 {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: -39px;
+  
+}
+.pro-11 span i {
+    background: #EEEEEE;
+    padding: 12px 13px;
+    border-radius: 30px;
+    margin-right: 8px;
+    font-size: 16px;
+}
+.panel img {
+    width: 40px;
+    margin-right: 5px;
+}
+.pro-11 img {
+     width: 40px;
+    margin-right: 5px;
+}
+
+
+
+
+
 @media(max-width:360px) {
 
  
@@ -2037,7 +2242,7 @@ table.table-1 td {
 
 
 
-/*Media Queries Of Website*/
+/*Media Queries Of Website
 
 /*Small Laptops*/
 @media screen and (max-width:992px) and (min-width:768px) { 
